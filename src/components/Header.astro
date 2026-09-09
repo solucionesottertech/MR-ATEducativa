@@ -35,6 +35,8 @@ const serviceIcons: Record<string, { iconPath: string; color: string }> = {
         <img
           src="/logo.svg"
           alt="MR ATEducativa"
+          width="160"
+          height="80"
           class="h-20 w-auto"
         />
       </a>
@@ -63,7 +65,7 @@ const serviceIcons: Record<string, { iconPath: string; color: string }> = {
                         class="flex items-center gap-3 px-4 py-3 text-sm text-neutral-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-colors"
                       >
                         {serviceIcon ? (
-                          <img src={serviceIcon.iconPath} alt="" class="w-5 h-5" aria-hidden="true" />
+                          <img src={serviceIcon.iconPath} alt="" width="20" height="20" class="w-5 h-5" aria-hidden="true" />
                         ) : (
                           <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
