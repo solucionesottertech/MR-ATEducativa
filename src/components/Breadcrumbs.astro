@@ -1,0 +1,39 @@
+---
+export interface Props {
+  items: { name: string; path: string }[];
+}
+
+const { items } = Astro.props;
+
+const breadcrumbSchema = {
+  itemListElement: items.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.name,
+    item: `https://mr-ateducativa.cl${item.path}`,
+  })),
+};
+---
+
+<!-- Visually hidden but accessible to screen readers and SEO -->
+<nav aria-label="Breadcrumb" class="sr-only">
+  <ol>
+    {items.map((item, index) => (
+      <li>
+        {index > 0 && <span aria-hidden="true"> / </span>}
+        {index === items.length - 1 ? (
+          <span aria-current="page">{item.name}</span>
+        ) : (
+          <a href={item.path}>{item.name}</a>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<!-- BreadcrumbList JSON-LD -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  ...breadcrumbSchema,
+})} />

@@ -1,0 +1,182 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  path: string;
+  schema?: string;
+  schemaData?: object;
+  breadcrumb?: { name: string; path: string }[];
+  accentColor?: string;
+  keywords?: string;
+  robots?: string;
+}
+
+const { title, description, path, schema, schemaData, breadcrumb, accentColor, keywords, robots = 'index, follow' } = Astro.props;
+
+import { site } from '../data/site';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import SchemaJsonLd from '../components/SchemaJsonLd.astro';
+import '../styles/global.css';
+
+const canonicalURL = new URL(path, site.url);
+const ogImageURL = new URL(site.ogImage, site.url);
+---
+
+<!doctype html>
+<html lang={site.lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:site_name" content={site.name} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts: Inter (body text) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- CO59 Self-hosted (SIL OpenFont License) -->
+    <style>
+      @font-face {
+        font-family: 'CO59';
+        src: url('/fonts/CO59-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'CO59';
+        src: url('/fonts/CO59-Bold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'CO59';
+        src: url('/fonts/CO59-Italic.ttf') format('truetype');
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'CO59';
+        src: url('/fonts/CO59-BoldItalic.ttf') format('truetype');
+        font-weight: 700;
+        font-style: italic;
+        font-display: swap;
+      }
+    </style>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Schema JSON-LD -->
+    {schema && schemaData && <SchemaJsonLd schema={schema} data={schemaData} />}
+
+    <!-- BreadcrumbList JSON-LD -->
+    {breadcrumb && breadcrumb.length > 0 && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: breadcrumb.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: item.name,
+          item: `https://mr-ateducativa.cl${item.path}`,
+        })),
+      })} />
+    )}
+
+    <!-- Analytics -->
+    <Analytics />
+
+    <!-- Accent color override if provided -->
+    {accentColor && (
+      <style set:html={`:root { --color-primary: ${accentColor}; }`} />
+    )}
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <!-- Skip to content — WCAG 2.1 AA -->
+    <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+
+    <Header />
+
+    <main id="main-content" class="flex-1">
+      {breadcrumb && breadcrumb.length > 0 && (
+        <nav aria-label="Breadcrumb" class="sr-only">
+          <ol>
+            {breadcrumb.map((item, index) => (
+              <li>
+                {index > 0 && <span aria-hidden="true"> / </span>}
+                {index === breadcrumb.length - 1 ? (
+                  <span aria-current="page">{item.name}</span>
+                ) : (
+                  <a href={item.path}>{item.name}</a>
+                )}
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )}
+      <slot />
+    </main>
+
+    <Footer />
+
+    <!-- IntersectionObserver for reveal animations -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+        );
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>

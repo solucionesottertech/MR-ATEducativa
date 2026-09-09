@@ -1,0 +1,603 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTAButton from '../../components/CTAButton.astro';
+import DiagnosticoModal from '../../components/DiagnosticoModal.astro';
+import RelatedServices from '../../components/RelatedServices.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const schemaData = {
+  name: 'Mentoría Estratégica para Directores Escolares — MR ATEducativa',
+  description: 'Fortalecemos el liderazgo directivo para que la mejora ocurra desde dentro de la escuela.',
+};
+
+const breadcrumbItems = [
+  { name: 'Inicio', path: '/' },
+  { name: 'Servicios', path: '/servicios' },
+  { name: 'Mentoría para Directores', path: '/servicios/mentoria-directores' },
+];
+---
+
+<BaseLayout
+  title="Mentoría para Directores Escolares | MR ATEducativa"
+  description="Acompañamiento especializado para directores escolares. Fortalecemos el liderazgo directivo con mentoría situada en la realidad de cada establecimiento."
+  path="/servicios/mentoria-directores"
+  schema="Service"
+  schemaData={schemaData}
+  keywords="mentoría directores, liderazgo directivo, fortalecimiento directivo, acompañamiento directores, gestión escolar"
+  breadcrumb={breadcrumbItems}
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-mentoria-700 min-h-[50vh] flex items-center">
+    <div class="relative py-20 sm:py-28" style="padding-left: var(--container-padding); padding-right: var(--container-padding);">
+      <div class="max-w-5xl ml-8 sm:ml-16 lg:ml-48">
+        <a href="/servicios" class="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Volver a servicios
+        </a>
+        <div class="flex items-start gap-6 mb-6">
+          <div class="w-16 h-16 flex-shrink-0">
+            <img src="/iconos/mentoria-blanco.svg" alt="" class="w-full h-full object-contain" aria-hidden="true" />
+          </div>
+          <h1 class="heading-display text-white text-left" style="text-wrap: normal;">Mentoría para Directores</h1>
+        </div>
+        <p class="text-lg sm:text-xl text-white/80 leading-relaxed max-w-2xl text-left">
+          Fortalecemos el liderazgo directivo para que la mejora ocurra desde dentro de la escuela.
+        </p>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <path d="M0 120L60 108C120 96 240 72 360 66C480 60 600 72 720 78C840 84 960 84 1080 78C1200 72 1320 60 1380 54L1440 48V120H0Z" fill="#fafafa"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Contexto -->
+  <section class="section-padding bg-neutral-50">
+    <div class="container-page">
+      <div class="max-w-3xl mx-auto">
+        <p class="body-lg text-neutral-700 mb-6">
+          En MR Asesoría Educativa acompañamos a sostenedores que identifican que uno o más de sus directores requieren orientación especializada y fortalecimiento de sus capacidades de liderazgo y gestión.
+        </p>
+        <p class="body-lg text-neutral-700 mb-6">
+          <strong class="text-primary-800">No reemplazamos al director ni gestionamos el establecimiento por él.</strong>
+        </p>
+        <p class="body-lg text-primary-700 font-semibold text-xl">
+          Desarrollamos su capacidad para liderarlo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Cuándo es necesaria? -->
+  <section class="section-padding bg-white">
+    <div class="container-page">
+      <div class="text-center mb-12">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold mb-4">
+          Señales de alerta
+        </span>
+        <h2 class="heading-h2 text-neutral-900 mb-4">
+          ¿Cuándo puede ser necesaria esta asesoría?
+        </h2>
+        <p class="body-lg max-w-2xl mx-auto text-neutral-600">
+          Este servicio está especialmente diseñado para sostenedores que observan situaciones como:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        {[
+          'Alta dependencia del sostenedor para resolver problemas cotidianos.',
+          'Dificultades del director para delegar y distribuir liderazgo.',
+          'Equipos directivos con baja autonomía o escasa coordinación.',
+          'Dificultad para sostener conversaciones profesionales complejas.',
+          'Reuniones frecuentes que generan pocos acuerdos o escaso seguimiento.',
+          'Problemas para movilizar a los líderes intermedios.',
+          'Dificultades para pasar de la planificación a la acción.',
+          'Escaso uso de evidencias para tomar decisiones.',
+          'Necesidad de fortalecer el liderazgo pedagógico.',
+          'Procesos de cambio, reorganización o instalación de nuevas prácticas que requieren mayor conducción.',
+          'Directores nuevos que necesitan consolidarse en su función.',
+          'Directores experimentados que enfrentan nuevos desafíos institucionales.',
+        ].map((item) => (
+          <div class="flex items-start gap-3 p-4 rounded-xl bg-neutral-50 border border-neutral-200">
+            <svg class="w-5 h-5 text-mentoria-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <p class="text-base text-neutral-700">{item}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="max-w-3xl mx-auto mt-12 p-6 rounded-2xl bg-primary-50 border border-primary-200">
+        <p class="text-base text-neutral-700 text-center">
+          La asesoría no parte de suponer que existe un "mal director". Parte de algo bastante más útil: <strong class="text-primary-800">identificar qué capacidades necesita fortalecer para responder mejor a los desafíos reales de su establecimiento.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Acompañamiento situado -->
+  <section class="section-padding bg-neutral-50">
+    <div class="container-page">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="heading-h2 text-neutral-900 mb-4">
+          Un acompañamiento situado en la realidad del director
+        </h2>
+        <p class="body-lg text-neutral-600">
+          No trabajamos con situaciones hipotéticas ni con modelos desvinculados del contexto.
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto bg-white rounded-2xl p-8 shadow-sm border border-neutral-200">
+        <p class="text-base text-neutral-700 mb-6">
+          La mentoría utiliza como principal insumo <strong class="text-primary-800">la gestión real del establecimiento</strong>: reuniones, decisiones, indicadores, estructura organizacional, conflictos, resultados, equipos, proyectos, dificultades y desafíos que el director enfrenta durante el proceso.
+        </p>
+        <p class="text-base text-neutral-700 mb-6">
+          Cada sesión permite analizar situaciones concretas, tomar decisiones, implementar acciones y posteriormente evaluar sus resultados.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3">
+          {['Reflexionar', 'Decidir', 'Actuar', 'Observar', 'Ajustar', 'Consolidar'].map((step, i) => (
+            <span class="inline-flex items-center gap-2">
+              <span class="px-4 py-2 rounded-full bg-primary-700 text-white text-sm font-semibold">{step}</span>
+              {i < 5 && <svg class="w-4 h-4 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Cómo funciona? -->
+  <section class="section-padding bg-neutral-50">
+    <div class="container-page">
+      <div class="text-center mb-14">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mentoria-100 text-mentoria-700 text-sm font-semibold mb-4">
+          Proceso de acompañamiento
+        </span>
+        <h2 class="heading-h2 text-neutral-900 mb-4">
+          ¿Cómo funciona?
+        </h2>
+      </div>
+
+      <div class="space-y-8 max-w-4xl mx-auto">
+        <!-- Paso 1 -->
+        <div class="bg-white rounded-2xl border border-mentoria-200 p-8 shadow-sm">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-mentoria-100 rounded-xl flex items-center justify-center">
+              <span class="text-mentoria-700 font-bold text-lg">1</span>
+            </div>
+            <h3 class="heading-h3 text-neutral-900">Diagnóstico inicial del liderazgo</h3>
+          </div>
+          <p class="text-base text-neutral-600 mb-4">
+            Comenzamos comprendiendo el contexto institucional y las expectativas del sostenedor.
+          </p>
+          <ul class="space-y-2 text-base text-neutral-600">
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Entrevista con el sostenedor
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Entrevista con el director
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Revisión del perfil de cargo
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Análisis de estructura y organigrama
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Revisión de evidencias e indicadores de gestión
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Identificación de fortalezas y áreas prioritarias
+            </li>
+          </ul>
+          <p class="text-xs text-neutral-500 mt-4 italic">
+            El objetivo es evitar esos diagnósticos genéricos que misteriosamente concluyen que todo director necesita exactamente la misma capacitación.
+          </p>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="bg-white rounded-2xl border border-mentoria-200 p-8 shadow-sm">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-mentoria-100 rounded-xl flex items-center justify-center">
+              <span class="text-mentoria-700 font-bold text-lg">2</span>
+            </div>
+            <h3 class="heading-h3 text-neutral-900">Plan Individual de Fortalecimiento Directivo</h3>
+          </div>
+          <p class="text-base text-neutral-600 mb-4">
+            A partir del diagnóstico se seleccionan competencias prioritarias y se construye una hoja de ruta de acompañamiento.
+          </p>
+          <ul class="space-y-2 text-base text-neutral-600">
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              <div>
+                <strong class="text-neutral-700">Liderazgo y conducción de equipos</strong>
+                <p class="text-sm">Delegación, distribución del liderazgo, coordinación y desarrollo de líderes intermedios.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              <div>
+                <strong class="text-neutral-700">Liderazgo pedagógico</strong>
+                <p class="text-sm">Seguimiento de aprendizajes, acompañamiento docente y conducción de la mejora pedagógica.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              <div>
+                <strong class="text-neutral-700">Gestión de personas</strong>
+                <p class="text-sm">Retroalimentación, evaluación de desempeño, conversaciones difíciles y desarrollo profesional.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              <div>
+                <strong class="text-neutral-700">Gestión estratégica</strong>
+                <p class="text-sm">Priorización, planificación, monitoreo y movilización de planes hacia la acción.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              <div>
+                <strong class="text-neutral-700">Toma de decisiones</strong>
+                <p class="text-sm">Uso de datos, evidencias e indicadores para orientar decisiones institucionales.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              <div>
+                <strong class="text-neutral-700">Gestión del cambio</strong>
+                <p class="text-sm">Movilización de equipos, manejo de resistencias e instalación de nuevas prácticas.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="bg-white rounded-2xl border border-mentoria-200 p-8 shadow-sm">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-mentoria-100 rounded-xl flex items-center justify-center">
+              <span class="text-mentoria-700 font-bold text-lg">3</span>
+            </div>
+            <h3 class="heading-h3 text-neutral-900">Mentoría directiva situada</h3>
+          </div>
+          <p class="text-base text-neutral-600 mb-4">
+            El director participa en sesiones periódicas individuales con una asesora especializada.
+          </p>
+          <p class="text-base text-neutral-600 mb-4">
+            En cada encuentro se analizan desafíos reales de su gestión y se establecen acciones concretas para implementar entre sesiones.
+          </p>
+          <p class="text-base text-neutral-600 mb-4">El acompañamiento busca desarrollar progresivamente:</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-mentoria-100 text-mentoria-700 text-xs font-semibold">Mayor autonomía</span>
+            <span class="px-3 py-1 rounded-full bg-mentoria-100 text-mentoria-700 text-xs font-semibold">Mejor capacidad de decisión</span>
+            <span class="px-3 py-1 rounded-full bg-mentoria-100 text-mentoria-700 text-xs font-semibold">Liderazgo distribuido</span>
+            <span class="px-3 py-1 rounded-full bg-mentoria-100 text-mentoria-700 text-xs font-semibold">Seguimiento</span>
+            <span class="px-3 py-1 rounded-full bg-mentoria-100 text-mentoria-700 text-xs font-semibold">Responsabilidad por resultados</span>
+          </div>
+        </div>
+
+        <!-- Paso 4 -->
+        <div class="bg-white rounded-2xl border border-mentoria-200 p-8 shadow-sm">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-mentoria-100 rounded-xl flex items-center justify-center">
+              <span class="text-mentoria-700 font-bold text-lg">4</span>
+            </div>
+            <h3 class="heading-h3 text-neutral-900">Aplicación en el establecimiento</h3>
+          </div>
+          <p class="text-base text-neutral-600 mb-4">
+            La mentoría no termina en la conversación. Entre sesiones, el director implementa acciones concretas relacionadas con los focos trabajados:
+          </p>
+          <ul class="space-y-2 text-base text-neutral-600">
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Conducir una reunión estratégica
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Delegar una responsabilidad
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Retroalimentar a un líder
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Abordar una conversación compleja
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Reorganizar un proceso
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Instalar mecanismos de seguimiento
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Analizar evidencias
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Movilizar un plan de mejora
+            </li>
+          </ul>
+          <p class="text-xs text-neutral-500 mt-4 italic">
+            Posteriormente se analiza el resultado y se realizan los ajustes necesarios.
+          </p>
+        </div>
+
+        <!-- Paso 5 -->
+        <div class="bg-white rounded-2xl border border-mentoria-200 p-8 shadow-sm">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-mentoria-100 rounded-xl flex items-center justify-center">
+              <span class="text-mentoria-700 font-bold text-lg">5</span>
+            </div>
+            <h3 class="heading-h3 text-neutral-900">Seguimiento mediante evidencias</h3>
+          </div>
+          <p class="text-base text-neutral-600 mb-4">
+            El proceso incorpora evidencias reales de gestión para analizar progresivamente los avances.
+          </p>
+          <p class="text-base text-neutral-600 mb-4">Podemos trabajar con:</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            {['Actas', 'Indicadores', 'Planes', 'Registros', 'Evaluaciones', 'Reportes', 'Observaciones', 'Instrumentos institucionales', 'Productos desarrollados por los equipos'].map((item) => (
+              <span class="px-3 py-1 rounded-full bg-mentoria-100 text-mentoria-700 text-xs font-semibold">{item}</span>
+            ))}
+          </div>
+          <p class="text-xs text-neutral-500 italic">
+            Esto permite que el acompañamiento no dependa exclusivamente de percepciones, sino de cambios observables en la práctica directiva.
+          </p>
+        </div>
+
+        <!-- Paso 6 -->
+        <div class="bg-white rounded-2xl border border-mentoria-200 p-8 shadow-sm">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-mentoria-100 rounded-xl flex items-center justify-center">
+              <span class="text-mentoria-700 font-bold text-lg">6</span>
+            </div>
+            <h3 class="heading-h3 text-neutral-900">Evaluación e informe ejecutivo al sostenedor</h3>
+          </div>
+          <p class="text-base text-neutral-600 mb-4">
+            Al finalizar el período se realiza una evaluación del proceso considerando:
+          </p>
+          <ul class="space-y-2 text-base text-neutral-600 mb-4">
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Capacidades fortalecidas
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Avances alcanzados
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Prácticas instaladas
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Desafíos pendientes
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-mentoria-500 rounded-full mt-1.5 flex-shrink-0"></span>
+              Recomendaciones de continuidad
+            </li>
+          </ul>
+          <p class="text-base text-neutral-700 font-medium">
+            El sostenedor recibe un <strong>Informe Ejecutivo de Avance</strong>, resguardando adecuadamente el espacio profesional de mentoría del director.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Qué recibe el sostenedor? -->
+  <section class="section-padding bg-white">
+    <div class="container-page">
+      <div class="text-center mb-12">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mentoria-100 text-mentoria-700 text-sm font-semibold mb-4">
+          Incluye
+        </span>
+        <h2 class="heading-h2 text-neutral-900 mb-4">
+          ¿Qué recibe el sostenedor?
+        </h2>
+        <p class="body-lg max-w-2xl mx-auto text-neutral-600">
+          El servicio contempla, según la modalidad contratada:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+        {[
+          'Diagnóstico inicial del liderazgo directivo',
+          'Definición de focos prioritarios de desarrollo',
+          'Plan Individual de Fortalecimiento Directivo',
+          'Sesiones periódicas de mentoría especializada',
+          'Herramientas e instrumentos de gestión',
+          'Seguimiento de compromisos y evidencias',
+          'Evaluación de avances',
+          'Informe Ejecutivo para el sostenedor',
+          'Recomendaciones para la continuidad del fortalecimiento',
+        ].map((item) => (
+          <div class="flex items-start gap-3 p-4 rounded-xl bg-neutral-50 border border-neutral-200">
+            <svg class="w-5 h-5 text-mentoria-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <p class="text-sm text-neutral-700">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Modalidades -->
+  <section class="section-padding bg-white">
+    <div class="container-page">
+      <div class="text-center mb-12">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mentoria-100 text-mentoria-700 text-sm font-semibold mb-4">
+          Modalidades de acompañamiento
+        </span>
+        <h2 class="heading-h2 text-neutral-900 mb-4">
+          Elige la duración que mejor se adapte a tus necesidades
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <!-- 3 meses -->
+        <div class="bg-neutral-50 rounded-2xl p-6 border-2 border-neutral-200 hover:border-mentoria-400 transition-all">
+          <div class="text-center mb-4">
+            <span class="inline-block px-4 py-1 rounded-full bg-mentoria-100 text-mentoria-700 text-sm font-semibold mb-3">
+              Intervención focalizada
+            </span>
+            <h3 class="heading-h3 text-neutral-900">3 meses</h3>
+          </div>
+          <p class="text-base text-neutral-600 text-center">
+            Para directores que presentan uno o dos desafíos específicos que requieren intervención y acompañamiento intensivo.
+          </p>
+        </div>
+
+        <!-- 6 meses -->
+        <div class="bg-mentoria-50 rounded-2xl p-6 border-2 border-mentoria-300 shadow-lg relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+            <span class="px-4 py-1 rounded-full bg-mentoria-500 text-white text-xs font-semibold">Más solicitado</span>
+          </div>
+          <div class="text-center mb-4">
+            <span class="inline-block px-4 py-1 rounded-full bg-mentoria-100 text-mentoria-700 text-sm font-semibold mb-3">
+              Fortalecimiento directivo
+            </span>
+            <h3 class="heading-h3 text-neutral-900">6 meses</h3>
+          </div>
+          <p class="text-base text-neutral-600 text-center">
+            Permite desarrollar competencias prioritarias, implementarlas y realizar seguimiento de su instalación.
+          </p>
+        </div>
+
+        <!-- 10 meses -->
+        <div class="bg-neutral-50 rounded-2xl p-6 border-2 border-neutral-200 hover:border-mentoria-400 transition-all">
+          <div class="text-center mb-4">
+            <span class="inline-block px-4 py-1 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold mb-3">
+              Mentoría directiva anual
+            </span>
+            <h3 class="heading-h3 text-neutral-900">10 meses</h3>
+          </div>
+          <p class="text-base text-neutral-600 text-center">
+            Acompañamiento sistemático durante el año escolar, permitiendo trabajar los desafíos a medida que aparecen y evaluar progresivamente el impacto del liderazgo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Redes de establecimientos -->
+  <section class="section-padding bg-neutral-50">
+    <div class="container-page">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mentoria-100 text-mentoria-700 text-sm font-semibold mb-4">
+            También acompañamos redes de establecimientos
+          </span>
+          <h2 class="heading-h2 text-neutral-900 mb-4">
+            Programa de Fortalecimiento de Liderazgos Directivos
+          </h2>
+          <p class="body-lg text-neutral-600">
+            Para sostenedores, fundaciones y organizaciones responsables de varios establecimientos educacionales, desarrollamos programas que permiten acompañar simultáneamente a sus directores bajo un marco común de liderazgo y mejora institucional.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-2xl p-6 border border-neutral-200 shadow-sm">
+            <div class="w-12 h-12 bg-primary-700 rounded-xl flex items-center justify-center mb-4 text-white font-bold text-lg">
+              S
+            </div>
+            <h3 class="heading-h3 text-neutral-900 mb-2">Sostenedor</h3>
+            <p class="text-base text-neutral-600">
+              Gobernanza, expectativas, autonomía, indicadores y seguimiento de los establecimientos.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 border border-neutral-200 shadow-sm">
+            <div class="w-12 h-12 bg-mentoria-600 rounded-xl flex items-center justify-center mb-4 text-white font-bold text-lg">
+              D
+            </div>
+            <h3 class="heading-h3 text-neutral-900 mb-2">Directores</h3>
+            <p class="text-base text-neutral-600">
+              Liderazgo estratégico, pedagógico, gestión de personas y conducción de la mejora.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 border border-neutral-200 shadow-sm">
+            <div class="w-12 h-12 bg-mentoria-700 rounded-xl flex items-center justify-center mb-4 text-white font-bold text-lg">
+              L
+            </div>
+            <h3 class="heading-h3 text-neutral-900 mb-2">Liderazgos intermedios</h3>
+            <p class="text-base text-neutral-600">
+              UTP, Convivencia Escolar, Inspectoría, PIE, Administración u otras áreas estratégicas, de acuerdo con las necesidades detectadas.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-8 p-6 rounded-2xl bg-primary-50 border border-primary-200 text-center">
+          <p class="text-base text-neutral-700">
+            De esta manera, el fortalecimiento deja de depender exclusivamente de las capacidades individuales y comienza a instalarse como una <strong class="text-primary-800">práctica de gestión de toda la organización</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nuestro enfoque -->
+  <section class="section-padding bg-white">
+    <div class="container-page">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="heading-h2 text-neutral-900 mb-8">
+          Nuestro enfoque
+        </h2>
+
+        <div class="space-y-6">
+          <div class="p-6 rounded-2xl bg-neutral-50 border border-neutral-200">
+            <p class="text-lg text-neutral-700 font-medium">
+              No hacemos el trabajo del director.
+            </p>
+            <p class="text-2xl text-primary-700 font-bold mt-2">
+              Desarrollamos su capacidad para hacerlo.
+            </p>
+          </div>
+
+          <p class="body-lg text-neutral-600">
+            Creemos que una asesoría efectiva no debe generar dependencia.
+          </p>
+
+          <p class="body-lg text-neutral-600">
+            Por eso acompañamos al director para que progresivamente pueda <strong class="text-neutral-900">analizar mejor, decidir mejor, conducir mejor y desarrollar a otros líderes</strong>, dejando capacidades instaladas que permanezcan una vez finalizada la asesoría.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <RelatedServices currentSlug="mentoria-directores" />
+
+  <!-- CTA Final -->
+  <section class="section-padding relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-mentoria-700 to-mentoria-600"></div>
+    <div class="container-page text-center relative">
+      <h2 class="heading-h2 text-white mb-4">
+        ¿Listo para fortalecer el liderazgo directivo?
+      </h2>
+      <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">
+        Cuéntanos sobre tu equipo directivo y te mostraremos cómo podemos ayudarte.
+      </p>
+      <CTAButton variant="white" size="lg" />
+    </div>
+  </section>
+
+  <DiagnosticoModal />
+</BaseLayout>

@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTAButton from '../../components/CTAButton.astro';
+import DiagnosticoModal from '../../components/DiagnosticoModal.astro';
+import RelatedServices from '../../components/RelatedServices.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { serviceAreas } from '../../data/services';
+
+const area = serviceAreas.find((a) => a.slug === 'formacion-convivencia')!;
+
+const breadcrumbItems = [
+  { name: 'Inicio', path: '/' },
+  { name: 'Servicios', path: '/servicios' },
+  { name: 'Formación y Convivencia', path: '/servicios/formacion-convivencia' },
+];
+---
+
+<BaseLayout
+  title={`Asesoría en Convivencia Escolar | MR ATEducativa`}
+  description={area.metaDescription}
+  path="/servicios/formacion-convivencia"
+  keywords={area.keywords.join(', ')}
+  breadcrumb={breadcrumbItems}
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-naranja-700 min-h-[50vh] flex items-center">
+
+    <div class="relative py-20 sm:py-28" style="padding-left: var(--container-padding); padding-right: var(--container-padding);">
+      <div class="max-w-5xl ml-8 sm:ml-16 lg:ml-48">
+        <a href="/servicios" class="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Volver a servicios
+        </a>
+        <div class="flex items-start gap-6 mb-6">
+          <div class="w-16 h-16 flex-shrink-0">
+            <img src="/iconos/convivencia-blanco.svg" alt="" class="w-full h-full object-contain" aria-hidden="true" />
+          </div>
+          <h1 class="heading-display text-white text-left" style="text-wrap: normal;">{area.name}</h1>
+        </div>
+        <p class="text-lg sm:text-xl text-white/80 leading-relaxed max-w-2xl text-left">
+          {area.tagline}
+        </p>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <path d="M0 120L60 108C120 96 240 72 360 66C480 60 600 72 720 78C840 84 960 84 1080 78C1200 72 1320 60 1380 54L1440 48V120H0Z" fill="#FBF9F6"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Description -->
+  <section class="section-padding-sm">
+    <div class="container-page">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="body-lg text-neutral-700">
+          {area.description}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subdimensions -->
+  <section class="section-padding bg-neutral-50">
+    <div class="container-page">
+      <div class="space-y-12">
+        {area.subdimensions.map((sub, index) => (
+          <div class="reveal" style={`transition-delay: ${index * 100}ms;`}>
+            <div class="bg-white rounded-2xl border border-naranja-200 p-8 shadow-sm">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 bg-naranja-100 rounded-xl flex items-center justify-center">
+                  <span class="text-naranja-700 font-bold text-lg">{index + 1}</span>
+                </div>
+                <h2 class="heading-h2 text-neutral-900">{sub.name}</h2>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {sub.services.map((service) => (
+                  <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-naranja-50 transition-colors">
+                    <svg class="w-5 h-5 mt-0.5 flex-shrink-0 text-naranja-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="text-neutral-700">{service}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <RelatedServices currentSlug="formacion-convivencia" />
+
+  <!-- CTA -->
+  <section class="section-padding relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-naranja-700 to-naranja-600"></div>
+    <div class="container-page text-center relative">
+      <h2 class="heading-h2 text-white mb-4">
+        ¿Quieres mejorar la convivencia en tu establecimiento?
+      </h2>
+      <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">
+        Cuéntanos sobre los desafíos de convivencia de tu comunidad y te mostraremos cómo podemos ayudarte.
+      </p>
+      <CTAButton variant="white" size="lg" />
+    </div>
+  </section>
+
+  <DiagnosticoModal />
+</BaseLayout>

@@ -1,0 +1,294 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/CTAButton.astro';
+import DiagnosticoModal from '../components/DiagnosticoModal.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const schemaData = {
+  name: 'MR ATEducativa',
+  url: 'https://mr-ateducativa.cl',
+  founder: {
+    '@type': 'Person',
+    name: 'Marilyn Reyes Molina',
+    jobTitle: 'Fundadora y Directora Ejecutiva',
+  },
+  description: 'Asesoría técnica educativa para colegios en Chile',
+};
+
+const breadcrumbItems = [
+  { name: 'Inicio', path: '/' },
+  { name: 'Sobre Nosotros', path: '/sobre-nosotros' },
+];
+---
+
+<BaseLayout
+  title="Sobre Nosotros | MR ATEducativa - Asesoría Educativa Chile"
+  description="Conoce a Marilyn Reyes Molina y el equipo detrás de MR ATEducativa. Más de 20 años de experiencia en asesoría técnica educativa en Chile."
+  path="/sobre-nosotros"
+  schema="Organization"
+  schemaData={schemaData}
+  keywords="Marilyn Reyes Molina, MR ATEducativa, asesoría educativa Chile, experiencia educativa, equipo ATE"
+  breadcrumb={breadcrumbItems}
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-primary-700 min-h-[50vh] flex items-center">
+
+    <div class="container-page py-20 sm:py-28 relative">
+      <div class="max-w-3xl">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white/90 text-sm font-semibold mb-4 border border-white/10">
+          Sobre nosotros
+        </span>
+        <h1 class="heading-display text-white mb-6">
+          Equipo MR ATEducativa | Asesoría Educativa en Chile
+        </h1>
+        <p class="text-lg sm:text-xl text-white/80 leading-relaxed max-w-2xl">
+          Conocimiento, evidencia y acompañamiento para hacer posible la mejora educativa.
+        </p>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <path d="M0 120L60 108C120 96 240 72 360 66C480 60 600 72 720 78C840 84 960 84 1080 78C1200 72 1320 60 1380 54L1440 48V120H0Z" fill="#FBF9F6"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Fundadora -->
+  <section class="section-padding">
+    <div class="container-page">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <!-- Foto -->
+        <div class="reveal">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+          <img
+            src="/foto-marilyn.webp"
+            alt="Marilyn Reyes Molina - Fundadora de MR ATEducativa"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div class="reveal" style="transition-delay: 100ms;">
+          <span class="text-sm font-semibold text-primary-600 uppercase tracking-wider">Nuestra fundadora</span>
+          <h2 class="heading-h2 text-neutral-900 mt-2 mb-6">Marilyn Reyes Molina</h2>
+          <p class="text-lg text-primary-600 font-medium mb-6">Fundadora y Directora Ejecutiva de MR ATEducativa</p>
+
+          <div class="prose-custom space-y-4">
+            <p>
+              Con más de 20 años de trayectoria en educación, Marilyn Reyes Molina ha desarrollado su carrera desde una perspectiva que integra experiencia directa en establecimientos educacionales, liderazgo escolar, administración educacional, investigación y asesoría técnica especializada.
+            </p>
+            <p>
+              Profesora de Educación General Básica y Licenciada en Educación por la Pontificia Universidad Católica de Chile, posee un Magíster en Educación, mención Administración Educacional, de la Universidad de Santiago de Chile. Su especialización se ha proyectado internacionalmente: fue becaria de investigación en Política Educativa Comparada en la Universidad de Salamanca, España, y actualmente desarrolla estudios de Doctorado en Administración y Políticas Educativas en la Universidade de Lisboa, Portugal.
+            </p>
+            <p>
+              Esta formación se complementa con una extensa experiencia en terreno. Ha ejercido funciones como profesora, coordinadora SEP y PME, jefa de UTP, coordinadora académica, directora escolar, consultora pedagógica y asesora técnica educativa, lo que le permite comprender la gestión de un establecimiento no únicamente desde la teoría, sino desde la complejidad cotidiana de quienes deben liderar, tomar decisiones e implementar procesos de mejora.
+            </p>
+          </div>
+
+          <!-- Formación destacada -->
+          <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-4 bg-primary-50 rounded-xl border border-primary-200">
+              <div class="text-sm font-semibold text-primary-700 mb-1">PUC Chile</div>
+              <div class="text-xs text-neutral-600">Profesora de Educación General Básica</div>
+            </div>
+            <div class="p-4 bg-rosa-50 rounded-xl border border-rosa-200">
+              <div class="text-sm font-semibold text-rosa-700 mb-1">Usach</div>
+              <div class="text-xs text-neutral-600">Magíster en Educación, Mención Administración Educacional</div>
+            </div>
+            <div class="p-4 bg-teal-50 rounded-xl border border-teal-200">
+              <div class="text-sm font-semibold text-teal-700 mb-1">Universidad de Salamanca</div>
+              <div class="text-xs text-neutral-600">Becaria de investigación en Política Educativa Comparada</div>
+            </div>
+            <div class="p-4 bg-naranja-50 rounded-xl border border-naranja-200">
+              <div class="text-sm font-semibold text-naranja-700 mb-1">Universidade de Lisboa</div>
+              <div class="text-xs text-neutral-600">Doctorado en Administración y Políticas Educativas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- De la investigación a la mejora educativa -->
+  <section class="section-padding bg-neutral-50">
+    <div class="container-page">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold mb-4">
+            Nuestro enfoque
+          </span>
+          <h2 class="heading-h2 text-neutral-900 mb-4">
+            De la investigación a la mejora educativa
+          </h2>
+        </div>
+
+        <div class="prose-custom space-y-4 max-w-2xl mx-auto">
+          <p>
+            Uno de los principios que da origen a MR ATEducativa es que ningún servicio debiera comenzar antes de comprender el establecimiento que será acompañado.
+          </p>
+          <p>
+            Por ello, Marilyn ha desarrollado una metodología de asesoría que comienza con el estudio y diagnóstico de la realidad institucional: analiza información disponible, resultados educativos, instrumentos de gestión, prácticas organizacionales, necesidades de los equipos y desafíos específicos del establecimiento. A partir de esa evidencia se determinan las prioridades y se diseñan las intervenciones.
+          </p>
+          <p>
+            Este enfoque permite alejarse de capacitaciones estandarizadas o soluciones prediseñadas. Primero investigamos; luego proponemos. La asesoría, capacitación o acompañamiento se construye para responder con mayor precisión a las necesidades reales de cada comunidad educativa.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiencia que se traduce en resultados -->
+  <section class="section-padding">
+    <div class="container-page">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-100 text-teal-700 text-sm font-semibold mb-4">
+            Caso representativo
+          </span>
+          <h2 class="heading-h2 text-neutral-900 mb-4">
+            Colegio Santa Cruz de Unco
+          </h2>
+          <p class="body-lg text-neutral-600">
+            Un ejemplo de cómo nuestro acompañamiento genera resultados concretos.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-teal-200 p-8 shadow-sm">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="text-center p-4 bg-teal-50 rounded-xl">
+              <div class="text-3xl font-bold text-teal-700 mb-2">2023</div>
+              <div class="text-sm text-neutral-600">Inicio del acompañamiento</div>
+            </div>
+            <div class="text-center p-4 bg-primary-50 rounded-xl">
+              <div class="text-3xl font-bold text-primary-700 mb-2">Integral</div>
+              <div class="text-sm text-neutral-600">Asesoría completa</div>
+            </div>
+            <div class="text-center p-4 bg-rosa-50 rounded-xl">
+              <div class="text-3xl font-bold text-rosa-700 mb-2">Sostenible</div>
+              <div class="text-sm text-neutral-600">Mejora continua</div>
+            </div>
+          </div>
+
+          <div class="prose-custom space-y-4 w-full">
+            <p>
+              El trabajo desarrollado desde 2023 con el Colegio Santa Cruz de Unco contempla investigación de la gestión institucional, identificación de desafíos y oportunidades, reorganización de procesos, formación continua, coaching y acompañamiento sistemático del equipo directivo.
+            </p>
+            <p>
+              Esta intervención está orientada a elevar la calidad educativa, fortalecer el desarrollo profesional y mejorar la gestión institucional del establecimiento.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Una red de especialistas -->
+  <section class="section-padding bg-neutral-50">
+    <div class="container-page">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rosa-100 text-rosa-700 text-sm font-semibold mb-4">
+          Red de trabajo
+        </span>
+        <h2 class="heading-h2 text-neutral-900 mb-6">
+          Una red de especialistas al servicio de cada colegio
+        </h2>
+
+        <div class="prose-custom space-y-4 max-w-2xl mx-auto text-left">
+          <p>
+            MR ATEducativa no se construye en torno a una única profesional. Como fundadora y directora, Marilyn lidera y coordina una red de relatores, asesores y especialistas, seleccionando los perfiles profesionales de acuerdo con las necesidades detectadas previamente en cada establecimiento.
+          </p>
+          <p>
+            Su experiencia como Directora Académica incluye la planificación estratégica de intervenciones educativas, la gestión de equipos profesionales y la coordinación con establecimientos para identificar oportunidades de mejora, desarrollar planes de acción e implementar estrategias orientadas al logro de objetivos.
+          </p>
+          <p>
+            Así, el relator no determina el servicio: la necesidad del establecimiento determina qué especialista, metodología y acompañamiento necesita. Esta forma de trabajo permite articular conocimientos especializados en liderazgo, gestión pedagógica, convivencia educativa, desarrollo profesional docente, normativa, evaluación, planificación institucional y otras áreas relevantes para la gestión escolar.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cierre -->
+  <section class="section-padding">
+    <div class="container-page">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="prose-custom">
+          <p class="text-lg text-neutral-700 font-medium">
+            En MR ATEducativa creemos que acompañar a un establecimiento significa mucho más que impartir una capacitación.
+          </p>
+          <p class="text-lg text-neutral-700">
+            Significa comprender antes de intervenir, trabajar con evidencia, acompañar la implementación y evaluar los avances.
+          </p>
+        </div>
+
+        <div class="mt-8 p-6 bg-primary-50 rounded-2xl border border-primary-200">
+          <p class="text-primary-700 font-semibold text-lg mb-2">Nuestro compromiso es simple:</p>
+          <p class="text-neutral-700">
+            No ofrecemos soluciones genéricas. Investigamos la realidad de cada establecimiento para diseñar servicios que respondan a sus verdaderas necesidades y acompañamos a sus equipos para transformar esas soluciones en prácticas sostenibles.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Administración y Finanzas -->
+  <section class="section-padding">
+    <div class="container-page">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-naranja-100 text-naranja-700 text-sm font-semibold mb-4">
+            Equipo administrativo
+          </span>
+          <h2 class="heading-h2 text-neutral-900 mb-4">
+            Administración y Finanzas
+          </h2>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-naranja-200 shadow-sm">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-naranja-500 to-naranja-700 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-naranja-500/25">
+              PR
+            </div>
+            <div>
+              <h3 class="heading-h3 text-neutral-900 mb-1">Pedro Reyes Álvarez</h3>
+              <p class="text-sm font-medium text-naranja-600 mb-3">Coordinador de Administración y Finanzas</p>
+              <div class="space-y-2 text-sm text-neutral-600">
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                  </svg>
+                  <a href="mailto:pedro@mr-ateducativa.cl" class="hover:text-primary-600 transition-colors">pedro@mr-ateducativa.cl</a>
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                  </svg>
+                  <a href="tel:+56972618887" class="hover:text-primary-600 transition-colors">+56 9 7261 8887</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-padding relative overflow-hidden">
+    <div class="absolute inset-0 bg-primary-700"></div>
+    <div class="container-page text-center relative">
+      <h2 class="heading-h2 text-white mb-4">
+        ¿Quieres conocernos en persona?
+      </h2>
+      <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">
+        Agenda una reunión y conversemos sobre los desafíos de tu establecimiento.
+      </p>
+      <CTAButton variant="white" size="lg" />
+    </div>
+  </section>
+
+  <DiagnosticoModal />
+</BaseLayout>

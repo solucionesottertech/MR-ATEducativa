@@ -1,0 +1,448 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import CTAButton from '../components/CTAButton.astro';
+import DiagnosticoModal from '../components/DiagnosticoModal.astro';
+import { services } from '../data/services';
+
+const schemaData = {
+  name: 'MR ATEducativa',
+  url: 'https://mr-ateducativa.cl',
+  logo: 'https://mr-ateducativa.cl/logo.svg',
+  description: 'Asesoría técnica educativa para colegios en Chile',
+  telephone: '+56 9 2765 9269',
+  email: 'info@mr-ateducativa.cl',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Santiago',
+    addressCountry: 'CL',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+56 9 2765 9269',
+    contactType: 'customer service',
+    availableLanguage: 'Spanish',
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'Chile',
+  },
+  sameAs: [
+    'https://www.linkedin.com/company/mr-ateducativa/',
+    'https://www.instagram.com/mr_ateducativa/',
+  ],
+};
+---
+
+<BaseLayout
+  title="Asesoría Técnica Educativa en Chile | MR ATEducativa"
+   description="Asesoría técnica educativa para colegios en Chile. Liderazgo institucional, pedagogía, convivencia, gestión de recursos y mentoría directiva. Diagnóstico gratuito."
+  path="/"
+  schema="ProfessionalService"
+  schemaData={schemaData}
+  keywords="asesoría técnica educativa, ATE Chile, consultoría educativa, liderazgo escolar, gestión pedagógica, convivencia escolar, mentoría directiva, capacitación docente"
+>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden min-h-[85vh] flex items-center">
+    <div class="absolute inset-0 bg-primary-700"></div>
+
+    <div class="container-page relative py-20 sm:py-28 lg:py-32">
+      <div class="max-w-3xl">
+        <div class="mb-6">
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white/90 text-sm font-semibold border border-white/10">
+            <span class="w-2 h-2 bg-naranja-400 rounded-full animate-pulse"></span>
+            Asesoría Técnica Educativa
+          </span>
+        </div>
+
+        <h1 class="heading-display text-white mb-6">
+          Soluciones Educativas desde la{' '}
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-rosa-300 via-naranja-300 to-teal-300">realidad</span>
+          {' '}de tu Comunidad
+        </h1>
+
+        <p class="text-lg sm:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl">
+           Acompañamos a establecimientos educacionales, sostenedores y equipos directivos en liderazgo, gestión pedagógica, convivencia, gestión de recursos y mentoría directiva.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <CTAButton size="lg" variant="white" />
+          <a href="/sobre-nosotros" class="btn px-8 py-4 text-lg border-2 border-white/30 text-white rounded-full hover:bg-white/10 hover:border-white/50 transition-all">
+            Conoce nuestra trayectoria
+          </a>
+        </div>
+
+        <!-- Area icons with official brand SVGs -->
+        <div class="flex flex-wrap gap-8 mt-12">
+          <div class="flex flex-col items-center gap-2">
+            <img src="/iconos/arco-liderazgo-blanco.svg" alt="" class="w-14 h-14" aria-hidden="true" />
+            <span class="text-white text-sm font-medium">Liderazgo</span>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <img src="/iconos/arco-pedagogica.svg" alt="" class="w-14 h-14" aria-hidden="true" />
+            <span class="text-rosa-300 text-sm font-medium">pedagogía</span>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <img src="/iconos/arco-convivencia.svg" alt="" class="w-14 h-14" aria-hidden="true" />
+            <span class="text-naranja-300 text-sm font-medium">convivencia</span>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <img src="/iconos/arco-recursos.svg" alt="" class="w-14 h-14" aria-hidden="true" />
+            <span class="text-teal-300 text-sm font-medium">Recursos</span>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <img src="/iconos/arco-mentoria.svg" alt="" class="w-14 h-14" aria-hidden="true" />
+            <span class="text-mentoria-300 text-sm font-medium">mentoría</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wave divider -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <path d="M0 120L60 108C120 96 240 72 360 66C480 60 600 72 720 78C840 84 960 84 1080 78C1200 72 1320 60 1380 54L1440 48V120H0Z" fill="white"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section-padding-sm bg-white relative z-10">
+    <div class="container-page">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="reveal p-6 rounded-2xl bg-primary-50 border border-primary-200 shadow-sm hover:shadow-card-hover transition-all">
+          <div class="stat-number text-primary-700 mb-2">+15</div>
+          <p class="text-sm text-neutral-700 font-medium">Años de experiencia</p>
+        </div>
+        <div class="reveal p-6 rounded-2xl bg-rosa-50 border border-rosa-200 shadow-sm hover:shadow-card-hover transition-all" style="transition-delay: 100ms;">
+          <div class="stat-number text-rosa-600 mb-2">+50</div>
+          <p class="text-sm text-neutral-700 font-medium">Establecimientos asesorados</p>
+        </div>
+        <div class="reveal p-6 rounded-2xl bg-naranja-50 border border-naranja-200 shadow-sm hover:shadow-card-hover transition-all" style="transition-delay: 200ms;">
+          <div class="stat-number text-naranja-600 mb-2">95%</div>
+          <p class="text-sm text-neutral-700 font-medium">Satisfacción de clientes</p>
+        </div>
+         <div class="reveal p-6 rounded-2xl bg-teal-50 border border-teal-200 shadow-sm hover:shadow-card-hover transition-all" style="transition-delay: 300ms;">
+          <div class="stat-number text-teal-600 mb-2">5</div>
+          <p class="text-sm text-neutral-700 font-medium">Áreas de especialización</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section — cool gradient background -->
+  <section class="section-padding bg-section-cool" id="servicios">
+    <div class="container-page">
+      <div class="text-center mb-14">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold mb-4">
+          Nuestras especialidades
+        </span>
+        <h2 class="heading-h2 text-neutral-900 mb-4">
+           Cinco áreas para{' '}
+          <span class="text-gradient-primary">fortalecer</span>{' '}tu establecimiento
+        </h2>
+        <p class="body-lg max-w-2xl mx-auto">
+           Cada establecimiento tiene desafíos únicos. Nuestras cinco áreas de asesoría están diseñadas para abordar las necesidades específicas de tu comunidad educativa.
+        </p>
+      </div>
+
+       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map((service, index) => (
+          <div class="reveal" style={`transition-delay: ${index * 100}ms;`}>
+            <ServiceCard service={service} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Nuestro Método — 6 pasos -->
+  <section class="section-padding bg-neutral-50">
+    <div class="container-page">
+      <div class="text-center mb-14">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold mb-4">
+          Nuestro método
+        </span>
+        <h2 class="heading-h2 text-neutral-900 mb-4">
+          No comenzamos por el servicio.{' '}
+          <span class="text-gradient-primary">Comenzamos por la necesidad.</span>
+        </h2>
+        <p class="body-lg max-w-2xl mx-auto">
+          Un proceso claro que garantiza que cada intervención responda a las necesidades reales de tu establecimiento.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Paso 1: Escuchamos -->
+        <div class="reveal bg-white p-6 rounded-2xl border border-primary-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+          <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-primary-500/25">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+            </svg>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">
+            Paso 1
+          </div>
+          <h3 class="heading-h3 text-neutral-900 mb-2">Escuchamos</h3>
+          <p class="body-sm text-neutral-600">Conocemos el requerimiento inicial del establecimiento, sostenedor o equipo.</p>
+        </div>
+
+        <!-- Paso 2: Investigamos -->
+        <div class="reveal bg-white p-6 rounded-2xl border border-primary-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" style="transition-delay: 100ms;">
+          <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-primary-500/25">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">
+            Paso 2
+          </div>
+          <h3 class="heading-h3 text-neutral-900 mb-2">Investigamos</h3>
+          <p class="body-sm text-neutral-600">Revisamos antecedentes, datos, documentos, resultados y otras evidencias necesarias.</p>
+        </div>
+
+        <!-- Paso 3: Diagnosticamos -->
+        <div class="reveal bg-white p-6 rounded-2xl border border-primary-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" style="transition-delay: 200ms;">
+          <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-primary-500/25">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z" />
+            </svg>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">
+            Paso 3
+          </div>
+          <h3 class="heading-h3 text-neutral-900 mb-2">Diagnosticamos</h3>
+          <p class="body-sm text-neutral-600">Identificamos fortalezas, brechas, necesidades y prioridades.</p>
+        </div>
+
+        <!-- Paso 4: Diseñamos -->
+        <div class="reveal bg-white p-6 rounded-2xl border border-primary-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" style="transition-delay: 300ms;">
+          <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-primary-500/25">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+            </svg>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">
+            Paso 4
+          </div>
+          <h3 class="heading-h3 text-neutral-900 mb-2">Diseñamos</h3>
+          <p class="body-sm text-neutral-600">Construimos una propuesta técnica pertinente y seleccionamos a los profesionales más adecuados.</p>
+        </div>
+
+        <!-- Paso 5: Implementamos -->
+        <div class="reveal bg-white p-6 rounded-2xl border border-primary-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" style="transition-delay: 400ms;">
+          <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-primary-500/25">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.58-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+            </svg>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">
+            Paso 5
+          </div>
+          <h3 class="heading-h3 text-neutral-900 mb-2">Implementamos</h3>
+          <p class="body-sm text-neutral-600">Desarrollamos la capacitación, asesoría o acompañamiento junto con los equipos.</p>
+        </div>
+
+        <!-- Paso 6: Evaluamos -->
+        <div class="reveal bg-white p-6 rounded-2xl border border-primary-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" style="transition-delay: 500ms;">
+          <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-primary-500/25">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+            </svg>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-3">
+            Paso 6
+          </div>
+          <h3 class="heading-h3 text-neutral-900 mb-2">Evaluamos</h3>
+          <p class="body-sm text-neutral-600">Analizamos avances, evidencias y resultados para orientar las decisiones siguientes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tres formas de trabajar -->
+  <section class="section-padding bg-white">
+    <div class="container-page">
+      <div class="text-center mb-14">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-100 text-teal-700 text-sm font-semibold mb-4">
+          Modalidades
+        </span>
+        <h2 class="heading-h2 text-neutral-900 mb-4">
+          Tres formas de{' '}
+          <span class="text-gradient-fresh">trabajar</span>{' '}con nosotros
+        </h2>
+        <p class="body-lg max-w-2xl mx-auto">
+          Elige la modalidad que mejor se adapte a las necesidades de tu establecimiento.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Capacitación -->
+        <div class="reveal bg-gradient-to-br from-primary-50 to-white p-8 rounded-2xl border border-primary-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+          <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-primary-500/25">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+            </svg>
+          </div>
+          <h3 class="heading-h3 text-neutral-900 mb-3">Capacitación</h3>
+          <p class="text-neutral-600 mb-6">
+            Para desarrollar conocimientos y capacidades específicas. Cursos, talleres o jornadas orientadas a una necesidad previamente definida.
+          </p>
+          <p class="text-sm text-primary-600 font-medium mb-4">Desde una jornada hasta programas de varias sesiones.</p>
+          <a href="/contacto" class="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold transition-colors">
+            Solicitar capacitación
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Asesoría Especializada -->
+        <div class="reveal bg-gradient-to-br from-primary-50 to-white p-8 rounded-2xl border border-primary-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" style="transition-delay: 100ms;">
+          <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-primary-500/25">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+            </svg>
+          </div>
+          <h3 class="heading-h3 text-neutral-900 mb-3">Asesoría Especializada</h3>
+          <p class="text-neutral-600 mb-6">
+            Para resolver un desafío institucional concreto. Analizamos una problemática, diseñamos una estrategia y trabajamos junto al equipo responsable.
+          </p>
+          <p class="text-sm text-primary-600 font-medium mb-4">Puede incluir diagnóstico, asesoría técnica, capacitación y evaluación.</p>
+          <a href="/contacto" class="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold transition-colors">
+            Solicitar asesoría
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Acompañamiento Institucional -->
+        <div class="reveal bg-gradient-to-br from-primary-50 to-white p-8 rounded-2xl border border-primary-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" style="transition-delay: 200ms;">
+          <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-primary-500/25">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+            </svg>
+          </div>
+          <h3 class="heading-h3 text-neutral-900 mb-3">Acompañamiento Institucional</h3>
+          <p class="text-neutral-600 mb-6">
+            Para instalar mejoras sostenibles. Procesos de mediano y largo plazo en los que nuestros especialistas acompañan sistemáticamente a equipos.
+          </p>
+          <p class="text-sm text-primary-600 font-medium mb-4">Programas trimestrales, semestrales o anuales.</p>
+          <a href="/contacto" class="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold transition-colors">
+            Conversar sobre un acompañamiento
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Diagnóstico -->
+  <section class="section-padding relative overflow-hidden">
+    <div class="absolute inset-0 bg-primary-700"></div>
+
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-naranja-400/25 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
+      <div class="absolute bottom-0 left-0 w-72 h-72 bg-teal-400/25 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rosa-400/15 rounded-full blur-3xl"></div>
+      <div class="absolute inset-0 dots-pattern bg-white"></div>
+    </div>
+
+    <div class="container-page text-center relative">
+      <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-naranja-400 to-naranja-600 flex items-center justify-center shadow-lg shadow-naranja-500/30">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+        </svg>
+      </div>
+
+      <h2 class="heading-h2 text-white mb-4">
+        Diagnóstico gratuito de 30 minutos
+      </h2>
+      <p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+        Cuéntanos la realidad de tu establecimiento y te mostraremos cómo podemos ayudarte a alcanzar tus objetivos.
+      </p>
+      <button type="button" onclick="window.openDiagnosticoModal()" class="btn bg-white text-primary-700 px-8 py-4 text-lg rounded-full hover:bg-white/90 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all font-semibold cursor-pointer">
+        Solicitar diagnóstico gratuito
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section-padding bg-section-warm relative overflow-hidden">
+    <!-- Decorative shapes -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-10 left-10 w-40 h-40 bg-rosa-400/10 rounded-full blur-xl"></div>
+      <div class="absolute bottom-10 right-10 w-40 h-40 bg-primary-400/10 rounded-full blur-xl"></div>
+    </div>
+
+    <div class="container-page relative">
+      <div class="text-center mb-14">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rosa-100 text-rosa-700 text-sm font-semibold mb-4 shadow-sm">
+          Casos de éxito
+        </span>
+        <h2 class="heading-h2 text-neutral-900 mb-4">
+          Resultados{' '}
+          <span class="text-gradient-warm">reales</span>{' '}de establecimientos que confiaron en nosotros
+        </h2>
+        <p class="body-lg max-w-2xl mx-auto">
+          Cada proyecto es único. Conoce cómo hemos ayudado a colegios como el tuyo a superar sus desafíos.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="reveal">
+          <TestimonialCard
+            name="María González"
+            role="Directora"
+            institution="Colegio San Pedro"
+            quote="La asesoría de MR ATEducativa transformó nuestro liderazgo institucional. En 6 meses mejoramos significativamente nuestro clima escolar."
+            problem="Directiva sin experiencia en gestión estratégica y bajo rendimiento en SIMCE."
+            solution="Acompañamiento en liderazgo institucional con foco en PEI y planificación estratégica."
+            result="Mejora de 15 puntos en SIMCE y clima escolar positivo según diagnóstico."
+          />
+        </div>
+        <div class="reveal" style="transition-delay: 100ms;">
+          <TestimonialCard
+            name="Carlos Ramírez"
+            role="Jefe de UTP"
+            institution="Escuela Los Alerces"
+            quote="El acompañamiento pedagógico nos permitió reorganizar nuestra planificación y obtener resultados concretos."
+            problem="Planificación desarticulada y bajos resultados en evaluaciones internas."
+            solution="Reestructuración de la planificación docente con foco en aprendizaje significativo."
+            result="Incremento del 20% en aprobación y satisfacción docente."
+          />
+        </div>
+        <div class="reveal" style="transition-delay: 200ms;">
+          <TestimonialCard
+            name="Ana Martínez"
+            role="Coordinadora SEP"
+            institution="Liceo Bicentenario"
+            quote="Gracias a la asesoría en gestión de recursos, optimizamos nuestro financiamiento SEP y logramos implementar todos nuestros proyectos."
+            problem="Dificultad para postular a fondos y ejecutar el financiamiento SEP."
+            solution="Capacitación en postulación y gestión de fondos concursables."
+            result="100% de ejecución del financiamiento SEP y 3 nuevos proyectos aprobados."
+          />
+        </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="/casos-exito" class="btn btn-outline px-6 py-3 rounded-full">
+          Ver más casos de éxito
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <DiagnosticoModal />
+
+</BaseLayout>

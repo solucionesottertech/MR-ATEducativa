@@ -1,0 +1,194 @@
+# Reunión para Página Web
+
+  Meeting started: 30/7/2026, 17:57:52
+  Duration: 23 minutes
+  Participants: Benjamin Faundez, Marilyn Reyes Molina, Otter Tech
+
+  [View original transcript](https://app.tactiq.io/api/2/u/m/r/TBhy50WRAt1kF3ycok2T?o=txt)
+
+    ## Quick prompts - Detailed summary
+
+## Overview
+
+Marilyn Reyes solicitó la reunión para avanzar en el lanzamiento de su nueva marca/página web personal y coordinar con Otter Tech y Benjamín Faundez la maqueta, contenidos, hosting y términos comerciales; acordaron pasos concretos para diseño, estructura, acceso y pago inicial (50% = 178.500 CLP). Se definió priorizar versión móvil, una narrativa centrada en el cliente y una oferta de servicios a medida (sociedad estratégica con colegios/OTEC), además de envío de información y cotización por correo.
+
+## Puntos clave y decisiones
+
+- Objetivo principal
+  - Crear y publicar la página web de Marilyn Reyes (marca personal/“Mr Guión Arte Educativa”) para posicionarla como socio estratégico en educación y vender cursos certificados.
+- Prioridad técnica y de diseño
+  - Priorizar diseño orientado a Mobile (por recomendación de Benjamín).
+  - Estilo visual: paleta de 4 colores definida por Marilyn, menor uso de fotografías, más ilustraciones e íconos modernos.
+  - Logo provisional generado con GPT; Alfonso (diseñador) entregará kit básico: paleta, logo principal y extendido (sin manual completo).
+- Estructura y contenido web propuesta
+  - Landing / Inicio: mensaje principal centrado en “construimos soluciones educativas desde la realidad de tu comunidad” y llamada a la acción tipo “Dime qué necesitas”.
+  - Sección “Sobre mí / Sobre nosotros”: presentar a Marilyn como fundadora y socios/colaboradores; incluir trayectoria, logros y casos (más énfasis en resultados que en roles).
+  - Servicios: enfoque en asesorías de largo plazo, diseño a medida y acompañamiento institucional (no charlas puntuales).
+  - Contacto/Conversión: formularios, agendamiento y CTA estratégicos para capturar clientes y convertir (embudo de ventas).
+  - SEO básico y análisis de competencia para identificar historias y prácticas que funcionan en el mercado educativo.
+- Plataforma y accesos
+  - Marilyn ya contrató hosting en Hostinger, creó sitio WordPress preliminar y tiene correo corporativo con Google Workspace; ofreció compartir claves para facilitar el trabajo.
+  - Otter Tech puede diseñar la maqueta aunque acceder al WordPress facilitará la implementación.
+- Oferta de cursos y modelo comercial
+  - Marilyn quiere ofrecer cursos (ya tiene algunos maqueteados y diseño instruccional) en la plataforma que Benjamín está desarrollando para OTEC/ATE; se consideró una prueba comercial y posible acuerdo de facturación compartida o condiciones preferentes por iniciar.
+  - Importancia de que los cursos puedan ser certificados por el MINEDU y ser financiables (ej. con fondos SEP).
+- Términos comerciales y facturación
+  - Precio inicial comentado: total aproximado 300.000 CLP; 50% al inicio = 178.500 CLP (cifra acordada para pago inicial).
+  - Otter Tech necesita facturar con IVA; Marilyn considera la opción pero debe verificar temas contables (no tiene contador actualmente).
+  - Otter Tech enviará cotización por correo con detalles y la factura correspondiente.
+- Confidencialidad y comunicaciones
+  - Marilyn solicitó confidencialidad respecto a su vínculo contractual con Perfeccionarte; Otter Tech lo confirmó sin objeciones.
+  - Próxima comunicación por WhatsApp y envío de correo con información y datos para facturación.
+
+## Próximos pasos y responsables
+
+- Marilyn
+  - Enviar por WhatsApp y por correo: acceso al WordPress/Hostinger si decide compartirlo, paleta de colores con códigos, credenciales de Google Workspace (correo corporativo) y un borrador del “problema/necesidad” del cliente para la narrativa de la landing.
+  - Confirmar si requiere factura con IVA y gestionar contador o decisión fiscal.
+  - Coordinar con Alfonso entrega del kit básico de identidad (logo y paleta) idealmente antes del 15 (fecha mencionada por Marilyn para parte básica).
+- Otter Tech
+  - Preparar y enviar cotización formal por correo incluyendo desglose, condiciones y 50% inicial (178.500 CLP).
+  - Diseñar maqueta inicial (wireframe/landing) enfocada en Mobile y compartirla para revisión.
+  - Definir estructura de páginas (Inicio/Servicios/Sobre Nosotros/Contacto) y proponer llamadas a la acción y componentes transaccionales (formularios, agendamiento).
+  - Investigar competencia/mercado y proponer elementos SEO básico para posicionamiento.
+- Benjamín Faundez
+  - Continuar con desarrollo de la plataforma de cursos (integraciones Google/Microsoft) y evaluar la posibilidad de una demo con una OTEC en partida.
+  - Coordinar criterios técnicos para integrar los cursos de Marilyn en la plataforma (posibles acuerdos comerciales).
+
+## Riesgos y asuntos a resolver
+
+- Fiscalidad y facturación: Marilyn necesita confirmar si solicitará factura con IVA y cómo afectará su situación (requiere decidir y/o contar con contador).
+- Accesos y seguridad: Marilyn expresó preocupación por seguridad del WordPress en Hostinger; Otter Tech deberá revisar configuración o reimplementar en entorno seguro.
+- Alcance del contenido: definir claramente qué contenidos aporta Marilyn (textos, casos, fotos) y qué producirá Otter Tech para evitar retrasos.
+- Tiempo de entrega y entrega de elementos visuales: Alfonso y el equipo de diseño deben coordinar plazos para no retrasar la implementación.
+
+## Acuerdos temporales y compromisos verbales
+
+- Pago inicial: Marilyn confirma que pagará 178.500 CLP (50%) como avance tras recibir la cotización/factura.
+- Otter Tech enviará cotización detallada y la primera maqueta para revisión antes de la implementación final.
+- Se priorizará la versión móvil de la web y se trabajará una narrativa centrada en el cliente con enfoque en diagnóstico y soluciones a medida.
+
+Si desean, preparo una lista de contenidos concretos requeridos (textos, fotos, casos, credenciales, paleta en formato .ase o hex) para acelerar entrega y maqueta.
+
+  ## Notes
+
+  
+
+  
+    ## Highlights
+
+    > 11:07 Marilyn Reyes Molina: plantas del estado y eso es importante que yo sepa porque no es así como la
+> 15:02 Otter Tech: Claro, principalmente por lo general una en la parte sobre nosotros cuando es de alguien de una persona tiene una foto como de mostrando mostrándose y tiene principalmente lo que ha hecho su trayectoria, si lo quiere colocar también están los estudios Con qué empresas ha trabajado Pero principalmente de los Cómo se llaman los logros que ha realizado, o sea más que qué es lo que dónde ha trabajado es qué es lo que ha hecho en esos trabajos, por ejemplo, una escuela que necesitaba mejorar en tal objetivo. Nosotros Gracias a mi
+
+  ## Transcript
+
+  00:00 Marilyn Reyes Molina: Oye Bueno contarles un poquito que esta reunión la pido yo como Marilyn Reyes Ya no como perfeccionarte a pesar de que yo trabajo en perfección y continúo con ello pero yo soy freelance yo trabajo independiente hace muchos años y a perfeccionarte le presto el servicio de directora académica pero yo no soy parte de esa corporación Pareciera que sí pero no no pertenezco en términos como contractuales solo le presta servicio a un horario Entonces desde ahí contarles que desde hace ya un tiempo estoy pensando en posicionar mi marca o mi nombre porque finalmente yo como profesional tengo mi historia y tengo mis clientes tengo y he sido muy rudimentaria para trabajar hasta el momento Entonces desde ahí decidí este año emprender la marca así como con imagen visual como todo lo que hicimos en perfección y de ahí para arriba o Sea yo a diferencia de la corporación Yo sí, aspiro a tener esta plataforma que Benjamín nos ofreció en su momento. Yo sí quiero como avanzar y avanzar más rápido perfeccionar el tema muy lento y eso es lo que a mí como que me ah como que yo quiero cargar curso, Yo quiero hacer cosas, pero me voy frenando por el tema de recursos que no es mi área Entonces les cuento esto porque ustedes Serían como los encargados de mi página web. Yo soy bien inquieta y les quería contar que para Contraté el hostel, cómo se llama que se lo escribí ayer en el Hosting que yo les puedo dar todas mis claves y todas esas cuestiones, ya tengo hostinger Tengo el Nick y tengo mi space de Google ya tengo correo corporativo al con el mismo arroba del Nick y empecé a crear una página web en wordpress a través de la contratación de hostinger, que me dio como el acceso pero por ahí Ricardo me decía que era como muy insegura a pesar de que yo le configuré toda la seguridad y más tuve como dos días configurando pura seguridad porque cuando
+01:57 Benjamin Faundez: pues
+01:59 Marilyn Reyes Molina: yo la habría aparecía en rojo en todos lados al final mira, me chateó la cuestión porque hay que saber yo hice algo y se los quería como compartir bien
+02:08 Otter Tech: claro
+02:09 Marilyn Reyes Molina: bien ordinario, pero es mi mayor ya y piensan ustedes que yo no soy del mundo de de lo que ustedes hacen, pero para mí eso. Es un gran logro fueron muchas horas de trabajo, entonces espérense que se los voy a compartir aquí Bueno Mientras tanto que lo busco. Venga, cuéntame cómo vas con ese servicio de cursos y learning. Ya va avanzando.
+02:36 Benjamin Faundez: Sí o sea, yo he ido seguido avanzando con ese proyecto por justamente por la por la fecha que habíamos hablado un poquito más o menos. Ahora lo estoy poniendo algunas otras cosas lo mismo integraciones con Google Con Microsoft como para que la la plataforma sea más robusta en ese sentido y también sea como un poco malo que bueno la otro tipo de aplicaciones parecida están yendo como para el mismo lado el asunto es que nosotros igual Bueno no sé si sería se lo mencionamos, pero ampliamos un poco el espectro de lo que es la aplicación para que también abarque no solamente ates, sino también pueda abarcar lo mismo que son universidades ote etcétera, entonces como que y cada una tiene un cumplimiento diferente, entonces igual es ha sido un poco más engañoso esa parte, o sea, no engaño, sino que un poco más complejo como de llevar la parte legal de lo que tiene que mantener una.
+03:33 Benjamin Faundez: otec, que es muy diferente a lo que mantiene un colegio porque los colegios en
+03:36 Marilyn Reyes Molina: exacto
+03:37 Benjamin Faundez: este caso mantienen no sé por los registros escolares de una manera en cambio, la Tecno es necesario que mantenga su registro escolares y y además son los que
+03:45 Marilyn Reyes Molina: sí
+03:47 Benjamin Faundez: son alcance y objetivos diferentes, una escuela puede tener el curso que si
+03:49 Marilyn Reyes Molina: sí
+03:52 Benjamin Faundez: quiere no sé qué tenerlo, pero nosotros lo estamos molestando también como para ayudar a los profesores, etcétera a los alumnos a los mismos padres si quieren tener acceso a la información de los hijos por entonces como que queremos que la plataforma sea como bien que sabe un poco ambicioso pero pero
+04:09 Marilyn Reyes Molina: Porque son objetivos diferentes y como tú dices responden a contextos
+04:12 Benjamin Faundez: Claro, y lo que eso sí, pero para no irnos así como en los carriles en un
+04:15 Marilyn Reyes Molina: distintos.
+04:19 Benjamin Faundez: momento decidimos también irnos primero ahora enfocándonos como lo último que hablamos, eran las otec y las ate entonces como que por ahí estamos yendo para
+04:25 Marilyn Reyes Molina: ya
+04:29 Benjamin Faundez: para partir con ese con esa con ese punto y de hecho hablamos con una otec de que está recién partiendo para poder entregarlo como demo para que también.
+04:39 Marilyn Reyes Molina: Pedir los mismos te quería pedir si podíamos hacer algún no hoy día porque yo estoy recién partiendo, pero yo soy muy rápida, o sea, si yo no tengo la página me la creo como yo quiero entrar al mundo virtual y también te quería como ofrecer eso dar darle una prueba como yo estoy partiendo. Yo ya tengo algunos cursos maqueteados. Tengo diseño instruccional y todo ver cómo cómo operar ahí tal vez a un precio.
+05:08 Marilyn Reyes Molina: a honores y ver si yo logro vender en base a esa plataforma y si se logra facturar inclusive llegar así como algún acuerdo como de la facturación, ver ahí alguna parcería que no implique que yo tenga que pagar mucho mensual porque finalmente No yo estoy partiendo en esto, pero si yo sé que tengo un largo alcance y Pensé que podría vender muchos cursos porque mi nombre en educación Mi nombre
+05:33 Benjamin Faundez: claro
+05:35 Marilyn Reyes Molina: es Marta yo te voy a linkedin, yo tengo muchos seguidores acompaño muchas escuelas Entonces quiero venderme a través también de la plataforma no solo del mailding o la web ya entonces ahí, pero lo vemos más adelante no me interesa sí me interesaría mucho eso.
+05:53 Benjamin Faundez: claro
+05:55 Marilyn Reyes Molina: Ya ya Bueno vamos entonces como a publicar mi mi súper página web, Dónde está, espérate. A ver, acá, sí, acá ya les puedo proyectar entonces tengo autorización.
+06:15 Otter Tech: Deberías sí tener la actualización.
+06:17 Marilyn Reyes Molina: Solo decirles se ve algo No sí, yo tengo que posicionarme en mi página para
+06:26 Otter Tech: sí
+06:29 Marilyn Reyes Molina: que ustedes la vean, verdad? O sea si la pueden ver subir y bajar.
+06:35 Otter Tech: sí
+06:35 Marilyn Reyes Molina: Ya ya, Mira el logo Este es un logo que yo hice con gpt, los diseñadores lo irán a cambiar, pero mientras tanto se puede ir pensando como que por ahí va a ir el logo, no sé si redondo cuadrado, pero esos son los colores institucionales que también puedo como tirarlos un poquito más tengo los códigos de los colores más neutros que son estos que están aquí estos son los cuatro colores, que voy a usar el fondo también yo.
+07:01 Marilyn Reyes Molina: O sacar aquí de wordpress y mandarle los colores con código para que ustedes también sepan Esta es una ate que a diferencia de las ates que que habitualmente se ven en el mercado no se quiere posicionar como como aquí te vengo a vender Aquí te vengo a regalar, no? Yo voy al revés nosotros yo como profesional y el equipo con los que yo pretendo trabajar somos un equipo que lo que pretende es escuchar a las comunidades, es entrar al contexto, es lo que está haciendo el el Benja en cuanto a escuchar lo que se requiere para poder ofrecer algo, entonces yo soy muy de traje a medida yo parto de la base que la gente en los Colegios tienen problemas contextuales de su propia, escuela y agricultura y comunidad Entonces yo quiero como construir soluciones, por eso ahí dice construimos soluciones educativas y no es como vendemos.
+08:01 Marilyn Reyes Molina: Nuestros servicios porque los servicios no sé, me explico, se diseñan a la luz de una investigación de campo primero se hace un diagnóstico de la problemática. Entonces yo quería un poco ir en esa lógica, obvio que la lógica es vender, pero es vender de otra manera Entonces al igual que perfecciónate y que las aten en general trabajamos por áreas de gestión porque esto es modelo mineduc, no es mío ni de perfecciónate son cuatro áreas de gestión de una escuela.
+08:31 Marilyn Reyes Molina: Y que tienen esos colores a nivel ministerial Por eso yo quiero usar siempre el azul y por eso en perfección, no te son esos colores. Ahora los míos son un poquito más llamativos más juveniles más moderno, los iconos también más modernos no tantas fotos menos menos foto y más más ilustración, entonces aquí. Bueno, Esto es como un ejemplo más o menos de lo que ya ya está bien
+08:59 Otter Tech: Está bien súper.
+09:01 Marilyn Reyes Molina: porque igual le sirve como de guía, después después lo que lo que la gente
+09:02 Otter Tech: No súper bien.
+09:06 Marilyn Reyes Molina: puede esperar de nosotros en el fondo es como si te contrato que espero espero obviamente resultados sostenible lo que nosotros vendemos también es un enfoque estratégico, es decir, No es no es nuestro fuerte una charla de convivencia escolar de dos horas, Porque eso es una cosa puntual. Nosotros alineamos la asesorías de largo aliento acompañamientos caminar, quiero ser como socio estratégico. De un colegio imagina el colegio Juanito los palotes tiene x recursos y necesita como curso de esto curso lo otro no sé qué lo que yo pretendo es como poner esta empresa en compañía de esa escuela y que juntos diseñen las estrategias como de desarrollo profesional que le haga sentido esa escuela, si no es una charla será un taller práctico, si no es una intervención a la estructura organizacional, o sea.
+10:01 Marilyn Reyes Molina: En el fondo quiero hacer un socio estratégico Entonces qué es lo que esperan de mí enfoque estratégico resultados en el tiempo un acompañamiento personalizado y evidencia basada en datos, o sea, todo lo que se haga tiene que ser en base a la investigación Comencemos por escucharte en el fondo de esto lo que yo pretendía era clic aquí y cuéntame tu problema, cachái. No sé después yo podría poner otro texto, pero no es como nuestro servicios o contáctanos sino que como te quiero escuchar.
+10:34 Benjamin Faundez: Dinos quién eres y cómo te ayudo?
+10:36 Marilyn Reyes Molina: Exacto una cosa así dime qué necesitas y yo te acompaño cachay y un acompañamiento con respaldo institucional aquí yo quería poner algunos Marcos de referencia que no alcancé a seguir poniendo también. Dije no, si pongo el logo al final puse un millón de cosas, pero sí decir que como la Marilyn está una empresa persona natural. Yo tengo respaldo minedu. Yo soy ate persona natural tengo servicio de minedu. Tengo estrellitas puedo vender cursos con
+11:03 Otter Tech: ya
+11:07 Marilyn Reyes Molina: plantas del estado y eso es importante que yo sepa porque no es así como la
+11:12 Marilyn Reyes Molina: emprendedora nm que se le ocurrió hacer esto sino que los cursos que yo venda pueden ser certificados por arte pueden pagarse con plata SEP cachái bueno y hasta ahí voy entonces desde ahí Esto no es una, o sea una una página como las que estamos acostumbrados que es como nosotros. Que tal vez Debería ser así como decía y tú así como fija como con categoría y también me parece bien Solo que me parece bien la estructura porque el cliente está acostumbrado a entrar a quienes somos inicio servicios, Me parece bien, pero el lenguaje que hay adentro de ella que no sea lo mismo que perfeccionate o lo mismo que las otras sino que sea algo muy centrado desde el cliente en el fondo portada de entrada, lo que decía acá construimos soluciones educativas desde la realidad de tu comunidad tus problemas son como nuestro para para la educación una cosa así como más personal cachái más o si me entiendan, sí.
+12:17 Otter Tech: Sí, sí, no entendemos, sube bien Es que de hecho es algo similar a lo que nosotros utilizamos para hacer página de hecho muchos tienen una página web en la que venden páginas web y colocan un precio estándar por algo estándar, pero nosotros nos gusta, eso no nos gusta algo estándar. Nosotros nos gusta hacer soluciones a medida Así que te entendemos en parte.
+12:38 Marilyn Reyes Molina: Sí Ah vale, vale Sí yo creo que eso es lo mismo que usted le hacen, pero para palarearte Entonces desde ahí. Yo no sé qué necesitarían como para partir Y qué tiempos También tienen Yo como te digo Estoy súper apurado, o sea, tengo a los diseñadores gráficos ustedes conocieron el Alfonso puestos están ahora ya en rotterdam viviendo y él está estudiando licenciatura en diseño y allá en rotterdam y mi hija se dedicó a trabajar y la tienen como jefa de marketing de una cadena coreana de supermercados Así que anda haciendo las redes sociales, anda como en toda esa onda, No tiene mucho tiempo me tienen bien tiradas Pero igual. Era Alfonso me va a hacer la la imagen visual Así es que yo atendía me dijo de aquel 15 la parte básica Yo le pedí al menos que que lo que es como parte básica y a lo mejor ahí ustedes me pueden ayudar para pedir lo más.
+13:37 Marilyn Reyes Molina: el kit básico ellos me hablan de un kit básico, pero yo no entiendo mucho lo que es solo les pedí luego principal la paleta de colores sin manual de normas porque yo se demoran caletas en hacer tu manual, Yo quiero la paleta colores un logo extendido un logo principal eso o necesitan más imágenes y cuestiones o no
+13:59 Otter Tech: No, no, no, no es necesario sobre todo viendo de que tú nos mencionas de que quieres que no sea constante imágenes. Ahora quizás dónde podríamos Y eso es algo que tú también tienes que evaluar, si necesitamos alguna imagen es la parte que faltaría una sección sobre nosotros una página anexa o sobre mí en este caso porque eres tú la que va a prestar este servicio, porque como es una página nueva, es algo que ya llevas tiempo haciendo, pero en la parte web va a ser nueva, va a ser reciente la gente necesita saber todo lo que has hecho sabemos que es una larga trayectoria, pero es bueno destacarlo para que la persona sepan que no es algo reciente.
+14:40 Marilyn Reyes Molina: Ya entonces ahí dime tú como qué te gusta, qué debería yo enviarte según tus maquetas o Según tu asesoría también Pues si tú me decís mal Mira igual tenés que hacerlo con nosotros inicio igual porque la gente Así lo busca, pero le cambiamos el contenido Dime qué y yo te lo mando por escrito y ahí ustedes le dan como como la estructura.
+15:02 Otter Tech: Claro, principalmente por lo general una en la parte sobre nosotros cuando es de alguien de una persona tiene una foto como de mostrando mostrándose y tiene principalmente lo que ha hecho su trayectoria, si lo quiere colocar también están los estudios Con qué empresas ha trabajado Pero principalmente de los Cómo se llaman los logros que ha realizado, o sea más que qué es lo que dónde ha trabajado es qué es lo que ha hecho en esos trabajos, por ejemplo, una escuela que necesitaba mejorar en tal objetivo. Nosotros Gracias a mi
+15:46 Otter Tech: trabajo lo hicimos.
+15:48 Marilyn Reyes Molina: Sí vale, vale Oye pero mira en este Nosotros igual interesante lo que tú me planteas porque yo me voy a colocar así como fundadora cachái, pero esta es una empresa que se asocia a otros at personas naturales, yo quiero ser como no
+16:02 Otter Tech: Ah perfecto
+16:05 Marilyn Reyes Molina: sé cómo llamarlo, pero como un holding así como juntar mucha gente que anda solita por el mundo aquí entonces Mr arte educativa Ese es mi Mr guiónate educativa, guión la perdona, pero la cagué por el guión, pero ya no importa Mr guión arte educativa porque quería darle como una sensación más de Corporación como más de empresa no tanto de Marilyn Reyes no por eso le puse Mr como para que la gente no cache que una persona natural sino que crea que es una una fundadora que se asocia con un montón de gente.
+16:40 Otter Tech: Ya perfecto.
+16:43 Marilyn Reyes Molina: Con los mejores Entonces nosotros puedo poner como la fundadora la Marilyn pero socios estratégico y ahí puede entrar todo el equipo con el que yo trabajo que son tremendos que le van a dar más peso a la página.
+16:55 Otter Tech: perfecto excelente Sí sí De todas maneras no se deja algo más que tú.
+17:01 Marilyn Reyes Molina: petica ok
+17:05 Benjamin Faundez: Sí, Solamente mencionar de que el desde el último desde hace un tiempo hasta ahora por lo menos Google y otra y otros motores de búsqueda están orientándose mucho más lo que es Mobile entonces claro Entonces nosotros. Te recomendaríamos que nosotros siempre nos adaptamos a lo que nos dice que no, que nos está viendo una página, pero te recomendaríamos que quizás lo también lo orientáramos primero a cómo se ve en el celular porque en general las personas ya no están accediendo tanto a página web por un computador Entonces yo creo que no sé si te parece bien, que lo orientemos primero a Mobile y después a escritorio.
+17:50 Marilyn Reyes Molina: Sí, súper bien, Yo creo que esta es la mejor decisión.
+17:53 Benjamin Faundez: ya
+17:54 Marilyn Reyes Molina: Entonces sí sí sin ningún problema Bueno dentro del de la como el nosotros Me imagino que tendrá otras columnas que colocar así como nuestro servicio o qué más te mando.
+18:09 Otter Tech: Sí en la parte principalmente tienen tres secciones así como inicio que puede ser como una especie de landing page en donde explicar varias cosas sobre nosotros si la persona por qué no colocarlo es sobre nosotros en la misma página y hacerle una landing page porque eso es algo así la persona quiere investigar más, si la persona Solamente quiere investigar sino le vamos a dirigir porque la página también tiene que ser transaccional, entonces tiene que ser como orientada como un embudo de venta, entonces tiene que tener sus llamadas de a la acción ubicada estratégicamente Que al momento de desplazarse la persona quede atrapada como es lo que está haciendo y ahí solicitar quizás un el contacto solicitar una entrevista y ahí claro, ahí podría ser la tercera sección que sería como contacto donde está ubicada las distintas formas o medios en los cuales se pueden contactar un formulario? Básico quizás agendar una reunión quizás otro otros componentes que veamos necesarios.
+19:11 Marilyn Reyes Molina: Ok entonces en este caso está nosotros que ya sé que el equipo y yo inicio que es toda la parte que yo te mostré o eso es mucho para el inicio.
+19:19 Otter Tech: sí No está bien Sí bueno, igual esto Esta es la primera conversación Así que
+19:21 Marilyn Reyes Molina: Está bien ya, ya, vale?
+19:26 Otter Tech: vamos a plantear una maqueta, vamos a plantear una maqueta para que tú la puedas observar la pueda decir sí me gusta, me agrada o cambiemos esto para antes de la implementación final y eso lo podemos ir avanzando antes de recibir quizás alguna de las otras informaciones.
+19:42 Marilyn Reyes Molina: Ah vale vale, o sea, esto como lo primero el inicio el contacto de nosotros en el inicio, qué qué va, así como para captar al cliente rápido.
+19:54 Otter Tech: Contar una historia principalmente a veces porque hay que en eso tenemos que investigar ahora un poquito sobre cómo cómo transaccionan las demás páginas, qué es lo que le está dando resultados? Porque igual va a incluir entre esto. Un seo básico que son las cosas necesarias para que se posicione la página pero tratando de ver qué es lo que está funcionando en tu mercado.
+20:18 Marilyn Reyes Molina: eso lo tengo que investigar quedo en el fondo como
+20:20 Otter Tech: No, no, no, no, no, eso no es parte de lo lo que podemos hacer nosotros de investigar en el área con otra.
+20:27 Marilyn Reyes Molina: No eso contar una historia A qué te referís con eso como
+20:31 Otter Tech: Algunas la hacen de esa manera como de ir desarrollando un el el el lo necesario o de poder solucionar la necesidad que tienen la persona.
+20:43 Marilyn Reyes Molina: Vale, aquí viene como general la necesidad, vale Ya Y eso te lo tengo que
+20:46 Otter Tech: claro
+20:49 Marilyn Reyes Molina: mandar así como una idea o sí, sí, yo lo hago yo lo hago ahí después tú lo
+20:51 Otter Tech: Sí si lo puedes hacer genial.
+20:56 Marilyn Reyes Molina: mejoras ya general la necesidad del cliente, vale? Con estas tres cosas, yo me quedo yo les puedo dar como mis credenciales para que ustedes ya entren a ese wordpress picante que hice al Hosting y todo eso o no necesitan todavía.
+21:13 Otter Tech: Sí Mientras antes lo tengamos quizás sea podemos diseñarla sin eso porque como va a ser una página nueva, lo podemos diseñar, podemos entrar al link, quizás sacar información acerca de eso, pero sí lo si lo tenemos de antes mejor, podemos ir trabajando directamente ahora la cotización. Bueno, igual que
+21:29 Marilyn Reyes Molina: ya
+21:31 Otter Tech: los nuestro trabajo partimos con un cierto monto.
+21:37 Marilyn Reyes Molina: Cuánto es el monto inicial.
+21:39 Otter Tech: el 50%
+21:42 Marilyn Reyes Molina: Ya son 150 Lucas para iniciar el trabajo eran trescientos, verdad?
+21:49 Otter Tech: Ahora tú no necesitas porque es sin iva, tú lo necesitas con con factura.
+21:56 Marilyn Reyes Molina: tengo facturas exentas, pero claramente a mí me sirve la factura porque me sirve para evitar también los impuestos que tengo que pagar fin de año no
+22:06 Otter Tech: un movimiento
+22:10 Marilyn Reyes Molina: tengo entonces tendría que ser como con factura masiva porque ustedes no venden sin iva, pues
+22:17 Otter Tech: Sí nosotros no vendemos sin iva, no, no tenemos una sociedad de profesionales.
+22:19 Marilyn Reyes Molina: claro Aún no, yo tampoco Oye bueno, por eso es que tendría que que pensarlo primero porque puede que ni ni lo necesite no sé, déjame darle una vuelta porque yo ni siquiera tengo contador, por eso te digo, soy tan rudimentaria, me dijo.
+22:37 Otter Tech: lo ideal sería que para nosotros igual lo ideal sería que así O sea pero
+22:43 Marilyn Reyes Molina: Con factura, vale, ningún problema ningún problema. Yo lo voy a considerar así trescientos. Entonces tendría que pagarte como los 150 más la factura
+22:48 Otter Tech: sí Ya sería.
+22:54 Marilyn Reyes Molina: tú, Tú ves que hacer una factura y yo pagártela una cosa así.
+22:57 Otter Tech: Claro, la primera sería como de 178,500 pesos.
+23:00 Marilyn Reyes Molina: 178 500 ya sí, cuenten con ellos.
+23:04 Otter Tech: Ya y vamos a dejar esto otra Como especificado mediante una cotización igual
+23:05 Marilyn Reyes Molina: ya
+23:11 Otter Tech: por si acaso y te lo mandamos, te lo mandamos al correo especificando todos estos detalles.
+23:17 Marilyn Reyes Molina: Sí, te voy a dar mi correo en el WhatsApp que el correo de la empresa porque quiero ya empezar a migrar todo para allá ya y lo otro que les quiero pedir Yo
+23:23 Otter Tech: ya
+23:25 Marilyn Reyes Molina: sé que no está de más decidido, pero confidencialidad Porque mi jefe se me puede enojar por esto porque a mí como para él nomás, pero él no, no, cacha,
+23:29 Otter Tech: No, no hay problema.
+23:32 Marilyn Reyes Molina: que yo trabajo como con escalera cliente solo que ahora quiero darle más más consistencia muy ordinaria. Ya, así que aquí aquí muere ya.
+23:39 Otter Tech: sí
+23:44 Marilyn Reyes Molina: Se las pido ya ha querido, vamos por WhatsApp yo les mando la info, mándenme la factura Pero lo primero es el correo y les voy a mandar ya, ya queridos Un gusto
+23:50 Otter Tech: No hay problema.
+23:52 Marilyn Reyes Molina: verlo Muchas gracias, Que estén bien. Chao. Un abrazo, chao.
+23:53 Otter Tech: igual
+  

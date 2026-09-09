@@ -1,0 +1,107 @@
+---
+import type { Service } from '../data/services';
+
+export interface Props {
+  service: Service;
+}
+
+const { service } = Astro.props;
+
+// Hex colors for each service brand
+const hexColors: Record<string, string> = {
+  liderazgo: '#202c4c',
+  'gestion-pedagogica': '#d95986',
+  'formacion-convivencia': '#ffbb5d',
+  'gestion-recursos': '#7bb6b3',
+  'mentoria-directores': '#a775b1',
+};
+
+const brandColor = hexColors[service.slug] || hexColors.liderazgo;
+
+// SVG icon paths for each service — using official brand icons
+const iconPaths: Record<string, string> = {
+  liderazgo: '/iconos/liderazgo.svg',
+  'gestion-pedagogica': '/iconos/pedagogica.svg',
+  'formacion-convivencia': '/iconos/convivencia.svg',
+  'gestion-recursos': '/iconos/gestion.svg',
+  'mentoria-directores': '/iconos/mentoria.svg',
+};
+
+// Decorative arc SVGs for each service
+const arcPaths: Record<string, string> = {
+  liderazgo: '/iconos/arco-liderazgo.svg',
+  'gestion-pedagogica': '/iconos/arco-pedagogica.svg',
+  'formacion-convivencia': '/iconos/arco-convivencia.svg',
+  'gestion-recursos': '/iconos/arco-recursos.svg',
+  'mentoria-directores': '/iconos/arco-mentoria.svg',
+};
+---
+
+<a
+  href={`/servicios/${service.slug}`}
+  class="group block h-full transition-all duration-300 ease-out-quart hover:-translate-y-1"
+  style="border-radius: 1.75rem;"
+>
+  <!-- Card body — white background with solid 3D shadow -->
+  <div
+    class="relative overflow-hidden h-full"
+    style={`
+      border-radius: 1.75rem;
+      background: #fff;
+      box-shadow: 8px 8px 0px ${brandColor};
+    `}
+  >
+    <!-- Decorative swoosh band — top-right corner -->
+    <svg
+      class="absolute top-0 right-[8%] w-[55%] h-10 sm:h-12 pointer-events-none"
+      viewBox="149 0 310 100"
+      preserveAspectRatio="none"
+      fill="none"
+      aria-hidden="true"
+      style="opacity: 0.9;"
+    >
+      <path
+        d="M149 0
+           C222 11 304 39 410.5 99.5
+           C411.8 100.2 413.2 99.8 414.1 98.5
+           L458.5 34.2
+           C432 19.6 402.5 8.3 374.5 0
+           Z"
+        fill={brandColor}
+      />
+    </svg>
+
+    <!-- Two-column layout: text left, icon right -->
+    <div class="flex h-full">
+      <!-- Left column: text content -->
+      <div class="flex flex-col flex-1 p-7 sm:p-8 pr-3 sm:pr-4 z-10">
+        <!-- Title -->
+        <h3 class="heading-h3 mb-4 text-neutral-900 leading-tight text-xl sm:text-2xl">
+          {service.title}
+        </h3>
+
+        <!-- Description -->
+        <p class="body-sm text-neutral-600 mb-6 line-clamp-3 flex-1 leading-relaxed text-sm sm:text-base">
+          {service.description}
+        </p>
+
+        <!-- Text link -->
+        <span class="inline-flex items-center gap-1 text-base font-bold" style={`color: ${brandColor};`}>
+          Conocer más
+          <span class="text-lg leading-none">»</span>
+        </span>
+      </div>
+
+      <!-- Right column: brand icon -->
+      <div class="relative flex items-center justify-center pr-5 sm:pr-6 w-[130px] sm:w-[150px] shrink-0 z-10">
+        <img
+          src={iconPaths[service.slug] || iconPaths.liderazgo}
+          alt=""
+          class="w-24 h-24 sm:w-28 sm:h-28"
+          style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.10));"
+          aria-hidden="true"
+        />
+      </div>
+    </div>
+  </div>
+</a>

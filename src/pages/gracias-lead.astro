@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DiagnosticoModal from '../components/DiagnosticoModal.astro';
+---
+
+<BaseLayout
+  title="Gracias por descargar — MR ATEducativa"
+  description="Tu recurso está listo para descargar. Revisa tu email."
+  path="/gracias-lead"
+>
+  <section class="section-padding">
+    <div class="container-page">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h1 class="heading-h1 text-gray-900 mb-4">
+          <!-- CLIENTE: Reemplazar con mensaje de agradecimiento -->
+          ¡Recurso enviado!
+        </h1>
+        <p class="body-lg text-gray-600 mb-8">
+          <!-- CLIENTE: Reemplazar con instrucciones -->
+          Revisa tu email. Hemos enviado el enlace de descarga a tu bandeja de entrada.
+        </p>
+        <div class="p-6 bg-primary-50 rounded-xl max-w-md mx-auto mb-8">
+          <p class="text-primary-800 font-medium mb-2">¿No lo encuentras?</p>
+          <p class="text-primary-700 text-sm">
+            Revisa tu carpeta de spam o promociones. Si no llega en 5 minutos, contáctanos.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/blog"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-semibold rounded-lg border-2 border-primary-600 text-primary-600 hover:bg-primary-50 transition-colors min-h-[44px]"
+          >
+            Ver más recursos
+          </a>
+          <button
+            type="button"
+            onclick="window.openDiagnosticoModal()"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-semibold rounded-lg bg-primary-600 text-white hover:bg-primary-700 transition-colors min-h-[44px] cursor-pointer"
+          >
+            Solicitar diagnóstico gratuito
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <DiagnosticoModal />
+</BaseLayout>

@@ -1,0 +1,108 @@
+---
+export interface Props {
+  name: string;
+  role: string;
+  institution: string;
+  quote: string;
+  problem: string;
+  solution: string;
+  result: string;
+  accentColor?: string;
+}
+
+const { name, role, institution, quote, problem, solution, result, accentColor = 'primary' } = Astro.props;
+
+const initials = name.split(' ').map((n) => n[0]).join('');
+
+// Rotate accent colors for variety
+const accents = [
+  { border: 'border-l-[#202c4c]', quote: 'text-[#202c4c]', avatar: 'bg-[#f0f2f7] text-[#202c4c]', glow: 'bg-[#202c4c]' },
+  { border: 'border-l-[#d95986]', quote: 'text-[#d95986]', avatar: 'bg-[#fdf2f6] text-[#d95986]', glow: 'bg-[#d95986]' },
+  { border: 'border-l-[#ffbb5d]', quote: 'text-[#ffbb5d]', avatar: 'bg-[#fff9f0] text-[#ffbb5d]', glow: 'bg-[#ffbb5d]' },
+  { border: 'border-l-[#7bb6b3]', quote: 'text-[#7bb6b3]', avatar: 'bg-[#f0f7f7] text-[#7bb6b3]', glow: 'bg-[#7bb6b3]' },
+];
+
+// Use first accent (navy/primary) for all cards for consistency
+const accent = accents[0];
+---
+
+<article class:list={[
+  'bg-white rounded-2xl overflow-hidden transition-all duration-300',
+  'hover:shadow-xl hover:-translate-y-1 border-l-4',
+  accent.border,
+  'border border-neutral-100'
+]}>
+  <!-- Quote section -->
+  <div class="p-6 sm:p-8 pb-4 relative">
+    <!-- Large colored quote mark in background -->
+    <div class:list={['absolute top-4 right-4 text-7xl font-serif opacity-10 leading-none', accent.quote]} aria-hidden="true">
+      &ldquo;
+    </div>
+    <blockquote class="relative">
+      <!-- Colored quote mark -->
+      <svg class:list={['w-10 h-10 mb-3 opacity-40', accent.quote]} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z"/>
+      </svg>
+      <p class="text-neutral-800 text-lg leading-relaxed font-medium italic">
+        {quote}
+      </p>
+    </blockquote>
+  </div>
+
+  <!-- Problem → Solution → Result -->
+  <div class="px-6 sm:px-8 pb-6 sm:pb-8 space-y-3">
+    <div class="grid grid-cols-1 gap-3">
+      <!-- Problem -->
+      <div class="p-4 rounded-xl bg-gradient-to-r from-primary-50 to-primary-50 border border-primary-100">
+        <div class="flex items-center gap-2 mb-1.5">
+          <div class="w-6 h-6 rounded-full bg-primary-100 flex items-center justify-center">
+            <svg class="w-3.5 h-3.5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+            </svg>
+          </div>
+          <span class="text-xs font-bold text-primary-700 uppercase tracking-wider">Problema</span>
+        </div>
+        <p class="text-sm text-primary-800">{problem}</p>
+      </div>
+
+      <!-- Solution -->
+      <div class="p-4 rounded-xl bg-gradient-to-r from-rosa-50 to-rosa-50 border border-rosa-100">
+        <div class="flex items-center gap-2 mb-1.5">
+          <div class="w-6 h-6 rounded-full bg-rosa-100 flex items-center justify-center">
+            <svg class="w-3.5 h-3.5 text-rosa-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+            </svg>
+          </div>
+          <span class="text-xs font-bold text-rosa-700 uppercase tracking-wider">Solución</span>
+        </div>
+        <p class="text-sm text-rosa-800">{solution}</p>
+      </div>
+
+      <!-- Result -->
+      <div class="p-4 rounded-xl bg-gradient-to-r from-teal-50 to-teal-50 border border-teal-100">
+        <div class="flex items-center gap-2 mb-1.5">
+          <div class="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center">
+            <svg class="w-3.5 h-3.5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <span class="text-xs font-bold text-teal-700 uppercase tracking-wider">Resultado</span>
+        </div>
+        <p class="text-sm text-teal-800 font-medium">{result}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Author -->
+  <div class="px-6 sm:px-8 py-4 bg-gradient-to-r from-neutral-50 to-white border-t border-neutral-100">
+    <div class="flex items-center gap-3">
+      <div class:list={['w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-sm', accent.avatar]}>
+        {initials}
+      </div>
+      <div>
+        <p class="font-semibold text-neutral-900 text-sm">{name}</p>
+        <p class="text-neutral-500 text-xs">{role}, {institution}</p>
+      </div>
+    </div>
+  </div>
+</article>

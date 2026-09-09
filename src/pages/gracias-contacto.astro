@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Gracias por tu contacto — MR ATEducativa"
+  description="Hemos recibido tu mensaje. Nos pondremos en contacto contigo pronto."
+  path="/gracias-contacto"
+>
+  <section class="section-padding">
+    <div class="container-page">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h1 class="heading-h1 text-gray-900 mb-4">
+          <!-- CLIENTE: Reemplazar con mensaje de agradecimiento -->
+          ¡Gracias por contactarnos!
+        </h1>
+        <p class="body-lg text-gray-600 mb-8">
+          <!-- CLIENTE: Reemplazar con próximos pasos -->
+          Hemos recibido tu mensaje y nos pondremos en contacto contigo dentro de las próximas 24 horas hábiles.
+        </p>
+        <div class="space-y-4">
+          <h2 class="heading-h3 text-gray-900">Próximos pasos</h2>
+          <ol class="text-left space-y-3 max-w-md mx-auto">
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center text-primary-700 text-sm font-bold">1</span>
+              <span class="text-gray-600">Revisaremos tu mensaje y la información de tu establecimiento</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center text-primary-700 text-sm font-bold">2</span>
+              <span class="text-gray-600">Te contactaremos para agendar una reunión o videollamada</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center text-primary-700 text-sm font-bold">3</span>
+              <span class="text-gray-600">Realizaremos un diagnóstico inicial gratuito de 30 minutos</span>
+            </li>
+          </ol>
+        </div>
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 mt-8 px-6 py-3 text-base font-semibold rounded-lg bg-primary-600 text-white hover:bg-primary-700 transition-colors min-h-[44px]"
+        >
+          Volver al inicio
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

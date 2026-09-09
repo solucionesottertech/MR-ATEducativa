@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MR ATEducativa — Asistencia Técnica Educativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FBF9F6; color: #202F55; font-family: "Source Sans 3", "Helvetica Neue", Helvetica, sans-serif; -webkit-font-smoothing: antialiased; text-wrap: pretty; }
+  a { color: #C9527F; text-decoration: none; }
+  a:hover { color: #202F55; }
+  section[id] { scroll-margin-top: 92px; }
+  .ph { background-color: #E7E2DA; background-image: repeating-linear-gradient(135deg, rgba(32,47,85,.10) 0 6px, rgba(32,47,85,0) 6px 12px); }
+</style>
+</helmet>
+
+<div style="max-width: 100%;">
+
+  <header style="position: sticky; top: 0; z-index: 50; background: #202F55; border-bottom: 1px solid rgba(255,255,255,.12);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 14px clamp(16px, 3vw, 28px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px;">
+      <a href="#inicio" style="display: flex; align-items: center; gap: 14px; color: #F3F1EC;">
+        <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 30px; line-height: 1; letter-spacing: -1px;">MR</span>
+        <span style="width: 1px; height: 34px; background: rgba(243,241,236,.5);"></span>
+        <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; letter-spacing: .06em;">ATEducativa</span>
+      </a>
+      <nav style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 26px; font-size: 14.5px; font-weight: 500; letter-spacing: .01em;">
+        <a href="#inicio" style="color: #F3F1EC;" style-hover="{{ navHover }}">Inicio</a>
+        <a href="#nosotros" style="color: #F3F1EC;" style-hover="{{ navHover }}">Nosotros</a>
+        <a href="#servicios" style="color: #F3F1EC;" style-hover="{{ navHover }}">Servicios</a>
+        <a href="#experiencia" style="color: #F3F1EC;" style-hover="{{ navHover }}">Experiencia y Resultados</a>
+        <a href="#equipo" style="color: #F3F1EC;" style-hover="{{ navHover }}">Equipo</a>
+        <a href="#contacto" style="background: #C9527F; color: #fff; padding: 9px 18px; border-radius: 2px; font-weight: 600;" style-hover="{{ ctaHover }}">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <div style="position: fixed; right: 18px; bottom: 18px; z-index: 90; display: flex; align-items: center; gap: 8px; background: rgba(32,47,85,.94); padding: 8px 10px; border-radius: 4px; box-shadow: 0 8px 24px rgba(32,47,85,.28);">
+    <span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10px; letter-spacing: .12em; color: rgba(243,241,236,.7); text-transform: uppercase;">Hero</span>
+    <button onClick="{{ pickA }}" style="{{ btnA }}">A</button>
+    <button onClick="{{ pickB }}" style="{{ btnB }}">B</button>
+  </div>
+
+  <sc-if value="{{ heroA }}" hint-placeholder-val="{{ true }}">
+    <section id="inicio" style="background: #202F55; color: #F3F1EC; padding: clamp(56px, 7vw, 96px) clamp(20px, 4vw, 28px) 0;">
+      <div style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(36px, 5vw, 64px); align-items: end;">
+        <div style="padding-bottom: clamp(56px, 7vw, 96px);">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 28px;">
+            <span style="width: 42px; height: 3px; background: #FBB44E;"></span>
+            <span style="font-size: 12.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #FBB44E;">Asistencia Técnica Educativa · Chile</span>
+          </div>
+          <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(38px, 5.4vw, 66px); line-height: 1.05; font-weight: 500; margin: 0 0 26px; letter-spacing: -1.5px;">Acompañamos a las escuelas que quieren <em style="color: #7CBDB6;">enseñar mejor</em>.</h1>
+          <p style="font-size: 19.5px; line-height: 1.6; color: rgba(243,241,236,.82); max-width: 560px; margin: 0 0 38px;">Asesoría técnica pedagógica para sostenedores, SLEP y equipos directivos: diagnóstico, plan de trabajo y acompañamiento en aula hasta que los resultados se sostienen solos.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
+            <a href="#contacto" style="background: #C9527F; color: #fff; padding: 16px 30px; border-radius: 2px; font-size: 16px; font-weight: 600;" style-hover="{{ ctaHover }}">Solicitar una propuesta</a>
+            <a href="#servicios" style="border: 1px solid rgba(243,241,236,.4); color: #F3F1EC; padding: 15px 28px; border-radius: 2px; font-size: 16px; font-weight: 500;" style-hover="{{ ghostHover }}">Ver servicios</a>
+          </div>
+          <p style="margin: 34px 0 0; font-size: 14.5px; color: rgba(243,241,236,.6);">Entidad inscrita en el Registro ATE del Ministerio de Educación.</p>
+        </div>
+        <div class="ph" style="aspect-ratio: 4 / 5; max-height: 460px; min-height: 300px; position: relative; display: flex; align-items: flex-end; padding: 20px;">
+          <span style="font-family: ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: .06em; color: #202F55; background: rgba(251,249,246,.9); padding: 7px 10px;">foto — asesora trabajando con docentes</span>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr);">
+        <span style="height: 8px; background: #C9527F;"></span>
+        <span style="height: 8px; background: #7CBDB6;"></span>
+        <span style="height: 8px; background: #FBB44E;"></span>
+        <span style="height: 8px; background: #16234A;"></span>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ heroB }}" hint-placeholder-val="{{ false }}">
+    <section id="inicio" style="background: #FBF9F6; padding: clamp(56px, 7vw, 88px) clamp(20px, 4vw, 28px) 0; text-align: center;">
+      <div style="max-width: 900px; margin: 0 auto;">
+        <span style="font-size: 12.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #C9527F;">Asistencia Técnica Educativa · Chile</span>
+        <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(38px, 6vw, 72px); line-height: 1.05; font-weight: 500; margin: 24px 0 26px; letter-spacing: -2px; color: #202F55;">Más de 20 años de aula, dirección y asesoría, al servicio de tu proyecto educativo.</h1>
+        <p style="font-size: 20px; line-height: 1.6; color: rgba(32,47,85,.75); max-width: 640px; margin: 0 auto 38px;">Trabajamos con sostenedores municipales, SLEP y equipos directivos para convertir el diagnóstico en prácticas concretas dentro de la sala de clases.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 20px;">
+          <a href="#contacto" style="background: #202F55; color: #fff; padding: 16px 30px; border-radius: 2px; font-size: 16px; font-weight: 600;" style-hover="{{ navyHover }}">Solicitar una propuesta</a>
+          <a href="#servicios" style="border: 1px solid rgba(32,47,85,.28); color: #202F55; padding: 15px 28px; border-radius: 2px; font-size: 16px; font-weight: 500;" style-hover="{{ lightHover }}">Ver servicios</a>
+        </div>
+        <p style="margin: 0 0 56px; font-size: 14.5px; color: rgba(32,47,85,.55);">Entidad inscrita en el Registro ATE del Ministerio de Educación.</p>
+      </div>
+      <div style="max-width: 1180px; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;">
+          <span style="height: 6px; background: #C9527F;"></span>
+          <span style="height: 6px; background: #7CBDB6;"></span>
+          <span style="height: 6px; background: #FBB44E;"></span>
+          <span style="height: 6px; background: #202F55;"></span>
+        </div>
+        <div class="ph" style="aspect-ratio: 21 / 9; min-height: 220px; display: flex; align-items: flex-end; padding: 20px;">
+          <span style="font-family: ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: .06em; color: #202F55; background: rgba(251,249,246,.9); padding: 7px 10px;">foto — taller con equipo directivo</span>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <section style="background: #202F55; color: #F3F1EC; padding: clamp(36px, 5vw, 44px) clamp(20px, 4vw, 28px);">
+    <div style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: clamp(24px, 3vw, 40px);">
+      <div>
+        <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 44px; line-height: 1; color: #FBB44E;">+20</div>
+        <div style="font-size: 14.5px; color: rgba(243,241,236,.72); margin-top: 8px;">años de trayectoria en educación</div>
+      </div>
+      <div>
+        <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 44px; line-height: 1; color: #7CBDB6;">40+</div>
+        <div style="font-size: 14.5px; color: rgba(243,241,236,.72); margin-top: 8px;">establecimientos acompañados</div>
+      </div>
+      <div>
+        <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 44px; line-height: 1; color: #C9527F;">1.200</div>
+        <div style="font-size: 14.5px; color: rgba(243,241,236,.72); margin-top: 8px;">docentes y directivos formados</div>
+      </div>
+      <div>
+        <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 44px; line-height: 1; color: #F3F1EC;">8</div>
+        <div style="font-size: 14.5px; color: rgba(243,241,236,.72); margin-top: 8px;">regiones del país</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotros" style="padding: clamp(64px, 8vw, 104px) clamp(20px, 4vw, 28px); background: #FBF9F6;">
+    <div style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(36px, 5vw, 72px); align-items: start;">
+      <div>
+        <span style="font-size: 12.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #C9527F;">Nosotros</span>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.14; font-weight: 500; margin: 18px 0 0; letter-spacing: -1px;">Una ATE que conoce la escuela desde dentro.</h2>
+        <div class="ph" style="aspect-ratio: 4 / 3; min-height: 220px; margin-top: 36px; display: flex; align-items: flex-end; padding: 16px;">
+          <span style="font-family: ui-monospace, Menlo, monospace; font-size: 11.5px; color: #202F55; background: rgba(251,249,246,.9); padding: 6px 9px;">foto — reunión con sostenedor</span>
+        </div>
+      </div>
+      <div>
+        <p style="font-size: 19px; line-height: 1.68; margin: 0 0 22px; color: rgba(32,47,85,.88);">MR ATEducativa nace de la experiencia directa en establecimientos educacionales: liderazgo escolar, administración educacional, investigación y asesoría técnica especializada. No llegamos con un manual; llegamos a leer el contexto de cada comunidad.</p>
+        <p style="font-size: 17px; line-height: 1.7; margin: 0 0 40px; color: rgba(32,47,85,.72);">Diseñamos planes de asesoría alineados al PME y a la normativa vigente, con foco en que las prácticas queden instaladas en el equipo docente una vez que la asesoría termina.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: rgba(32,47,85,.12);">
+          <div style="background: #FBF9F6; padding: 26px 24px;">
+            <div style="width: 26px; height: 3px; background: #C9527F; margin-bottom: 14px;"></div>
+            <h3 style="font-size: 17px; margin: 0 0 8px; font-weight: 600;">Diagnóstico con evidencia</h3>
+            <p style="font-size: 15.5px; line-height: 1.6; margin: 0; color: rgba(32,47,85,.7);">Datos de aprendizaje, observación de aula y voz de la comunidad antes de proponer.</p>
+          </div>
+          <div style="background: #FBF9F6; padding: 26px 24px;">
+            <div style="width: 26px; height: 3px; background: #7CBDB6; margin-bottom: 14px;"></div>
+            <h3 style="font-size: 17px; margin: 0 0 8px; font-weight: 600;">Trabajo en terreno</h3>
+            <p style="font-size: 15.5px; line-height: 1.6; margin: 0; color: rgba(32,47,85,.7);">Acompañamiento presencial en la sala, no solo capacitación en sala de reuniones.</p>
+          </div>
+          <div style="background: #FBF9F6; padding: 26px 24px;">
+            <div style="width: 26px; height: 3px; background: #FBB44E; margin-bottom: 14px;"></div>
+            <h3 style="font-size: 17px; margin: 0 0 8px; font-weight: 600;">Capacidades que quedan</h3>
+            <p style="font-size: 15.5px; line-height: 1.6; margin: 0; color: rgba(32,47,85,.7);">Formamos a los equipos internos para que sostengan el cambio sin dependencia externa.</p>
+          </div>
+          <div style="background: #FBF9F6; padding: 26px 24px;">
+            <div style="width: 26px; height: 3px; background: #202F55; margin-bottom: 14px;"></div>
+            <h3 style="font-size: 17px; margin: 0 0 8px; font-weight: 600;">Reporte para el sostenedor</h3>
+            <p style="font-size: 15.5px; line-height: 1.6; margin: 0; color: rgba(32,47,85,.7);">Informes claros de avance, entregables y rendición compatible con SEP.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" style="padding: clamp(64px, 8vw, 104px) clamp(20px, 4vw, 28px); background: #F3EFE9;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="display: flex; justify-content: space-between; align-items: end; gap: 40px; flex-wrap: wrap; margin-bottom: clamp(36px, 4vw, 52px);">
+        <div>
+          <span style="font-size: 12.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #C9527F;">Servicios</span>
+          <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.14; font-weight: 500; margin: 18px 0 0; letter-spacing: -1px; max-width: 620px;">Ocho líneas de asesoría, un plan a la medida.</h2>
+        </div>
+        <p style="font-size: 16px; line-height: 1.6; color: rgba(32,47,85,.7); max-width: 320px; margin: 0;">Cada línea se puede contratar por separado o combinar dentro de un plan anual de asesoría.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+        <div style="background: #FBF9F6; border-top: 4px solid #C9527F; padding: 30px 24px 34px;">
+          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 500; margin: 0 0 12px; line-height: 1.25;">Asesoría en gestión curricular</h3>
+          <p style="font-size: 15.5px; line-height: 1.62; margin: 0; color: rgba(32,47,85,.72);">Alineación de planificaciones, cobertura curricular y evaluación con las bases vigentes.</p>
+        </div>
+        <div style="background: #FBF9F6; border-top: 4px solid #7CBDB6; padding: 30px 24px 34px;">
+          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 500; margin: 0 0 12px; line-height: 1.25;">Desarrollo profesional docente</h3>
+          <p style="font-size: 15.5px; line-height: 1.62; margin: 0; color: rgba(32,47,85,.72);">Ciclos de formación situada, mentoría entre pares y comunidades de aprendizaje.</p>
+        </div>
+        <div style="background: #FBF9F6; border-top: 4px solid #FBB44E; padding: 30px 24px 34px;">
+          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 500; margin: 0 0 12px; line-height: 1.25;">Convivencia escolar</h3>
+          <p style="font-size: 15.5px; line-height: 1.62; margin: 0; color: rgba(32,47,85,.72);">Protocolos, gestión de conflictos y planes de convivencia con participación real.</p>
+        </div>
+        <div style="background: #FBF9F6; border-top: 4px solid #202F55; padding: 30px 24px 34px;">
+          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 500; margin: 0 0 12px; line-height: 1.25;">Liderazgo directivo</h3>
+          <p style="font-size: 15.5px; line-height: 1.62; margin: 0; color: rgba(32,47,85,.72);">Fortalecimiento del equipo de gestión, distribución de roles y liderazgo pedagógico.</p>
+        </div>
+        <div style="background: #FBF9F6; border-top: 4px solid #7CBDB6; padding: 30px 24px 34px;">
+          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 500; margin: 0 0 12px; line-height: 1.25;">Evaluación y diagnóstico</h3>
+          <p style="font-size: 15.5px; line-height: 1.62; margin: 0; color: rgba(32,47,85,.72);">Levantamiento institucional, análisis de datos de aprendizaje y línea base medible.</p>
+        </div>
+        <div style="background: #FBF9F6; border-top: 4px solid #C9527F; padding: 30px 24px 34px;">
+          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 500; margin: 0 0 12px; line-height: 1.25;">Acompañamiento en aula</h3>
+          <p style="font-size: 15.5px; line-height: 1.62; margin: 0; color: rgba(32,47,85,.72);">Observación de clases, retroalimentación formativa y modelamiento de prácticas.</p>
+        </div>
+        <div style="background: #FBF9F6; border-top: 4px solid #202F55; padding: 30px 24px 34px;">
+          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 500; margin: 0 0 12px; line-height: 1.25;">Planes de mejoramiento (PME)</h3>
+          <p style="font-size: 15.5px; line-height: 1.62; margin: 0; color: rgba(32,47,85,.72);">Elaboración, seguimiento y ajuste del PME con foco en metas alcanzables.</p>
+        </div>
+        <div style="background: #FBF9F6; border-top: 4px solid #FBB44E; padding: 30px 24px 34px;">
+          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 500; margin: 0 0 12px; line-height: 1.25;">Inclusión y PIE</h3>
+          <p style="font-size: 15.5px; line-height: 1.62; margin: 0; color: rgba(32,47,85,.72);">Diversificación de la enseñanza, trabajo colaborativo y normativa del decreto 83.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencia" style="padding: clamp(64px, 8vw, 104px) clamp(20px, 4vw, 28px); background: #202F55; color: #F3F1EC;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <span style="font-size: 12.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #FBB44E;">Experiencia y Resultados</span>
+      <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.14; font-weight: 500; margin: 18px 0 56px; letter-spacing: -1px; max-width: 640px;">Cómo trabajamos, y qué deja la asesoría.</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 28px; margin-bottom: clamp(48px, 6vw, 72px);">
+        <div style="border-top: 1px solid rgba(243,241,236,.28); padding-top: 22px;">
+          <div style="font-family: ui-monospace, Menlo, monospace; font-size: 12px; color: #FBB44E; letter-spacing: .1em; margin-bottom: 12px;">01</div>
+          <h3 style="font-size: 19px; margin: 0 0 10px; font-weight: 600;">Diagnóstico</h3>
+          <p style="font-size: 15.5px; line-height: 1.62; margin: 0; color: rgba(243,241,236,.72);">Cuatro a seis semanas de levantamiento: datos, aula y entrevistas a la comunidad.</p>
+        </div>
+        <div style="border-top: 1px solid rgba(243,241,236,.28); padding-top: 22px;">
+          <div style="font-family: ui-monospace, Menlo, monospace; font-size: 12px; color: #FBB44E; letter-spacing: .1em; margin-bottom: 12px;">02</div>
+          <h3 style="font-size: 19px; margin: 0 0 10px; font-weight: 600;">Plan de asesoría</h3>
+          <p style="font-size: 15.5px; line-height: 1.62; margin: 0; color: rgba(243,241,236,.72);">Metas, entregables y cronograma acordados con el sostenedor y el equipo directivo.</p>
+        </div>
+        <div style="border-top: 1px solid rgba(243,241,236,.28); padding-top: 22px;">
+          <div style="font-family: ui-monospace, Menlo, monospace; font-size: 12px; color: #FBB44E; letter-spacing: .1em; margin-bottom: 12px;">03</div>
+          <h3 style="font-size: 19px; margin: 0 0 10px; font-weight: 600;">Implementación</h3>
+          <p style="font-size: 15.5px; line-height: 1.62; margin: 0; color: rgba(243,241,236,.72);">Sesiones de formación, acompañamiento en aula y reuniones de seguimiento mensuales.</p>
+        </div>
+        <div style="border-top: 1px solid rgba(243,241,236,.28); padding-top: 22px;">
+          <div style="font-family: ui-monospace, Menlo, monospace; font-size: 12px; color: #FBB44E; letter-spacing: .1em; margin-bottom: 12px;">04</div>
+          <h3 style="font-size: 19px; margin: 0 0 10px; font-weight: 600;">Cierre y transferencia</h3>
+          <p style="font-size: 15.5px; line-height: 1.62; margin: 0; color: rgba(243,241,236,.72);">Informe final, evidencia para rendición y protocolo para sostener las prácticas.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+        <blockquote style="margin: 0; background: rgba(243,241,236,.06); border-left: 4px solid #7CBDB6; padding: 32px 34px;">
+          <p style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; line-height: 1.5; font-style: italic; margin: 0 0 20px;">“El acompañamiento en aula cambió la conversación en el consejo de profesores: dejamos de hablar de notas y empezamos a hablar de enseñanza.”</p>
+          <footer style="font-size: 14.5px; color: rgba(243,241,236,.65);">Directora, establecimiento municipal — Región de Valparaíso</footer>
+        </blockquote>
+        <blockquote style="margin: 0; background: rgba(243,241,236,.06); border-left: 4px solid #C9527F; padding: 32px 34px;">
+          <p style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; line-height: 1.5; font-style: italic; margin: 0 0 20px;">“Los informes nos sirvieron tal cual para la rendición SEP. Es la primera asesoría que nos entrega evidencia ordenada.”</p>
+          <footer style="font-size: 14.5px; color: rgba(243,241,236,.65);">Jefe técnico, sostenedor municipal — Región Metropolitana</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipo" style="padding: clamp(64px, 8vw, 104px) clamp(20px, 4vw, 28px); background: #FBF9F6;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <span style="font-size: 12.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #C9527F;">Equipo</span>
+      <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.14; font-weight: 500; margin: 18px 0 52px; letter-spacing: -1px;">Quiénes están detrás.</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(32px, 4vw, 56px); align-items: start; padding-bottom: 56px; border-bottom: 1px solid rgba(32,47,85,.14); margin-bottom: 56px;">
+        <div class="ph" style="aspect-ratio: 4 / 5; min-height: 300px; display: flex; align-items: flex-end; padding: 16px;">
+          <span style="font-family: ui-monospace, Menlo, monospace; font-size: 11.5px; color: #202F55; background: rgba(251,249,246,.9); padding: 6px 9px;">retrato — Marilyn Reyes</span>
+        </div>
+        <div>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+            <span style="width: 32px; height: 3px; background: #7CBDB6;"></span>
+            <span style="font-size: 12.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(32,47,85,.6);">Nuestra fundadora</span>
+          </div>
+          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px, 3vw, 36px); font-weight: 500; margin: 0 0 6px; letter-spacing: -.5px;">Marilyn Reyes Molina</h3>
+          <p style="font-size: 16px; color: #C9527F; font-weight: 600; margin: 0 0 24px;">Fundadora y Directora Ejecutiva</p>
+          <p style="font-size: 18px; line-height: 1.68; margin: 0 0 18px; color: rgba(32,47,85,.85);">Con más de 20 años de trayectoria en educación, ha desarrollado su carrera integrando experiencia directa en establecimientos educacionales, liderazgo escolar, administración educacional, investigación y asesoría técnica especializada.</p>
+          <p style="font-size: 17px; line-height: 1.7; margin: 0 0 28px; color: rgba(32,47,85,.72);">Profesora de Educación General Básica, su mirada combina la práctica de aula con la gestión institucional: entiende tanto la planificación de una clase como las exigencias administrativas de un sostenedor.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <span style="border: 1px solid rgba(32,47,85,.2); padding: 7px 14px; font-size: 14px; color: rgba(32,47,85,.75);">Liderazgo escolar</span>
+            <span style="border: 1px solid rgba(32,47,85,.2); padding: 7px 14px; font-size: 14px; color: rgba(32,47,85,.75);">Gestión curricular</span>
+            <span style="border: 1px solid rgba(32,47,85,.2); padding: 7px 14px; font-size: 14px; color: rgba(32,47,85,.75);">Investigación educativa</span>
+            <span style="border: 1px solid rgba(32,47,85,.2); padding: 7px 14px; font-size: 14px; color: rgba(32,47,85,.75);">Administración educacional</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px;">
+        <div>
+          <div class="ph" style="aspect-ratio: 4 / 3; min-height: 190px; display: flex; align-items: flex-end; padding: 14px; margin-bottom: 18px;">
+            <span style="font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: #202F55; background: rgba(251,249,246,.9); padding: 5px 8px;">retrato — Pedro Reyes</span>
+          </div>
+          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 500; margin: 0 0 4px;">Pedro Reyes Álvarez</h3>
+          <p style="font-size: 15px; color: #C9527F; font-weight: 600; margin: 0 0 12px;">Coordinador de Administración y Finanzas</p>
+          <p style="font-size: 15.5px; line-height: 1.62; margin: 0 0 12px; color: rgba(32,47,85,.72);">Gestiona contratos, convenios con sostenedores y la rendición de recursos asociados a cada asesoría.</p>
+          <a href="mailto:pedro@mr-ateducativa.cl" style="font-size: 14.5px;">pedro@mr-ateducativa.cl</a>
+        </div>
+        <div>
+          <div class="ph" style="aspect-ratio: 4 / 3; min-height: 190px; display: flex; align-items: flex-end; padding: 14px; margin-bottom: 18px;">
+            <span style="font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: #202F55; background: rgba(251,249,246,.9); padding: 5px 8px;">retrato — consultor/a</span>
+          </div>
+          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 500; margin: 0 0 4px;">Nombre del consultor</h3>
+          <p style="font-size: 15px; color: #C9527F; font-weight: 600; margin: 0 0 12px;">Especialista en convivencia escolar</p>
+          <p style="font-size: 15.5px; line-height: 1.62; margin: 0; color: rgba(32,47,85,.72);">Reemplazar con el perfil real: formación, años de experiencia y foco de trabajo en terreno.</p>
+        </div>
+        <div>
+          <div class="ph" style="aspect-ratio: 4 / 3; min-height: 190px; display: flex; align-items: flex-end; padding: 14px; margin-bottom: 18px;">
+            <span style="font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: #202F55; background: rgba(251,249,246,.9); padding: 5px 8px;">retrato — consultor/a</span>
+          </div>
+          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 500; margin: 0 0 4px;">Nombre del consultor</h3>
+          <p style="font-size: 15px; color: #C9527F; font-weight: 600; margin: 0 0 12px;">Especialista en gestión curricular</p>
+          <p style="font-size: 15.5px; line-height: 1.62; margin: 0; color: rgba(32,47,85,.72);">Reemplazar con el perfil real: formación, años de experiencia y foco de trabajo en terreno.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" style="padding: clamp(64px, 8vw, 104px) clamp(20px, 4vw, 28px); background: #F3EFE9;">
+    <div style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: clamp(40px, 5vw, 72px); align-items: start;">
+      <div>
+        <span style="font-size: 12.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #C9527F;">Contacto</span>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.14; font-weight: 500; margin: 18px 0 22px; letter-spacing: -1px;">Conversemos sobre tu establecimiento.</h2>
+        <p style="font-size: 17.5px; line-height: 1.65; color: rgba(32,47,85,.75); margin: 0 0 40px;">Cuéntanos brevemente qué necesitas y te enviamos una propuesta con alcance, plazos y valores.</p>
+        <div style="display: grid; gap: 26px;">
+          <div>
+            <div style="font-size: 12.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(32,47,85,.55); margin-bottom: 8px;">Dirección Ejecutiva</div>
+            <div style="display: grid; gap: 4px; font-size: 16.5px;">
+              <a href="mailto:marilyn@mr-ateducativa.cl">marilyn@mr-ateducativa.cl</a>
+              <a href="https://wa.me/56927659269">WhatsApp Chile · +56 9 2765 9269</a>
+              <a href="tel:+351910171760">Internacional · +351 910 171 760</a>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: 12.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(32,47,85,.55); margin-bottom: 8px;">Administración y Finanzas</div>
+            <div style="display: grid; gap: 4px; font-size: 16.5px;">
+              <span style="color: rgba(32,47,85,.85);">Pedro Reyes Álvarez</span>
+              <a href="mailto:pedro@mr-ateducativa.cl">pedro@mr-ateducativa.cl</a>
+              <a href="https://wa.me/56972618887">+56 9 7261 8887</a>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: 12.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(32,47,85,.55); margin-bottom: 8px;">Sitio</div>
+            <a href="https://www.mr-ateducativa.cl" style="font-size: 16.5px;">www.mr-ateducativa.cl</a>
+          </div>
+        </div>
+      </div>
+
+      <form onSubmit="{{ submit }}" style="background: #FBF9F6; padding: 40px; display: grid; gap: 20px; border-top: 4px solid #202F55;">
+        <div style="display: grid; gap: 7px;">
+          <label for="f-nombre" style="font-size: 13.5px; font-weight: 600; letter-spacing: .04em; color: rgba(32,47,85,.8);">Nombre y apellido</label>
+          <input id="f-nombre" name="nombre" type="text" required="required" style="{{ inputStyle }}" />
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px;">
+          <div style="display: grid; gap: 7px;">
+            <label for="f-email" style="font-size: 13.5px; font-weight: 600; letter-spacing: .04em; color: rgba(32,47,85,.8);">Correo</label>
+            <input id="f-email" name="email" type="email" required="required" style="{{ inputStyle }}" />
+          </div>
+          <div style="display: grid; gap: 7px;">
+            <label for="f-fono" style="font-size: 13.5px; font-weight: 600; letter-spacing: .04em; color: rgba(32,47,85,.8);">Teléfono</label>
+            <input id="f-fono" name="fono" type="tel" style="{{ inputStyle }}" />
+          </div>
+        </div>
+        <div style="display: grid; gap: 7px;">
+          <label for="f-inst" style="font-size: 13.5px; font-weight: 600; letter-spacing: .04em; color: rgba(32,47,85,.8);">Establecimiento o sostenedor</label>
+          <input id="f-inst" name="institucion" type="text" style="{{ inputStyle }}" />
+        </div>
+        <div style="display: grid; gap: 7px;">
+          <label for="f-serv" style="font-size: 13.5px; font-weight: 600; letter-spacing: .04em; color: rgba(32,47,85,.8);">Servicio de interés</label>
+          <select id="f-serv" name="servicio" style="{{ inputStyle }}">
+            <option>Asesoría en gestión curricular</option>
+            <option>Desarrollo profesional docente</option>
+            <option>Convivencia escolar</option>
+            <option>Liderazgo directivo</option>
+            <option>Evaluación y diagnóstico</option>
+            <option>Acompañamiento en aula</option>
+            <option>Planes de mejoramiento (PME)</option>
+            <option>Inclusión y PIE</option>
+            <option>Aún no lo sé</option>
+          </select>
+        </div>
+        <div style="display: grid; gap: 7px;">
+          <label for="f-msg" style="font-size: 13.5px; font-weight: 600; letter-spacing: .04em; color: rgba(32,47,85,.8);">Mensaje</label>
+          <textarea id="f-msg" name="mensaje" rows="4" style="{{ inputStyle }}"></textarea>
+        </div>
+        <button type="submit" style="background: #C9527F; color: #fff; border: none; padding: 16px; font-size: 16px; font-weight: 600; font-family: inherit; cursor: pointer; border-radius: 2px;" style-hover="{{ ctaHover }}">Enviar solicitud</button>
+        <p style="margin: 0; font-size: 13.5px; line-height: 1.55; color: rgba(32,47,85,.6);">{{ formNote }}</p>
+      </form>
+    </div>
+  </section>
+
+  <footer style="background: #16234A; color: rgba(243,241,236,.7); padding: clamp(40px, 6vw, 52px) clamp(20px, 4vw, 28px) 40px;">
+    <div style="max-width: 1180px; margin: 0 auto; display: flex; justify-content: space-between; align-items: end; gap: 40px; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 14px; color: #F3F1EC;">
+        <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 28px; line-height: 1; letter-spacing: -1px;">MR</span>
+        <span style="width: 1px; height: 32px; background: rgba(243,241,236,.4);"></span>
+        <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 14px; letter-spacing: .06em;">ATEducativa</span>
+      </div>
+      <p style="margin: 0; font-size: 14px; max-width: 420px; line-height: 1.6;">Asistencia Técnica Educativa inscrita en el Registro ATE del Ministerio de Educación de Chile.</p>
+      <p style="margin: 0; font-size: 13.5px;">© 2026 MR ATEducativa. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroVariant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;A&quot;,&quot;B&quot;],&quot;default&quot;:&quot;A&quot;,&quot;tsType&quot;:&quot;\&quot;A\&quot; | \&quot;B\&quot;&quot;,&quot;section&quot;:&quot;Variantes&quot;}}">
+class Component extends DCLogic {
+  state = { variant: null, sent: false };
+  get variant() { return this.state.variant || this.props.heroVariant || "A"; }
+  renderVals() {
+    const v = this.variant;
+    const btn = (on) => ({
+      background: on ? "#C9527F" : "transparent",
+      color: on ? "#fff" : "rgba(243,241,236,.75)",
+      border: on ? "1px solid #C9527F" : "1px solid rgba(243,241,236,.35)",
+      borderRadius: "3px", padding: "5px 12px", fontSize: "12px", fontWeight: 600,
+      fontFamily: "inherit", cursor: "pointer", lineHeight: 1.2
+    });
+    return {
+      heroA: v === "A",
+      heroB: v === "B",
+      btnA: btn(v === "A"),
+      btnB: btn(v === "B"),
+      pickA: () => this.setState({ variant: "A" }),
+      pickB: () => this.setState({ variant: "B" }),
+      navHover: { color: "#FBB44E" },
+      ctaHover: { background: "#B4436F", color: "#fff" },
+      navyHover: { background: "#16234A", color: "#fff" },
+      ghostHover: { background: "rgba(243,241,236,.1)", color: "#fff" },
+      lightHover: { background: "rgba(32,47,85,.06)" },
+      inputStyle: {
+        font: "inherit", fontSize: "16px", padding: "12px 14px",
+        border: "1px solid rgba(32,47,85,.25)", borderRadius: "2px",
+        background: "#fff", color: "#202F55", width: "100%"
+      },
+      formNote: this.state.sent
+        ? "Gracias. Se abrió tu cliente de correo con la solicitud; también puedes escribirnos por WhatsApp."
+        : "Al enviar, se abre tu correo con la solicitud dirigida a marilyn@mr-ateducativa.cl. Página estática: no se almacena información.",
+      submit: (e) => {
+        e.preventDefault();
+        const f = new FormData(e.target);
+        const g = (k) => (f.get(k) || "").toString().trim();
+        const body = [
+          "Nombre: " + g("nombre"),
+          "Correo: " + g("email"),
+          "Teléfono: " + g("fono"),
+          "Establecimiento / sostenedor: " + g("institucion"),
+          "Servicio de interés: " + g("servicio"),
+          "",
+          g("mensaje")
+        ].join("\n");
+        const inst = g("institucion");
+        const subject = inst ? "Solicitud de propuesta — " + inst : "Solicitud de propuesta";
+        window.location.href = "mailto:marilyn@mr-ateducativa.cl?subject=" +
+          encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+        this.setState({ sent: true });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+---
+export interface Props {
+  class?: string;
+  resourceSlug?: string;
+  resourceUrl?: string;
+}
+
+const { class: className = '', resourceSlug = '', resourceUrl } = Astro.props;
+const resolvedResourceUrl = resourceUrl?.trim() || '';
+---
+
+<form
+  id="lead-magnet-form"
+  data-resource-url={resolvedResourceUrl || undefined}
+  action="/api/contact"
+  method="POST"
+  class:list={['space-y-4', className]}
+  novalidate
+>
+  <input type="hidden" name="form_type" value="lead-magnet" />
+  <input type="hidden" name="resource_slug" value={resourceSlug} />
+  <input type="hidden" name="resource_url" value={resolvedResourceUrl} />
+
+  <!-- Honeypot anti-spam -->
+  <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
+  <div class="flex flex-col sm:flex-row gap-3">
+    <div class="flex-1">
+      <label for="lead-email" class="sr-only">Email</label>
+      <input
+        type="email"
+        id="lead-email"
+        name="email"
+        required
+        class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors min-h-[44px]"
+        placeholder="Tu email para descargar"
+      />
+      <p class="hidden mt-1 text-sm text-red-600" data-error="lead-email">Por favor ingresa un email válido</p>
+    </div>
+    <button
+      type="submit"
+      class="px-6 py-2.5 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 active:bg-primary-800 transition-colors min-h-[44px] whitespace-nowrap"
+      data-umami-event="lead-download"
+    >
+      Descargar gratis
+    </button>
+  </div>
+
+  <p id="lead-form-status" class="min-h-6 text-sm" role="status" aria-live="polite" aria-atomic="true"></p>
+  <a id="lead-resource-link" href={resolvedResourceUrl || undefined} target="_blank" rel="noopener noreferrer" class="hidden inline-flex min-h-[44px] items-center justify-center rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white hover:bg-primary-700 transition-colors">
+    Descargar recurso
+  </a>
+  <p id="lead-resource-unavailable" class="hidden text-sm text-neutral-600">Recurso disponible próximamente.</p>
+
+  <p class="text-xs text-gray-500">
+    Al descargar aceptas recibir contenido educativo ocasional. Puedes cancelar en cualquier momento.
+  </p>
+</form>
+
+<script>
+  const leadForm = document.getElementById('lead-magnet-form') as HTMLFormElement | null;
+  const leadEmail = document.getElementById('lead-email') as HTMLInputElement | null;
+  const leadError = document.querySelector('[data-error="lead-email"]');
+  const leadSubmit = leadForm?.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+  const leadStatus = document.getElementById('lead-form-status');
+  const leadResourceLink = document.getElementById('lead-resource-link');
+  const leadResourceUnavailable = document.getElementById('lead-resource-unavailable');
+  const resourceUrl = leadForm?.dataset.resourceUrl?.trim();
+
+  leadForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!leadForm.checkValidity() || !leadEmail || !leadError) {
+      leadForm.reportValidity();
+      return;
+    }
+
+    const value = leadEmail.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+      leadError.classList.remove('hidden');
+      leadEmail.classList.add('border-red-500');
+      return;
+    }
+
+    leadError.classList.add('hidden');
+    leadEmail.classList.remove('border-red-500');
+    if (leadSubmit) {
+      leadSubmit.disabled = true;
+      leadSubmit.textContent = 'ENVIANDO...';
+    }
+    if (leadStatus) {
+      leadStatus.textContent = 'Preparando tu recurso...';
+      leadStatus.className = 'min-h-6 text-sm text-neutral-600';
+    }
+
+    try {
+      const response = await fetch(leadForm.action, {
+        method: 'POST',
+        body: new FormData(leadForm),
+        headers: { Accept: 'application/json' },
+      });
+      const result = await response.json().catch(() => null);
+
+      if (!response.ok || !result?.success) {
+        throw new Error(result?.message ?? 'No fue posible enviar el formulario.');
+      }
+
+      leadEmail.value = '';
+      if (resourceUrl) {
+        leadResourceLink?.classList.remove('hidden');
+      } else {
+        leadResourceUnavailable?.classList.remove('hidden');
+      }
+      if (leadStatus) {
+        leadStatus.textContent = resourceUrl ? result.message : 'Tu solicitud fue recibida.';
+        leadStatus.className = 'min-h-6 text-sm text-green-700';
+      }
+    } catch (error) {
+      if (leadStatus) {
+        leadStatus.textContent = error instanceof Error
+          ? error.message
+          : 'No fue posible enviar el formulario. Inténtalo nuevamente.';
+        leadStatus.className = 'min-h-6 text-sm text-red-700';
+        leadStatus.setAttribute('role', 'alert');
+      }
+    } finally {
+      if (leadSubmit) {
+        leadSubmit.disabled = false;
+        leadSubmit.textContent = 'Descargar gratis';
+      }
+    }
+  });
+</script>

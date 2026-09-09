@@ -1,0 +1,202 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import CTAButton from '../components/CTAButton.astro';
+import DiagnosticoModal from '../components/DiagnosticoModal.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const schemaData = {
+  name: 'Casos de Éxito — MR ATEducativa',
+  description: 'Resultados reales de establecimientos que confiaron en MR ATEducativa',
+};
+
+const breadcrumbItems = [
+  { name: 'Inicio', path: '/' },
+  { name: 'Casos de Éxito', path: '/casos-exito' },
+];
+
+const testimonials = [
+  {
+    name: 'María González',
+    role: 'Directora',
+    institution: 'Colegio San Pedro',
+    quote: 'La asesoría de MR ATEducativa transformó nuestro liderazgo institucional. En 6 meses mejoramos significativamente nuestro clima escolar.',
+    problem: 'Directiva sin experiencia en gestión estratégica y bajo rendimiento en SIMCE.',
+    solution: 'Acompañamiento en liderazgo institucional con foco en PEI y planificación estratégica.',
+    result: 'Mejora de 15 puntos en SIMCE y clima escolar positivo según diagnóstico.',
+  },
+  {
+    name: 'Carlos Ramírez',
+    role: 'Jefe de UTP',
+    institution: 'Escuela Los Alerces',
+    quote: 'El acompañamiento pedagógico nos permitió reorganizar nuestra planificación y obtener resultados concretos.',
+    problem: 'Planificación desarticulada y bajos resultados en evaluaciones internas.',
+    solution: 'Reestructuración de la planificación docente con foco en aprendizaje significativo.',
+    result: 'Incremento del 20% en aprobación y satisfacción docente.',
+  },
+  {
+    name: 'Ana Martínez',
+    role: 'Coordinadora SEP',
+    institution: 'Liceo Bicentenario',
+    quote: 'Gracias a la asesoría en gestión de recursos, optimizamos nuestro financiamiento SEP y logramos implementar todos nuestros proyectos.',
+    problem: 'Dificultad para postular a fondos y ejecutar el financiamiento SEP.',
+    solution: 'Capacitación en postulación y gestión de fondos concursables.',
+    result: '100% de ejecución del financiamiento SEP y 3 nuevos proyectos aprobados.',
+  },
+  {
+    name: 'Roberto Soto',
+    role: 'Director',
+    institution: 'Colegio Los Robles',
+    quote: 'La convivencia escolar mejoró drásticamente. Los estudiantes y profesores ahora tienen herramientas para resolver conflictos.',
+    problem: 'Alto índice de conflictos y bajo clima escolar.',
+    solution: 'Diagnóstico de convivencia, protocolos y formación en habilidades socioemocionales.',
+    result: 'Reducción del 40% en incidentes y mejora en percepción de seguridad.',
+  },
+  {
+    name: 'Patricia Vega',
+    role: 'Directora',
+    institution: 'Escuela Esperanza',
+    quote: 'Logramos postular a 3 fondos concursables y ejecutar el 100% del financiamiento SEP por primera vez.',
+    problem: 'Baja ejecución presupuestaria y desconocimiento de fondos disponibles.',
+    solution: 'Acompañamiento en gestión de recursos y postulación a fondos.',
+    result: '100% de ejecución SEP y 3 proyectos nuevos aprobados.',
+  },
+  {
+    name: 'Jorge Muñoz',
+    role: 'Jefe de Convivencia',
+    institution: 'Liceo República',
+    quote: 'MR ATEducativa nos ayudó a construir un sistema de convivencia que involucra a toda la comunidad educativa.',
+    problem: 'Protocolos de convivencia desactualizados y falta de participación familiar.',
+    solution: 'Rediseño del sistema de convivencia con participación de todos los actores.',
+    result: 'Comunidad educativa comprometida y clima escolar positivo sostenido.',
+  },
+];
+
+// Schema.org Review data for testimonials
+const reviewSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: testimonials.map((t, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: t.name,
+        jobTitle: t.role,
+        worksFor: {
+          '@type': 'Organization',
+          name: t.institution,
+        },
+      },
+      reviewBody: t.quote,
+      positiveNotes: {
+        '@type': 'ItemList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: `Resultado: ${t.result}` },
+        ],
+      },
+    },
+  })),
+};
+---
+
+<BaseLayout
+  title="Casos de Éxito | MR ATEducativa - Resultados Reales"
+  description="Conoce los resultados reales de establecimientos educacionales que han trabajado con MR ATEducativa. Mejoras en liderazgo, pedagogía, convivencia y recursos."
+  path="/casos-exito"
+  keywords="casos de éxito ATE, resultados educativos, testimonios colegios, mejoras SIMCE, liderazgo escolar"
+  breadcrumb={breadcrumbItems}
+>
+  <!-- Schema.org Reviews -->
+  <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
+
+  <!-- Hero — VIBRANT gradient -->
+  <section class="relative overflow-hidden bg-primary-700 min-h-[50vh] flex items-center">
+
+    <div class="container-page py-20 sm:py-28 relative">
+      <div class="max-w-3xl text-center mx-auto">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white/90 text-sm font-semibold mb-4 border border-white/10">
+          Resultados comprobados
+        </span>
+        <h1 class="heading-display text-white mb-6">
+          Casos de éxito
+        </h1>
+        <p class="text-lg sm:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto">
+          Resultados reales de establecimientos que confiaron en nosotros para su transformación educativa.
+        </p>
+      </div>
+    </div>
+
+    <!-- Wave divider -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <path d="M0 120L60 108C120 96 240 72 360 66C480 60 600 72 720 78C840 84 960 84 1080 78C1200 72 1320 60 1380 54L1440 48V120H0Z" fill="white"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Stats — VIBRANT colored -->
+  <section class="section-padding-sm bg-white border-b border-neutral-100">
+    <div class="container-page">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="reveal p-6 rounded-2xl bg-gradient-to-br from-liderazgo-50 to-primary-100 border border-liderazgo-200 shadow-sm">
+          <div class="stat-number text-gradient-primary mb-2">+50</div>
+          <p class="text-sm text-neutral-700 font-medium">Establecimientos asesorados</p>
+        </div>
+        <div class="reveal p-6 rounded-2xl bg-gradient-to-br from-pedagogica-50 to-rosa-100 border border-pedagogica-200 shadow-sm" style="transition-delay: 100ms;">
+          <div class="stat-number text-pedagogica-600 mb-2">95%</div>
+          <p class="text-sm text-neutral-700 font-medium">Satisfacción de clientes</p>
+        </div>
+        <div class="reveal p-6 rounded-2xl bg-gradient-to-br from-convivencia-50 to-naranja-100 border border-convivencia-200 shadow-sm" style="transition-delay: 200ms;">
+          <div class="stat-number text-convivencia-600 mb-2">+20</div>
+          <p class="text-sm text-neutral-700 font-medium">Puntos promedio en SIMCE</p>
+        </div>
+        <div class="reveal p-6 rounded-2xl bg-gradient-to-br from-recursos-50 to-teal-100 border border-recursos-200 shadow-sm" style="transition-delay: 300ms;">
+          <div class="stat-number text-recursos-600 mb-2">100%</div>
+          <p class="text-sm text-neutral-700 font-medium">Ejecución SEP lograda</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Grid -->
+  <section class="section-padding">
+    <div class="container-page">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {testimonials.map((testimonial, index) => (
+          <div class="reveal" style={`transition-delay: ${index * 100}ms;`}>
+            <TestimonialCard {...testimonial} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA — VIBRANT gradient -->
+  <section class="section-padding relative overflow-hidden">
+    <div class="absolute inset-0 bg-primary-700"></div>
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-64 h-64 bg-recursos-400/20 rounded-full blur-2xl"></div>
+      <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-pedagogica-400/20 rounded-full blur-2xl"></div>
+    </div>
+
+    <div class="container-page text-center relative">
+      <h2 class="heading-h2 text-white mb-4">
+        ¿Tu establecimiento será el próximo caso de éxito?
+      </h2>
+      <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">
+        Agenda un diagnóstico gratuito y conversemos sobre los desafíos de tu establecimiento.
+      </p>
+      <button type="button" onclick="window.openDiagnosticoModal()" class="btn bg-white text-primary-700 px-8 py-4 text-lg rounded-full hover:bg-white/90 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all font-semibold cursor-pointer">
+        Solicitar diagnóstico gratuito
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <DiagnosticoModal />
+</BaseLayout>

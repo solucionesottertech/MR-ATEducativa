@@ -1,0 +1,87 @@
+import type { APIRoute } from 'astro';
+
+export const prerender = false;
+
+const jsonResponse = (body: Record<string, unknown>, status = 200) =>
+  new Response(JSON.stringify(body), {
+    status,
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+export const POST: APIRoute = async ({ request }) => {
+  try {
+    const formData = await request.formData();
+    const resourceSlug = String(formData.get('resource_slug') ?? '').trim();
+    const email = String(formData.get('email') ?? '').trim();
+    const requiredFields = resourceSlug
+      ? ['email']
+      : ['nombre', 'institucion', 'cargo', 'email', 'tipo-ayuda'];
+    const missingField = requiredFields.find(
+      (field) => !String(formData.get(field) ?? '').trim(),
+    );
+
+    if (missingField) {
+      return jsonResponse(
+        { success: false, message: `El campo ${missingField} es obligatorio.` },
+        400,
+      );
+    }
+
+    if (!emailPattern.test(email)) {
+      return jsonResponse(
+        { success: false, message: 'Ingresa un correo electrónico válido.' },
+        400,
+      );
+    }
+
+    const accessKey = process.env.WEB3FORMS_ACCESS_KEY ?? import.meta.env.WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      return jsonResponse(
+        { success: false, message: 'El formulario no está configurado todavía.' },
+        500,
+      );
+    }
+
+    formData.set('access_key', accessKey);
+    formData.set(
+      'subject',
+      resourceSlug
+        ? `Descarga de recurso: ${resourceSlug}`
+        : 'Nuevo contacto desde MR Ateducativa',
+    );
+    formData.set('from_name', 'MR Ateducativa');
+    formData.set('replyto', email);
+    formData.delete('redirect');
+
+    const web3FormsResponse = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData,
+      headers: { Accept: 'application/json' },
+    });
+    const result = await web3FormsResponse.json().catch(() => null);
+
+    if (!web3FormsResponse.ok || !result?.success) {
+      return jsonResponse(
+        {
+          success: false,
+          message: result?.message ?? 'No fue posible enviar el formulario.',
+        },
+        web3FormsResponse.status || 502,
+      );
+    }
+
+    return jsonResponse({
+      success: true,
+      message: resourceSlug
+        ? 'Tu recurso está listo para abrir.'
+        : 'Gracias. Recibimos tu solicitud y te contactaremos pronto.',
+    });
+  } catch {
+    return jsonResponse(
+      { success: false, message: 'No fue posible procesar la solicitud.' },
+      400,
+    );
+  }
+};

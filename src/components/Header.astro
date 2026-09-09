@@ -1,0 +1,246 @@
+---
+import { site, nav } from '../data/site';
+import CTAButton from './CTAButton.astro';
+
+// Service-specific icons with official brand SVGs
+const serviceIcons: Record<string, { iconPath: string; color: string }> = {
+  '/servicios/liderazgo': {
+    iconPath: '/iconos/liderazgo.svg',
+    color: 'text-primary-700',
+  },
+  '/servicios/gestion-pedagogica': {
+    iconPath: '/iconos/pedagogica.svg',
+    color: 'text-rosa-500',
+  },
+  '/servicios/formacion-convivencia': {
+    iconPath: '/iconos/convivencia.svg',
+    color: 'text-naranja-500',
+  },
+  '/servicios/gestion-recursos': {
+    iconPath: '/iconos/gestion.svg',
+    color: 'text-teal-500',
+  },
+  '/servicios/mentoria-directores': {
+    iconPath: '/iconos/mentoria.svg',
+    color: 'text-mentoria-500',
+  },
+};
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-neutral-100" role="banner">
+  <div class="container-page">
+    <div class="flex items-center justify-between h-[72px]">
+      <!-- Logo -->
+      <a href="/" class="flex items-center group" aria-label="MR ATEducativa - Inicio">
+        <img
+          src="/logo.svg"
+          alt="MR ATEducativa"
+          class="h-20 w-auto"
+        />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Navegación principal">
+        {nav.map((item) =>
+          item.children ? (
+            <div class="desktop-dropdown relative group">
+              <a
+                href={item.path}
+                class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 rounded-lg hover:bg-primary-50 transition-all"
+              >
+                {item.name}
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+              <div id="services-submenu" class="desktop-submenu absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-lg border border-neutral-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 transform scale-95 group-hover:scale-100 group-focus-within:scale-100">
+                <div class="p-2">
+                  {item.children.map((child) => {
+                    const serviceIcon = serviceIcons[child.path];
+                    return (
+                      <a
+                        href={child.path}
+                        class="flex items-center gap-3 px-4 py-3 text-sm text-neutral-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-colors"
+                      >
+                        {serviceIcon ? (
+                          <img src={serviceIcon.iconPath} alt="" class="w-5 h-5" aria-hidden="true" />
+                        ) : (
+                          <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          </svg>
+                        )}
+                        {child.name}
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <a
+              href={item.path}
+              class="px-4 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 rounded-lg hover:bg-primary-50 transition-all"
+            >
+              {item.name}
+            </a>
+          )
+        )}
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="hidden lg:block">
+        <CTAButton size="sm" variant="gradient" />
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-toggle"
+        class="lg:hidden flex items-center justify-center w-11 h-11 rounded-lg hover:bg-primary-50 transition-colors"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          <path id="menu-icon-close" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" class="hidden" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+</header>
+
+<!-- Mobile Navigation Panel (fuera del header para evitar problemas de stacking context) -->
+<div id="mobile-menu" class="hidden lg:hidden fixed inset-0 top-[72px] bg-white z-[60] overflow-y-auto">
+    <nav class="container-page py-6 space-y-1" aria-label="Navegación móvil">
+      {nav.map((item) =>
+        item.children ? (
+          <div>
+            <button
+              class="mobile-submenu-toggle flex items-center justify-between w-full py-3 px-4 text-left text-neutral-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-colors font-medium"
+              aria-expanded="false"
+            >
+              {item.name}
+              <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="mobile-submenu hidden pl-4 space-y-1">
+              {item.children.map((child) => {
+                const serviceIcon = serviceIcons[child.path];
+                return (
+                  <a
+                    href={child.path}
+                    class="flex items-center gap-3 py-2.5 px-4 text-neutral-600 hover:text-primary-700 hover:bg-primary-50 rounded-lg transition-colors"
+                  >
+                    {serviceIcon && (
+                      <img src={serviceIcon.iconPath} alt="" class="w-5 h-5" aria-hidden="true" />
+                    )}
+                    {child.name}
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        ) : (
+          <a
+            href={item.path}
+            class="block py-3 px-4 text-neutral-700 hover:bg-primary-50 hover:text-primary-700 rounded-lg transition-colors font-medium"
+          >
+            {item.name}
+          </a>
+        )
+      )}
+      <div class="pt-4 px-4">
+        <CTAButton size="lg" variant="gradient" class="w-full text-center" />
+      </div>
+    </nav>
+</div>
+
+<script>
+  // Mobile menu toggle — minimal JS island
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  if (toggle && menu && iconOpen && iconClose) {
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.classList.toggle('overflow-hidden', isOpen);
+    });
+  }
+
+  // Mobile submenu toggles
+  document.querySelectorAll('.mobile-submenu-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const submenu = btn.nextElementSibling;
+      if (submenu) {
+        submenu.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', String(!submenu.classList.contains('hidden')));
+      }
+    });
+  });
+
+  const desktopDropdown = document.querySelector<HTMLElement>('.desktop-dropdown');
+  const desktopButton = desktopDropdown?.querySelector('a');
+  const desktopSubmenu = document.getElementById('services-submenu');
+
+  if (desktopDropdown && desktopButton && desktopSubmenu) {
+    const submenuLinks = () => Array.from(desktopSubmenu.querySelectorAll<HTMLAnchorElement>('a'));
+
+    const setDesktopMenuOpen = (open: boolean) => {
+      desktopDropdown.classList.toggle('is-closed', !open);
+      if (open) desktopDropdown.classList.remove('is-closed');
+    };
+
+    const syncDesktopMenuState = () => {
+      setDesktopMenuOpen(
+        desktopDropdown.matches(':hover') || desktopDropdown.matches(':focus-within'),
+      );
+    };
+
+    desktopButton.addEventListener('keydown', (event) => {
+      const links = submenuLinks();
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        setDesktopMenuOpen(true);
+        links[0].focus();
+      } else if (event.key === 'ArrowUp' && links.length > 0) {
+        event.preventDefault();
+        setDesktopMenuOpen(true);
+        links[links.length - 1].focus();
+      }
+    });
+
+    desktopSubmenu.addEventListener('focusin', syncDesktopMenuState);
+    desktopDropdown.addEventListener('focusout', syncDesktopMenuState);
+
+    submenuLinks().forEach((link, index, links) => {
+      link.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowDown') {
+          event.preventDefault();
+          links[(index + 1) % links.length].focus();
+        } else if (event.key === 'ArrowUp') {
+          event.preventDefault();
+          links[(index - 1 + links.length) % links.length].focus();
+        } else if (event.key === 'Escape') {
+          event.preventDefault();
+          setDesktopMenuOpen(false);
+          desktopButton.focus();
+        }
+      });
+    });
+  }
+</script>
+
+<style>
+  .desktop-dropdown.is-closed .desktop-submenu {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: scale(0.95) !important;
+  }
+</style>

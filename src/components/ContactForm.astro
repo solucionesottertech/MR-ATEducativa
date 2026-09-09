@@ -1,0 +1,160 @@
+---
+export interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<form
+  id="contact-form"
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  class:list={['space-y-4', className]}
+  novalidate
+>
+  <!-- Web3Forms Access Key -->
+  <!-- CLIENTE: Reemplazar con access key real de Web3Forms -->
+  <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY" />
+  <input type="hidden" name="subject" value="Nuevo contacto desde MR ATEducativa" />
+  <input type="hidden" name="from_name" value="MR ATEducativa" />
+  <input type="hidden" name="redirect" value="https://mr-ateducativa.cl/gracias-contacto" />
+
+  <!-- Honeypot anti-spam -->
+  <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
+  <!-- Nombre -->
+  <div>
+    <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">
+      Nombre completo <span class="text-red-500">*</span>
+    </label>
+    <input
+      type="text"
+      id="nombre"
+      name="nombre"
+      required
+      minlength="2"
+      class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors min-h-[44px]"
+      placeholder="Tu nombre completo"
+    />
+    <p class="hidden mt-1 text-sm text-red-600" data-error="nombre">Por favor ingresa tu nombre</p>
+  </div>
+
+  <!-- Email -->
+  <div>
+    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+      Email <span class="text-red-500">*</span>
+    </label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+      class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors min-h-[44px]"
+      placeholder="tu@email.com"
+    />
+    <p class="hidden mt-1 text-sm text-red-600" data-error="email">Por favor ingresa un email válido</p>
+  </div>
+
+  <!-- Teléfono (opcional) -->
+  <div>
+    <label for="telefono" class="block text-sm font-medium text-gray-700 mb-1">
+      Teléfono
+    </label>
+    <input
+      type="tel"
+      id="telefono"
+      name="telefono"
+      class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors min-h-[44px]"
+      placeholder="+56 9 1234 5678"
+    />
+  </div>
+
+  <!-- Tipo de establecimiento -->
+  <div>
+    <label for="tipo-establecimiento" class="block text-sm font-medium text-gray-700 mb-1">
+      Tipo de establecimiento <span class="text-red-500">*</span>
+    </label>
+    <select
+      id="tipo-establecimiento"
+      name="tipo_establecimiento"
+      required
+      class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors min-h-[44px] bg-white"
+    >
+      <option value="">Selecciona una opción</option>
+      <option value="municipal">Municipal</option>
+      <option value="particular-subvencionado">Particular Subvencionado</option>
+      <option value="particular-pagado">Particular Pagado</option>
+      <option value="servicio-local">Servicio Local de Educación</option>
+      <option value="otro">Otro</option>
+    </select>
+    <p class="hidden mt-1 text-sm text-red-600" data-error="tipo-establecimiento">Por favor selecciona un tipo</p>
+  </div>
+
+  <!-- Mensaje -->
+  <div>
+    <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-1">
+      Mensaje <span class="text-red-500">*</span>
+    </label>
+    <textarea
+      id="mensaje"
+      name="mensaje"
+      required
+      rows="4"
+      minlength="10"
+      class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-y"
+      placeholder="Cuéntanos sobre tu establecimiento y los desafíos que enfrentas"
+    ></textarea>
+    <p class="hidden mt-1 text-sm text-red-600" data-error="mensaje">Por favor ingresa un mensaje (mínimo 10 caracteres)</p>
+  </div>
+
+  <!-- Submit -->
+  <button
+    type="submit"
+    class="w-full px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 active:bg-primary-800 transition-colors min-h-[44px]"
+    data-umami-event="form-submit"
+  >
+    Enviar mensaje
+  </button>
+
+  <p class="text-xs text-gray-500 text-center">
+    Al enviar aceptas que usemos tu información para contactarte respecto a tu consulta.
+  </p>
+</form>
+
+<script>
+  // Client-side validation — progressive enhancement
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      const currentForm = e.currentTarget as HTMLFormElement;
+      let isValid = true;
+      const fields = [
+        { id: 'nombre', validate: (v) => v.length >= 2 },
+        { id: 'email', validate: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+        { id: 'tipo-establecimiento', validate: (v) => v !== '' },
+        { id: 'mensaje', validate: (v) => v.length >= 10 },
+      ];
+
+      fields.forEach(({ id, validate }) => {
+        const input = currentForm.querySelector(`#${id}`);
+        const error = currentForm.querySelector(`[data-error="${id}"]`);
+        if (input && error) {
+          const value = (input as HTMLInputElement).value.trim();
+          if (!validate(value)) {
+            isValid = false;
+            error.classList.remove('hidden');
+            input.classList.add('border-red-500');
+          } else {
+            error.classList.add('hidden');
+            input.classList.remove('border-red-500');
+          }
+        }
+      });
+
+      if (!isValid) {
+        e.preventDefault();
+      }
+    });
+  }
+</script>

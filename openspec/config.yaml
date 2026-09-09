@@ -1,0 +1,33 @@
+# OpenSpec Configuration — MR Ateducativa
+
+project: MR Ateducativa
+context: |
+  Sitio web institucional para marca personal de ATE (Asistencia Técnica Educativa).
+  Fundadora: Marilyn Reyes Molina. Empresa: MR-ATE (MR guión arte educativa).
+  Tipo: Landing page transaccional mobile-first.
+  Hosting: Hostinger (contratado por cliente). Dominio propio.
+  Stack: Astro + Tailwind CSS.
+  Objetivo: Posicionar a la fundadora como socio estratégico de colegios.
+  SEO transaccional, narrativa centrada en el cliente, conversiones por formulario.
+
+strict_tdd: false
+
+testing:
+  available: false
+  reason: Proyecto nuevo sin código. Testing se habilitará al iniciar desarrollo.
+
+phases:
+  proposal:
+    required: true
+  spec:
+    required: true
+  design:
+    required: true
+  tasks:
+    required: true
+  apply:
+    required: true
+  verify:
+    required: true
+  archive:
+    required: true

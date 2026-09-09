@@ -1,0 +1,79 @@
+---
+export interface Props {
+  currentSlug: string;
+}
+
+const { currentSlug } = Astro.props;
+
+// Related services for cross-linking
+const relatedServices: Record<string, { slug: string; name: string; color: string; description: string }[]> = {
+  liderazgo: [
+    { slug: 'gestion-pedagogica', name: 'Gestión Pedagógica', color: 'rosa', description: 'Fortalece la gestión curricular y el acompañamiento docente.' },
+    { slug: 'mentoria-directores', name: 'Mentoría para Directores', color: 'mentoria', description: 'Acompañamiento situado para directores escolares.' },
+  ],
+  'gestion-pedagogica': [
+    { slug: 'liderazgo', name: 'Liderazgo Institucional', color: 'primary', description: 'Fortalece el liderazgo directivo y la gestión institucional.' },
+    { slug: 'formacion-convivencia', name: 'Formación y Convivencia', color: 'naranja', description: 'Desarrolla competencias socioemocionales y clima escolar.' },
+  ],
+  'formacion-convivencia': [
+    { slug: 'gestion-pedagogica', name: 'Gestión Pedagógica', color: 'rosa', description: 'Fortalece la gestión curricular y el acompañamiento docente.' },
+    { slug: 'gestion-recursos', name: 'Gestión de Recursos', color: 'teal', description: 'Optimiza la gestión de recursos humanos y financieros.' },
+  ],
+  'gestion-recursos': [
+    { slug: 'liderazgo', name: 'Liderazgo Institucional', color: 'primary', description: 'Fortalece el liderazgo directivo y la gestión institucional.' },
+    { slug: 'formacion-convivencia', name: 'Formación y Convivencia', color: 'naranja', description: 'Desarrolla competencias socioemocionales y clima escolar.' },
+  ],
+  'mentoria-directores': [
+    { slug: 'liderazgo', name: 'Liderazgo Institucional', color: 'primary', description: 'Fortalece el liderazgo directivo y la gestión institucional.' },
+    { slug: 'gestion-pedagogica', name: 'Gestión Pedagógica', color: 'rosa', description: 'Fortalece la gestión curricular y el acompañamiento docente.' },
+  ],
+};
+
+const related = relatedServices[currentSlug] || [];
+
+const colorClasses: Record<string, { bg: string; text: string; border: string }> = {
+  primary: { bg: 'bg-primary-50', text: 'text-primary-700', border: 'border-primary-200' },
+  rosa: { bg: 'bg-rosa-50', text: 'text-rosa-700', border: 'border-rosa-200' },
+  naranja: { bg: 'bg-naranja-50', text: 'text-naranja-700', border: 'border-naranja-200' },
+  teal: { bg: 'bg-teal-50', text: 'text-teal-700', border: 'border-teal-200' },
+  mentoria: { bg: 'bg-mentoria-50', text: 'text-mentoria-700', border: 'border-mentoria-200' },
+};
+---
+
+<section class="section-padding bg-neutral-50">
+  <div class="container-page">
+    <div class="text-center mb-12">
+      <h2 class="heading-h2 text-neutral-900 mb-4">
+        Servicios relacionados
+      </h2>
+      <p class="body-lg max-w-2xl mx-auto text-neutral-600">
+        Complementa este servicio con otras áreas de especialización.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      {related.map((service) => {
+        const colors = colorClasses[service.color] || colorClasses.primary;
+        return (
+          <a
+            href={`/servicios/${service.slug}`}
+            class={`block p-6 rounded-2xl border ${colors.border} ${colors.bg} hover:shadow-lg hover:-translate-y-1 transition-all`}
+          >
+            <h3 class={`heading-h3 ${colors.text} mb-2`}>
+              {service.name}
+            </h3>
+            <p class="body-sm text-neutral-600">
+              {service.description}
+            </p>
+            <span class={`inline-flex items-center gap-2 mt-4 text-sm font-semibold ${colors.text}`}>
+              Conocer más
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadMagnetForm from '../../components/LeadMagnetForm.astro';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  // <!-- CLIENTE: Reemplazar slugs y contenido con recursos reales -->
+  return [
+    {
+      params: { slug: 'guia-pei' },
+      props: {
+        title: 'Guía práctica para elaborar tu PEI',
+        description: 'Descarga esta guía paso a paso para crear un Proyecto Educativo Institucional que realmente guíe las decisiones de tu establecimiento.',
+        resourceSlug: 'guia-pei',
+      },
+    },
+    {
+      params: { slug: 'checklist-simce' },
+      props: {
+        title: 'Checklist de preparación SIMCE',
+        description: 'Lista de verificación completa para preparar tu establecimiento para el SIMCE con estrategias basadas en evidencia.',
+        resourceSlug: 'checklist-simce',
+      },
+    },
+    {
+      params: { slug: 'protocolo-convivencia' },
+      props: {
+        title: 'Template de protocolo de convivencia escolar',
+        description: 'Plantilla personalizable para diseñar un protocolo de convivencia que involucre a toda la comunidad educativa.',
+        resourceSlug: 'protocolo-convivencia',
+      },
+    },
+  ];
+}
+
+const { title, description, resourceSlug } = Astro.props;
+
+const breadcrumb = [
+  { name: 'Inicio', path: '/' },
+  { name: 'Recursos', path: '/blog' },
+  { name: title, path: `/recursos/${resourceSlug}` },
+];
+---
+
+<BaseLayout
+  title={`${title} — MR ATEducativa`}
+  description={description}
+  path={`/recursos/${resourceSlug}`}
+  breadcrumb={breadcrumb}
+>
+  <section class="section-padding">
+    <div class="container-page">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+        </div>
+        <h1 class="heading-h1 text-gray-900 mb-4">{title}</h1>
+        <p class="body-lg text-gray-600 mb-8">{description}</p>
+
+        <!-- Lead Magnet Form -->
+        <div class="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-sm max-w-md mx-auto">
+          <h3 class="heading-h3 text-gray-900 mb-4">Descarga gratuita</h3>
+          <p class="body-base text-gray-600 mb-6">
+            Ingresa tu email y recibe el recurso directamente.
+          </p>
+          <LeadMagnetForm resourceSlug={resourceSlug} />
+        </div>
+
+        <!-- What's included -->
+        <div class="mt-12 text-left">
+          <h3 class="heading-h3 text-gray-900 mb-4">¿Qué incluye?</h3>
+          <!-- CLIENTE: Reemplazar con contenido real del recurso -->
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">Guía paso a paso con ejemplos prácticos</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">Plantillas descargables editables</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">Checklist de implementación</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

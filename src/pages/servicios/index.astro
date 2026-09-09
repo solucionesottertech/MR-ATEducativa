@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTAButton from '../../components/CTAButton.astro';
+import { serviceAreas } from '../../data/services';
+
+const hexColors: Record<string, string> = {
+  primary: '#202c4c',
+  rosa: '#d95986',
+  teal: '#7bb6b3',
+  naranja: '#ffbb5d',
+  mentoria: '#a775b1',
+};
+
+const iconPaths: Record<string, string> = {
+  primary: '/iconos/liderazgo.svg',
+  rosa: '/iconos/pedagogica.svg',
+  teal: '/iconos/gestion.svg',
+  naranja: '/iconos/convivencia.svg',
+  mentoria: '/iconos/mentoria.svg',
+};
+---
+
+<BaseLayout
+  title="Servicios de Asesoría Educativa | MR ATEducativa Chile"
+  description="Soluciones educativas diseñadas desde las necesidades reales de cada institución. Liderazgo, gestión pedagógica, formación y convivencia, gestión de recursos y mentoría directiva."
+  path="/servicios"
+  keywords="servicios ATE, asesoría liderazgo, gestión pedagógica, convivencia escolar, gestión recursos, mentoría directiva"
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-primary-700 min-h-[50vh] flex items-center">
+
+    <div class="container-page py-20 sm:py-28 relative">
+      <div class="max-w-3xl text-center mx-auto">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white/90 text-sm font-semibold mb-4 border border-white/10">
+          Nuestros servicios
+        </span>
+        <h1 class="heading-display text-white mb-6">
+          Soluciones educativas diseñadas desde las necesidades reales de cada institución
+        </h1>
+        <p class="text-lg sm:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto">
+          Acompañamos a establecimientos educacionales, sostenedores, equipos directivos, docentes y profesionales de la educación en sus procesos de fortalecimiento y mejora.
+        </p>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <path d="M0 120L60 108C120 96 240 72 360 66C480 60 600 72 720 78C840 84 960 84 1080 78C1200 72 1320 60 1380 54L1440 48V120H0Z" fill="#FBF9F6"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Service Areas Grid -->
+  <section class="section-padding">
+    <div class="container-page">
+      <div class="text-center mb-14">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold mb-4">
+           Cinco áreas de especialización
+        </span>
+        <h2 class="heading-h2 text-neutral-900 mb-4">
+          Elige el área que tu establecimiento necesita
+        </h2>
+        <p class="body-lg max-w-2xl mx-auto">
+           Cada establecimiento tiene desafíos únicos. Nuestras cinco áreas de asesoría están diseñadas para abordar las necesidades específicas de tu comunidad educativa.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {serviceAreas.map((area, index) => {
+          const brandColor = hexColors[area.color] || hexColors.primary;
+          const iconPath = iconPaths[area.color] || iconPaths.primary;
+          return (
+            <div class="reveal" style={`transition-delay: ${index * 100}ms;`}>
+              <a href={`/servicios/${area.slug}`} class="group block h-full transition-all duration-300 ease-out-quart hover:-translate-y-1" style="border-radius: 1.75rem;">
+                <div class="relative overflow-hidden h-full" style={`border-radius: 1.75rem; background: #fff; box-shadow: 8px 8px 0px ${brandColor};`}>
+                  <!-- Decorative swoosh band -->
+                  <svg class="absolute top-0 right-[8%] w-[55%] h-10 sm:h-12 pointer-events-none" viewBox="149 0 310 100" preserveAspectRatio="none" fill="none" aria-hidden="true" style="opacity: 0.9;">
+                    <path d="M149 0 C222 11 304 39 410.5 99.5 C411.8 100.2 413.2 99.8 414.1 98.5 L458.5 34.2 C432 19.6 402.5 8.3 374.5 0 Z" fill={brandColor} />
+                  </svg>
+
+                  <!-- Two-column layout -->
+                  <div class="flex h-full">
+                    <!-- Left column: content -->
+                    <div class="flex flex-col flex-1 p-7 sm:p-8 pr-3 sm:pr-4 z-10">
+                      <h2 class="heading-h2 text-neutral-900 mb-2 leading-tight">{area.name}</h2>
+                      <p class="body-lg text-neutral-600 mb-5">{area.tagline}</p>
+
+                      <div class="space-y-3 mb-5 flex-1">
+                        {area.subdimensions.map((sub) => (
+                          <div class="flex items-start gap-3">
+                            <svg class={`w-5 h-5 mt-0.5 flex-shrink-0`} fill="none" stroke={brandColor} viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="text-neutral-700 font-medium text-sm">{sub.name}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <span class="inline-flex items-center gap-1 text-base font-bold" style={`color: ${brandColor};`}>
+                        Ver servicios completos
+                        <span class="text-lg leading-none">»</span>
+                      </span>
+                    </div>
+
+                    <!-- Right column: icon -->
+                    <div class="relative flex items-center justify-center pr-5 sm:pr-6 w-[130px] sm:w-[150px] shrink-0 z-10">
+                      <img src={iconPath} alt="" class="w-24 h-24 sm:w-28 sm:h-28" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.10));" aria-hidden="true" />
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-padding relative overflow-hidden">
+    <div class="absolute inset-0 bg-primary-700"></div>
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-64 h-64 bg-rosa-400/20 rounded-full blur-2xl"></div>
+      <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-naranja-400/20 rounded-full blur-2xl"></div>
+    </div>
+
+    <div class="container-page text-center relative">
+      <h2 class="heading-h2 text-white mb-4">
+        ¿No encuentras el servicio que necesitas?
+      </h2>
+      <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+        No todos los desafíos educativos caben dentro de una categoría. Cuéntanos qué necesita tu institución y diseñaremos una solución a medida.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contacto" class="btn bg-white text-primary-700 px-8 py-4 text-lg rounded-full hover:bg-white/90 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all font-semibold">
+          Solicitar una reunión
+        </a>
+        <a href="https://wa.me/56927659269" target="_blank" rel="noopener noreferrer" class="btn border-2 border-white/30 text-white px-8 py-4 text-lg rounded-full hover:bg-white/10 transition-all">
+          Hablar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const sitemapPages = [
+  {
+    category: 'Principal',
+    pages: [
+      { name: 'Inicio', path: '/', description: 'Asesoría técnica educativa para colegios en Chile' },
+      { name: 'Sobre Nosotros', path: '/sobre-nosotros', description: 'Conoce a Marilyn Reyes Molina y nuestro equipo' },
+      { name: 'Casos de Éxito', path: '/casos-exito', description: 'Resultados reales de establecimientos educacionales' },
+      { name: 'Contacto', path: '/contacto', description: 'Diagnóstico gratuito de 30 minutos' },
+    ],
+  },
+  {
+    category: 'Servicios',
+    pages: [
+      { name: 'Todos los Servicios', path: '/servicios', description: 'Cinco áreas de especialización educativa' },
+      { name: 'Liderazgo Institucional', path: '/servicios/liderazgo', description: 'Fortalecemos a quienes lideran la mejora educativa' },
+      { name: 'Gestión Pedagógica', path: '/servicios/gestion-pedagogica', description: 'Prácticas que impactan en el aprendizaje' },
+      { name: 'Formación y Convivencia', path: '/servicios/formacion-convivencia', description: 'De la gestión de casos a la construcción de capacidades' },
+      { name: 'Gestión de Recursos', path: '/servicios/gestion-recursos', description: 'Optimización de recursos para una gestión eficiente' },
+      { name: 'Mentoría para Directores', path: '/servicios/mentoria-directores', description: 'Fortalecemos el liderazgo directivo desde la realidad de cada escuela' },
+    ],
+  },
+  {
+    category: 'Recursos',
+    pages: [
+      { name: 'Guía PEI', path: '/recursos/guia-pei', description: 'Guía para la elaboración del Proyecto Educativo Institucional' },
+      { name: 'Checklist SIMCE', path: '/recursos/checklist-simce', description: 'Lista de verificación para la preparación SIMCE' },
+      { name: 'Protocolo de Convivencia', path: '/recursos/protocolo-convivencia', description: 'Protocolo para la gestión de convivencia escolar' },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Mapa del Sitio | MR ATEducativa"
+  description="Mapa completo del sitio web de MR ATEducativa. Encuentra todas nuestras páginas de asesoría técnica educativa."
+  path="/sitemap"
+  robots="noindex, follow"
+>
+  <section class="section-padding bg-neutral-50">
+    <div class="container-page">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="heading-display text-neutral-900 mb-6">
+          Mapa del Sitio
+        </h1>
+        <p class="body-lg text-neutral-600 mb-12">
+          Encuentra rápidamente todas las páginas y recursos disponibles en nuestro sitio web.
+        </p>
+
+        <div class="space-y-12">
+          {sitemapPages.map((section) => (
+            <div>
+              <h2 class="heading-h2 text-neutral-900 mb-6 pb-4 border-b-2 border-primary-200">
+                {section.category}
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {section.pages.map((page) => (
+                  <a
+                    href={page.path}
+                    class="block p-6 bg-white rounded-xl border border-neutral-200 hover:border-primary-300 hover:shadow-md transition-all group"
+                  >
+                    <h3 class="heading-h3 text-primary-700 mb-2 group-hover:text-primary-800">
+                      {page.name}
+                    </h3>
+                    <p class="body-sm text-neutral-600">
+                      {page.description}
+                    </p>
+                    <span class="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-primary-600">
+                      Visitar página
+                      <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-16 p-8 bg-primary-50 rounded-2xl border border-primary-200">
+          <h3 class="heading-h3 text-primary-900 mb-4">
+            ¿No encuentras lo que buscas?
+          </h3>
+          <p class="body-lg text-neutral-700 mb-6">
+            Contáctanos directamente y te ayudaremos a encontrar la información que necesitas.
+          </p>
+          <a
+            href="/contacto"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-primary-700 text-white rounded-full hover:bg-primary-800 transition-colors font-semibold"
+          >
+            Contactar ahora
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
