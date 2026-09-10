@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbItems = [
+  { name: 'Inicio', path: '/' },
+  { name: 'Política de Privacidad', path: '/politica-privacidad' },
+];
+
+const lastUpdated = 'Septiembre 2026';
+---
+
+<BaseLayout
+  title="Política de Privacidad | MR ATEducativa"
+  description="Política de privacidad y protección de datos de MR ATEducativa"
+  path="/politica-privacidad"
+  breadcrumb={breadcrumbItems}
+>
+  <section class="section-padding bg-neutral-50">
+    <div class="container-page max-w-4xl">
+      <div class="mb-10">
+        <h1 class="heading-display text-neutral-900 mb-4">Política de Privacidad</h1>
+        <p class="text-sm text-neutral-500">Última actualización: {lastUpdated}</p>
+      </div>
+
+      <div class="prose prose-lg max-w-none">
+        <div class="bg-white p-8 rounded-2xl border border-neutral-200 space-y-8">
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">1. Introducción</h2>
+            <p class="text-neutral-700 leading-relaxed">
+              En <strong>MR ATEducativa</strong> ("nosotros", "nuestro" o "la empresa"), nos comprometemos a proteger la privacidad de nuestros usuarios y clientes. Esta Política de Privacidad describe cómo recopilamos, usamos, almacenamos y protegemos la información personal que nos proporcionan a través de nuestro sitio web <a href="https://mr-ateducativa.cl" class="text-primary-600 hover:underline">mr-ateducativa.cl</a> y nuestros servicios de asesoría técnica educativa.
+            </p>
+            <p class="text-neutral-700 leading-relaxed mt-4">
+              Al utilizar nuestro sitio web y servicios, usted acepta las prácticas descritas en esta política. Si no está de acuerdo con los términos aquí establecidos, le rogamos no utilizar nuestros servicios.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">2. Responsable del Tratamiento de Datos</h2>
+            <div class="bg-primary-50 p-6 rounded-xl border border-primary-200">
+              <p class="text-neutral-700 leading-relaxed mb-2"><strong>MR ATEducativa</strong></p>
+              <p class="text-neutral-700 leading-relaxed mb-2">Representante legal: Marilyn Reyes Molina</p>
+              <p class="text-neutral-700 leading-relaxed mb-2">Correo electrónico de contacto: <a href="mailto:info@mr-ateducativa.cl" class="text-primary-600 hover:underline">info@mr-ateducativa.cl</a></p>
+              <p class="text-neutral-700 leading-relaxed">Ubicación: Santiago, Chile</p>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">3. Información que Recopilamos</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">Recopilamos información personal que usted nos proporciona voluntariamente al:</p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
+              <li>Completar formularios de contacto en nuestro sitio web</li>
+              <li>Solicitar un diagnóstico gratuito</li>
+              <li>Contratar nuestros servicios de asesoría</li>
+              <li>Descargar recursos gratuitos (guías, checklists, plantillas)</li>
+              <li>Suscribirse a nuestro boletín informativo</li>
+              <li>Participar en capacitaciones o talleres</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-neutral-900 mt-6 mb-3">Tipos de datos recopilados:</h3>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
+              <li><strong>Datos de identificación:</strong> nombre completo, RUT (cuando aplica)</li>
+              <li><strong>Datos de contacto:</strong> correo electrónico, teléfono, dirección</li>
+              <li><strong>Datos profesionales:</strong> cargo, institución educativa, rol en la organización</li>
+              <li><strong>Datos del establecimiento:</strong> nombre del colegio, comuna, región, cantidad de alumnos</li>
+              <li><strong>Datos de navegación:</strong> dirección IP, tipo de navegador, páginas visitadas, tiempo de permanencia</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">4. Finalidad del Tratamiento</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">Utilizamos su información personal para:</p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
+              <li>Prestar nuestros servicios de asesoría técnica educativa</li>
+              <li>Responder a sus consultas y solicitudes</li>
+              <li>Enviar información sobre nuestros servicios (con su consentimiento)</li>
+              <li>Mejorar la calidad de nuestros servicios y experiencia del usuario</li>
+              <li>Cumplir con obligaciones legales y contractuales</li>
+              <li>Realizar análisis estadísticos y estudios de mercado (datos anonimizados)</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">5. Base Legal para el Tratamiento</h2>
+            <p class="text-neutral-700 leading-relaxed">
+              Tratamos sus datos personales sobre la base de:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700 mt-4">
+              <li><strong>Consentimiento:</strong> cuando usted nos autoriza explícitamente (formularios, suscripciones)</li>
+              <li><strong>Ejecución contractual:</strong> cuando es necesario para prestar nuestros servicios</li>
+              <li><strong>Interés legítimo:</strong> para mejorar nuestros servicios y comunicaciones</li>
+              <li><strong>Cumplimiento legal:</strong> cuando la ley nos obliga a tratar ciertos datos</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">6. Compartición de Datos</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              No vendemos, alquilamos ni compartimos su información personal con terceros con fines comerciales. Solo compartimos datos en los siguientes casos:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
+              <li><strong>Proveedores de servicios:</strong> empresas que nos ayudan a operar (hosting, email, analytics) bajo estrictos acuerdos de confidencialidad</li>
+              <li><strong>Obligación legal:</strong> cuando la ley, regulaciones o procesos legales lo requieran</li>
+              <li><strong>Protección de derechos:</strong> para proteger nuestros derechos, propiedad o seguridad</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">7. Almacenamiento y Seguridad</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Implementamos medidas de seguridad técnicas y organizativas apropiadas para proteger sus datos personales contra acceso no autorizado, alteración, divulgación o destrucción. Estas medidas incluyen:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
+              <li>Cifrado de datos en tránsito (HTTPS/SSL)</li>
+              <li>Almacenamiento seguro en servidores protegidos</li>
+              <li>Control de acceso basado en roles</li>
+              <li>Capacitación regular del personal en protección de datos</li>
+              <li>Evaluaciones periódicas de seguridad</li>
+            </ul>
+            <p class="text-neutral-700 leading-relaxed mt-4">
+              Conservamos sus datos personales solo durante el tiempo necesario para cumplir con las finalidades descritas en esta política, o según lo requiera la legislación aplicable.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">8. Derechos del Titular de los Datos</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              De acuerdo con la Ley N° 19.628 sobre Protección de la Vida Privada de Chile, usted tiene derecho a:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
+              <li><strong>Acceder</strong> a sus datos personales en nuestro poder</li>
+              <li><strong>Rectificar</strong> datos inexactos o incompletos</li>
+              <li><strong>Cancelar</strong> sus datos cuando considere que no están siendo utilizados conforme a la ley</li>
+              <li><strong>Oponerse</strong> al tratamiento de sus datos para fines específicos</li>
+              <li><strong>Revocar el consentimiento</strong> otorgado para el tratamiento de sus datos</li>
+              <li><strong>Portabilidad</strong> de sus datos en formato estructurado</li>
+            </ul>
+            <p class="text-neutral-700 leading-relaxed mt-4">
+              Para ejercer estos derechos, puede contactarnos a <a href="mailto:info@mr-ateducativa.cl" class="text-primary-600 hover:underline">info@mr-ateducativa.cl</a>. Responderemos a su solicitud dentro de los plazos establecidos por la ley.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">9. Cookies y Tecnologías de Rastreo</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Nuestro sitio web utiliza cookies y tecnologías similares para mejorar su experiencia de navegación. Las cookies son pequeños archivos de texto que se almacenan en su dispositivo.
+            </p>
+            <h3 class="text-xl font-semibold text-neutral-900 mt-6 mb-3">Tipos de cookies que utilizamos:</h3>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
+              <li><strong>Cookies esenciales:</strong> necesarias para el funcionamiento del sitio</li>
+              <li><strong>Cookies de rendimiento:</strong> nos ayudan a entender cómo los visitantes interactúan con el sitio</li>
+              <li><strong>Cookies de funcionalidad:</strong> permiten recordar sus preferencias</li>
+            </ul>
+            <p class="text-neutral-700 leading-relaxed mt-4">
+              Puede configurar su navegador para rechazar cookies, aunque esto puede afectar la funcionalidad del sitio.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">10. Menores de Edad</h2>
+            <p class="text-neutral-700 leading-relaxed">
+              Nuestros servicios están dirigidos a profesionales de la educación y establecimientos educacionales. No recopilamos intencionalmente información personal de menores de edad. Si tiene conocimiento de que un menor nos ha proporcionado datos personales, por favor contáctenos para que podamos eliminar dicha información.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">11. Transferencias Internacionales</h2>
+            <p class="text-neutral-700 leading-relaxed">
+              En caso de que sus datos sean transferidos fuera de Chile, nos aseguraremos de que existan garantías adecuadas de protección, conforme a la legislación chilena vigente.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">12. Cambios en esta Política</h2>
+            <p class="text-neutral-700 leading-relaxed">
+              Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento. Los cambios entrarán en vigor inmediatamente después de su publicación en el sitio web. Le recomendamos revisar periódicamente esta política para estar informado sobre cómo protegemos su información.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">13. Contacto</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Si tiene preguntas, comentarios o inquietudes sobre esta Política de Privacidad o el tratamiento de sus datos personales, puede contactarnos a través de:
+            </p>
+            <div class="bg-neutral-50 p-6 rounded-xl border border-neutral-200">
+              <p class="text-neutral-700 leading-relaxed mb-2"><strong>MR ATEducativa</strong></p>
+              <p class="text-neutral-700 leading-relaxed mb-2">Correo electrónico: <a href="mailto:info@mr-ateducativa.cl" class="text-primary-600 hover:underline">info@mr-ateducativa.cl</a></p>
+              <p class="text-neutral-700 leading-relaxed mb-2">Teléfono: <a href="tel:+56232100922" class="text-primary-600 hover:underline">+56 2 32100922</a></p>
+              <p class="text-neutral-700 leading-relaxed">Sitio web: <a href="https://mr-ateducativa.cl" class="text-primary-600 hover:underline" target="_blank" rel="noopener noreferrer">mr-ateducativa.cl</a></p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

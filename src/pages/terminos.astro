@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbItems = [
+  { name: 'Inicio', path: '/' },
+  { name: 'Términos de Uso', path: '/terminos' },
+];
+
+const lastUpdated = 'Septiembre 2026';
+---
+
+<BaseLayout
+  title="Términos de Uso | MR ATEducativa"
+  description="Términos y condiciones de uso del sitio web de MR ATEducativa"
+  path="/terminos"
+  breadcrumb={breadcrumbItems}
+>
+  <section class="section-padding bg-neutral-50">
+    <div class="container-page max-w-4xl">
+      <div class="mb-10">
+        <h1 class="heading-display text-neutral-900 mb-4">Términos de Uso</h1>
+        <p class="text-sm text-neutral-500">Última actualización: {lastUpdated}</p>
+      </div>
+
+      <div class="prose prose-lg max-w-none">
+        <div class="bg-white p-8 rounded-2xl border border-neutral-200 space-y-8">
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">1. Aceptación de los Términos</h2>
+            <p class="text-neutral-700 leading-relaxed">
+              Bienvenido al sitio web de <strong>MR ATEducativa</strong> ("nosotros", "nuestro" o "la empresa"), accesible en <a href="https://mr-ateducativa.cl" class="text-primary-600 hover:underline">mr-ateducativa.cl</a>. Al acceder y utilizar este sitio web, usted acepta estar sujeto a estos Términos de Uso y a nuestra Política de Privacidad. Si no está de acuerdo con estos términos, le rogamos no utilizar nuestro sitio web.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">2. Descripción del Servicio</h2>
+            <p class="text-neutral-700 leading-relaxed">
+              MR ATEducativa es una empresa de asesoría técnica educativa que ofrece servicios de consultoría, capacitación y acompañamiento a establecimientos educacionales en Chile. Nuestro sitio web proporciona información sobre nuestros servicios, recursos educativos gratuitos y canales de contacto para solicitar asesoría.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">3. Uso Permitido</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Usted se compromete a utilizar nuestro sitio web únicamente para fines legales y de manera que no infrinja los derechos de, restrinja o inhiba el uso y disfrute del sitio por parte de terceros. El uso del sitio está sujeto a las siguientes condiciones:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
+              <li>Proporcionar información veraz y actualizada al completar formularios</li>
+              <li>No utilizar el sitio para transmitir contenido ilegal, ofensivo o dañino</li>
+              <li>No intentar acceder a áreas restringidas del sitio sin autorización</li>
+              <li>No utilizar el sitio para enviar spam o comunicaciones no solicitadas</li>
+              <li>No reproducir, duplicar o explotar cualquier parte del sitio con fines comerciales sin nuestro consentimiento expreso</li>
+              <li>No realizar ingeniería inversa, descompilar o desensamblar el software del sitio</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">4. Propiedad Intelectual</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Todo el contenido publicado en este sitio web, incluyendo pero no limitado a textos, gráficos, logotipos, íconos, imágenes, archivos de audio, clips de video, compilaciones de datos y software, es propiedad de MR ATEducativa o de sus proveedores de contenido y está protegido por las leyes de propiedad intelectual de Chile y tratados internacionales.
+            </p>
+            <p class="text-neutral-700 leading-relaxed">
+              Los recursos gratuitos disponibles para descarga (guías, checklists, plantillas) se proporcionan para uso personal e institucional no comercial. Queda prohibida su reproducción, distribución o modificación con fines comerciales sin autorización expresa.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">5. Servicios y Contratación</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Los servicios de asesoría técnica educativa se prestan bajo contratos específicos que se acuerdan individualmente con cada cliente. Los términos particulares de cada servicio (alcance, duración, honorarios, condiciones de pago) se establecen en propuestas comerciales y contratos independientes.
+            </p>
+            <p class="text-neutral-700 leading-relaxed">
+              El sitio web proporciona información general sobre nuestros servicios, pero no constituye una oferta contractual. La contratación efectiva requiere un proceso de diagnóstico, propuesta y aceptación formal por ambas partes.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">6. Limitación de Responsabilidad</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              En la máxima medida permitida por la ley aplicable, MR ATEducativa no será responsable por:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
+              <li>Daños indirectos, incidentales, especiales, consecuentes o punitivos</li>
+              <li>Pérdida de beneficios, ingresos, datos, uso, fondo de comercio u otras pérdidas intangibles</li>
+              <li>Interrupciones, errores o defectos en el funcionamiento del sitio web</li>
+              <li>Virus u otros componentes dañinos transmitidos a través del sitio</li>
+              <li>Contenido, declaraciones o acciones de terceros en el sitio</li>
+            </ul>
+            <p class="text-neutral-700 leading-relaxed mt-4">
+              Nuestra responsabilidad total, en cualquier caso, estará limitada al monto pagado por usted (si corresponde) en los últimos seis meses anteriores al evento que dio origen a la reclamación.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">7. Enlaces a Sitios de Terceros</h2>
+            <p class="text-neutral-700 leading-relaxed">
+              Nuestro sitio web puede contener enlaces a sitios web de terceros que no son operados por nosotros. No tenemos control sobre el contenido, políticas de privacidad o prácticas de sitios de terceros. Le recomendamos revisar los términos y políticas de privacidad de cualquier sitio de terceros que visite.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">8. Modificaciones del Sitio</h2>
+            <p class="text-neutral-700 leading-relaxed">
+              Nos reservamos el derecho de modificar, suspender o discontinuar cualquier parte del sitio web en cualquier momento, con o sin previo aviso. No seremos responsables ante usted o terceros por cualquier modificación, suspensión o discontinuación del sitio.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">9. Legislación Aplicable</h2>
+            <p class="text-neutral-700 leading-relaxed">
+              Estos Términos de Uso se rigen por las leyes de la República de Chile. Cualquier controversia derivada de estos términos o del uso del sitio web será sometida a los tribunales competentes de Santiago, Chile.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">10. Modificaciones de los Términos</h2>
+            <p class="text-neutral-700 leading-relaxed">
+              Nos reservamos el derecho de modificar estos Términos de Uso en cualquier momento. Los cambios entrarán en vigor inmediatamente después de su publicación en el sitio web. Su uso continuado del sitio después de la publicación de modificaciones constituye su aceptación de los términos revisados.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">11. Contacto</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Si tiene preguntas sobre estos Términos de Uso, puede contactarnos a través de:
+            </p>
+            <div class="bg-neutral-50 p-6 rounded-xl border border-neutral-200">
+              <p class="text-neutral-700 leading-relaxed mb-2"><strong>MR ATEducativa</strong></p>
+              <p class="text-neutral-700 leading-relaxed mb-2">Correo electrónico: <a href="mailto:info@mr-ateducativa.cl" class="text-primary-600 hover:underline">info@mr-ateducativa.cl</a></p>
+              <p class="text-neutral-700 leading-relaxed mb-2">Teléfono: <a href="tel:+56232100922" class="text-primary-600 hover:underline">+56 2 32100922</a></p>
+              <p class="text-neutral-700 leading-relaxed">Sitio web: <a href="https://mr-ateducativa.cl" class="text-primary-600 hover:underline" target="_blank" rel="noopener noreferrer">mr-ateducativa.cl</a></p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

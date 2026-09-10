@@ -9,38 +9,69 @@ import CTAButton from '../components/CTAButton.astro';
   path="/404"
   robots="noindex, follow"
 >
-  <section class="min-h-[60vh] flex items-center justify-center bg-neutral-50">
-    <div class="container-page text-center">
-      <div class="max-w-2xl mx-auto">
-        <h1 class="text-6xl font-bold text-primary-700 mb-4">404</h1>
-        <h2 class="heading-h2 text-neutral-900 mb-6">
-          Página no encontrada
+  <section class="min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-primary-50 via-white to-rosa-50 relative overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute top-20 left-10 w-32 h-32 bg-primary-200/30 rounded-full blur-2xl"></div>
+    <div class="absolute bottom-20 right-10 w-40 h-40 bg-rosa-200/30 rounded-full blur-2xl"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-naranja-100/20 rounded-full blur-3xl"></div>
+
+    <div class="container-page text-center relative z-10">
+      <div class="max-w-3xl mx-auto">
+        <!-- Large 404 with gradient -->
+        <div class="mb-8">
+          <h1 class="text-9xl font-bold bg-gradient-to-r from-primary-600 via-rosa-500 to-naranja-500 bg-clip-text text-transparent mb-2">
+            404
+          </h1>
+          <div class="flex justify-center gap-2 mb-6">
+            <div class="w-3 h-3 rounded-full bg-primary-500"></div>
+            <div class="w-3 h-3 rounded-full bg-rosa-500"></div>
+            <div class="w-3 h-3 rounded-full bg-naranja-500"></div>
+          </div>
+        </div>
+
+        <h2 class="heading-h2 text-neutral-900 mb-4">
+          Ups, parece que te perdiste en el camino
         </h2>
-        <p class="body-lg text-neutral-600 mb-8">
-          La página que buscas no existe o fue movida. Te ayudamos a encontrar lo que necesitas.
+        <p class="body-lg text-neutral-600 mb-10 max-w-xl mx-auto">
+          La página que buscas no existe o fue movida. Pero no te preocupes, te ayudamos a encontrar lo que necesitas.
         </p>
 
+        <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <a href="/" class="btn bg-primary-600 text-white px-6 py-3 rounded-full hover:bg-primary-700 transition-colors">
+          <a href="/" class="btn bg-primary-600 text-white px-8 py-4 rounded-full hover:bg-primary-700 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all font-semibold">
             Volver al inicio
           </a>
-          <a href="/servicios" class="btn border-2 border-primary-600 text-primary-600 px-6 py-3 rounded-full hover:bg-primary-50 transition-colors">
-            Ver servicios
+          <a href="/servicios" class="btn border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full hover:bg-primary-50 transition-all font-semibold">
+            Explorar servicios
           </a>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-          <a href="/servicios/liderazgo" class="block p-6 bg-white rounded-xl border border-neutral-200 hover:border-primary-300 hover:shadow-md transition-all">
-            <h3 class="font-semibold text-neutral-900 mb-2">Liderazgo Institucional</h3>
+        <!-- Quick links cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left max-w-4xl mx-auto">
+          <a href="/servicios/liderazgo" class="group block p-6 bg-white rounded-2xl border-2 border-primary-200 hover:border-primary-400 hover:shadow-lg hover:-translate-y-1 transition-all">
+            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors">
+              <img src="/iconos/liderazgo.svg" alt="" class="w-7 h-7" aria-hidden="true" />
+            </div>
+            <h3 class="font-bold text-neutral-900 mb-2">Liderazgo Institucional</h3>
             <p class="text-sm text-neutral-600">Fortalecemos a quienes lideran la mejora educativa.</p>
           </a>
-          <a href="/servicios/gestion-pedagogica" class="block p-6 bg-white rounded-xl border border-neutral-200 hover:border-rosa-300 hover:shadow-md transition-all">
-            <h3 class="font-semibold text-neutral-900 mb-2">Gestión Pedagógica</h3>
+
+          <a href="/servicios/gestion-pedagogica" class="group block p-6 bg-white rounded-2xl border-2 border-rosa-200 hover:border-rosa-400 hover:shadow-lg hover:-translate-y-1 transition-all">
+            <div class="w-12 h-12 bg-rosa-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-rosa-200 transition-colors">
+              <img src="/iconos/pedagogica.svg" alt="" class="w-7 h-7" aria-hidden="true" />
+            </div>
+            <h3 class="font-bold text-neutral-900 mb-2">Gestión Pedagógica</h3>
             <p class="text-sm text-neutral-600">Prácticas que impactan directamente en el aprendizaje.</p>
           </a>
-          <a href="/contacto" class="block p-6 bg-white rounded-xl border border-neutral-200 hover:border-teal-300 hover:shadow-md transition-all">
-            <h3 class="font-semibold text-neutral-900 mb-2">Contacto</h3>
-            <p class="text-sm text-neutral-600">Diagnóstico gratuito de 30 minutos.</p>
+
+          <a href="/contacto" class="group block p-6 bg-white rounded-2xl border-2 border-teal-200 hover:border-teal-400 hover:shadow-lg hover:-translate-y-1 transition-all">
+            <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-teal-200 transition-colors">
+              <svg class="w-7 h-7 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-neutral-900 mb-2">Contacto</h3>
+            <p class="text-sm text-neutral-600">Conversemos sobre las necesidades de tu comunidad.</p>
           </a>
         </div>
       </div>
