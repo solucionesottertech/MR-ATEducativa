@@ -32,7 +32,6 @@ export const nav = [
       { name: 'Mentoría para Directores', path: '/servicios/mentoria-directores' },
     ],
   },
-  { name: 'Casos de éxito', path: '/casos-exito' },
   { name: 'Contacto', path: '/contacto' },
 ];
 
