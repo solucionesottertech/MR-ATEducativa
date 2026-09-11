@@ -117,8 +117,9 @@ const { class: className = '' } = Astro.props;
     Enviar mensaje
   </button>
 
-  <p class="text-xs text-gray-500 text-center">
-    Al enviar aceptas que usemos tu información para contactarte respecto a tu consulta.
+  <!-- Protección de datos -->
+  <p class="text-xs text-gray-500 text-center mt-4 leading-relaxed">
+    <strong>Protección de datos:</strong> Los datos proporcionados serán tratados por MR ATEducativa para gestionar su solicitud, inscripción o contacto. Puede conocer más sobre el tratamiento de sus datos y ejercer sus derechos consultando nuestra <a href="/politica-privacidad" class="text-primary-600 hover:underline">Política de Privacidad</a>.
   </p>
 </form>
 

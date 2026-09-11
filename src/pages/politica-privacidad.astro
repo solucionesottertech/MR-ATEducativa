@@ -8,6 +8,7 @@ const breadcrumbItems = [
 ];
 
 const lastUpdated = 'Septiembre 2026';
+const version = '1.0';
 ---
 
 <BaseLayout
@@ -19,147 +20,331 @@ const lastUpdated = 'Septiembre 2026';
   <section class="section-padding bg-neutral-50">
     <div class="container-page max-w-4xl">
       <div class="mb-10">
-        <h1 class="heading-display text-neutral-900 mb-4">Política de Privacidad</h1>
-        <p class="text-sm text-neutral-500">Última actualización: {lastUpdated}</p>
+        <h1 class="heading-display text-neutral-900 mb-4">Política de Privacidad y Protección de Datos Personales</h1>
+        <div class="flex items-center gap-4 text-sm text-neutral-500">
+          <span>Última actualización: {lastUpdated}</span>
+          <span>•</span>
+          <span>Versión {version}</span>
+        </div>
       </div>
 
       <div class="prose prose-lg max-w-none">
         <div class="bg-white p-8 rounded-2xl border border-neutral-200 space-y-8">
           <section>
-            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">1. Introducción</h2>
-            <p class="text-neutral-700 leading-relaxed">
-              En <strong>MR ATEducativa</strong> ("nosotros", "nuestro" o "la empresa"), nos comprometemos a proteger la privacidad de nuestros usuarios y clientes. Esta Política de Privacidad describe cómo recopilamos, usamos, almacenamos y protegemos la información personal que nos proporcionan a través de nuestro sitio web <a href="https://mr-ateducativa.cl" class="text-primary-600 hover:underline">mr-ateducativa.cl</a> y nuestros servicios de asesoría técnica educativa.
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">1. Identificación del responsable</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              La presente Política de Privacidad regula el tratamiento de datos personales realizado a través del sitio web y demás canales digitales de <strong>MR Asesoría Técnica Educativa</strong>, en adelante "MR ATEducativa", organización dedicada a la prestación de servicios de asesoría técnica educativa, acompañamiento profesional, formación, cursos y servicios relacionados con el ámbito educacional.
             </p>
-            <p class="text-neutral-700 leading-relaxed mt-4">
-              Al utilizar nuestro sitio web y servicios, usted acepta las prácticas descritas en esta política. Si no está de acuerdo con los términos aquí establecidos, le rogamos no utilizar nuestros servicios.
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Para efectos de esta Política, MR ATEducativa actuará como responsable del tratamiento de los datos personales que recopile directamente.
             </p>
-          </section>
-
-          <section>
-            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">2. Responsable del Tratamiento de Datos</h2>
             <div class="bg-primary-50 p-6 rounded-xl border border-primary-200">
-              <p class="text-neutral-700 leading-relaxed mb-2"><strong>MR ATEducativa</strong></p>
-              <p class="text-neutral-700 leading-relaxed mb-2">RUT: 13.673.271-4</p>
-              <p class="text-neutral-700 leading-relaxed mb-2">Representante legal: Marilyn Reyes Molina</p>
-              <p class="text-neutral-700 leading-relaxed mb-2">Dirección: Juan Pablo II 11399, La Florida, Santiago, Chile</p>
-              <p class="text-neutral-700 leading-relaxed mb-2">Correo electrónico de contacto: <a href="mailto:info@mr-ateducativa.cl" class="text-primary-600 hover:underline">info@mr-ateducativa.cl</a></p>
-              <p class="text-neutral-700 leading-relaxed">Teléfono: <a href="tel:+56232100922" class="text-primary-600 hover:underline">+56 2 32100922</a></p>
+              <p class="text-neutral-700 leading-relaxed mb-2"><strong>Datos del responsable:</strong></p>
+              <p class="text-neutral-700 leading-relaxed mb-1">Nombre comercial: MR ATEducativa</p>
+              <p class="text-neutral-700 leading-relaxed mb-1">RUT: 13.673.271-4</p>
+              <p class="text-neutral-700 leading-relaxed mb-1">Representante legal: Marilyn Reyes Molina</p>
+              <p class="text-neutral-700 leading-relaxed mb-1">Dirección: Juan Pablo II 11399, La Florida, Santiago, Chile</p>
+              <p class="text-neutral-700 leading-relaxed mb-1">Correo electrónico: <a href="mailto:info@mr-ateducativa.cl" class="text-primary-600 hover:underline">info@mr-ateducativa.cl</a></p>
+              <p class="text-neutral-700 leading-relaxed">Teléfono: <a href="tel:+56927659269" class="text-primary-600 hover:underline">+56 9 2765 9269</a></p>
             </div>
           </section>
 
           <section>
-            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">3. Información que Recopilamos</h2>
-            <p class="text-neutral-700 leading-relaxed mb-4">Recopilamos información personal que usted nos proporciona voluntariamente al:</p>
-            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
-              <li>Completar formularios de contacto en nuestro sitio web</li>
-              <li>Solicitar un diagnóstico gratuito</li>
-              <li>Contratar nuestros servicios de asesoría</li>
-              <li>Descargar recursos gratuitos (guías, checklists, plantillas)</li>
-              <li>Suscribirse a nuestro boletín informativo</li>
-              <li>Participar en capacitaciones o talleres</li>
-            </ul>
-
-            <h3 class="text-xl font-semibold text-neutral-900 mt-6 mb-3">Tipos de datos recopilados:</h3>
-            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
-              <li><strong>Datos de identificación:</strong> nombre completo, RUT (cuando aplica)</li>
-              <li><strong>Datos de contacto:</strong> correo electrónico, teléfono, dirección</li>
-              <li><strong>Datos profesionales:</strong> cargo, institución educativa, rol en la organización</li>
-              <li><strong>Datos del establecimiento:</strong> nombre del colegio, comuna, región, cantidad de alumnos</li>
-              <li><strong>Datos de navegación:</strong> dirección IP, tipo de navegador, páginas visitadas, tiempo de permanencia</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">4. Finalidad del Tratamiento</h2>
-            <p class="text-neutral-700 leading-relaxed mb-4">Utilizamos su información personal para:</p>
-            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
-              <li>Prestar nuestros servicios de asesoría técnica educativa</li>
-              <li>Responder a sus consultas y solicitudes</li>
-              <li>Enviar información sobre nuestros servicios (con su consentimiento)</li>
-              <li>Mejorar la calidad de nuestros servicios y experiencia del usuario</li>
-              <li>Cumplir con obligaciones legales y contractuales</li>
-              <li>Realizar análisis estadísticos y estudios de mercado (datos anonimizados)</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">5. Base Legal para el Tratamiento</h2>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">2. Marco normativo</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              MR ATEducativa realiza el tratamiento de datos personales de acuerdo con la legislación chilena aplicable en materia de privacidad y protección de datos personales, especialmente la <strong>Ley N.º 19.628</strong> sobre Protección de la Vida Privada, sus modificaciones y demás normativa complementaria.
+            </p>
             <p class="text-neutral-700 leading-relaxed">
-              Tratamos sus datos personales sobre la base de:
+              Asimismo, esta Política incorpora los principios y estándares establecidos por la <strong>Ley N.º 21.719</strong>, que regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales, de acuerdo con su entrada en vigencia y demás disposiciones aplicables. MR ATEducativa procurará adaptar continuamente sus procedimientos a las modificaciones regulatorias que resulten aplicables.
             </p>
-            <ul class="list-disc pl-6 space-y-2 text-neutral-700 mt-4">
-              <li><strong>Consentimiento:</strong> cuando usted nos autoriza explícitamente (formularios, suscripciones)</li>
-              <li><strong>Ejecución contractual:</strong> cuando es necesario para prestar nuestros servicios</li>
-              <li><strong>Interés legítimo:</strong> para mejorar nuestros servicios y comunicaciones</li>
-              <li><strong>Cumplimiento legal:</strong> cuando la ley nos obliga a tratar ciertos datos</li>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">3. Alcance de esta Política</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">Esta Política se aplica a los datos personales obtenidos mediante:</p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
+              <li>El sitio web de MR ATEducativa</li>
+              <li>Formularios de contacto</li>
+              <li>Formularios de inscripción</li>
+              <li>Formularios de solicitud de información o cotización</li>
+              <li>Descarga o solicitud de materiales</li>
+              <li>Inscripción a cursos, talleres, asesorías, webinars u otras actividades</li>
+              <li>Correo electrónico</li>
+              <li>Comunicaciones telefónicas o mediante WhatsApp</li>
+              <li>Reuniones virtuales</li>
+              <li>Actividades presenciales</li>
+              <li>Encuestas o evaluaciones</li>
+              <li>Redes sociales, cuando corresponda</li>
+              <li>Relaciones contractuales o precontractuales con establecimientos educacionales, profesionales, proveedores o clientes</li>
             </ul>
           </section>
 
           <section>
-            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">6. Compartición de Datos</h2>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">4. Datos personales que podemos recopilar</h2>
             <p class="text-neutral-700 leading-relaxed mb-4">
-              No vendemos, alquilamos ni compartimos su información personal con terceros con fines comerciales. Solo compartimos datos en los siguientes casos:
+              Dependiendo de la relación que la persona mantenga con MR ATEducativa y del servicio solicitado, podremos recopilar datos como:
             </p>
             <ul class="list-disc pl-6 space-y-2 text-neutral-700">
-              <li><strong>Proveedores de servicios:</strong> empresas que nos ayudan a operar (hosting, email, analytics) bajo estrictos acuerdos de confidencialidad</li>
-              <li><strong>Obligación legal:</strong> cuando la ley, regulaciones o procesos legales lo requieran</li>
-              <li><strong>Protección de derechos:</strong> para proteger nuestros derechos, propiedad o seguridad</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">7. Almacenamiento y Seguridad</h2>
-            <p class="text-neutral-700 leading-relaxed mb-4">
-              Implementamos medidas de seguridad técnicas y organizativas apropiadas para proteger sus datos personales contra acceso no autorizado, alteración, divulgación o destrucción. Estas medidas incluyen:
-            </p>
-            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
-              <li>Cifrado de datos en tránsito (HTTPS/SSL)</li>
-              <li>Almacenamiento seguro en servidores protegidos</li>
-              <li>Control de acceso basado en roles</li>
-              <li>Capacitación regular del personal en protección de datos</li>
-              <li>Evaluaciones periódicas de seguridad</li>
+              <li><strong>Datos de identificación:</strong> nombre y apellidos</li>
+              <li><strong>Datos profesionales:</strong> cargo, función, profesión, establecimiento educacional, institución u organización a la cual pertenece</li>
+              <li><strong>Datos de contacto:</strong> correo electrónico, teléfono y otros medios proporcionados voluntariamente</li>
+              <li><strong>Datos territoriales:</strong> comuna, ciudad, región o país, cuando sean necesarios para prestar un servicio o responder una solicitud</li>
+              <li><strong>Datos relativos a solicitudes comerciales:</strong> servicio de interés, tipo de establecimiento, requerimientos institucionales, cotizaciones solicitadas u otra información proporcionada en formularios o comunicaciones</li>
+              <li><strong>Datos de inscripción y participación:</strong> información necesaria para gestionar cursos, talleres, asesorías, webinars, reuniones u otras actividades</li>
+              <li><strong>Datos para certificación:</strong> aquellos antecedentes estrictamente necesarios para identificar correctamente a una persona participante y emitir certificados cuando corresponda</li>
+              <li><strong>Datos de navegación:</strong> dirección IP, características técnicas del dispositivo, navegador, páginas visitadas, fecha y hora de acceso y otra información técnica obtenida mediante cookies o tecnologías similares, cuando estas se encuentren habilitadas</li>
             </ul>
             <p class="text-neutral-700 leading-relaxed mt-4">
-              Conservamos sus datos personales solo durante el tiempo necesario para cumplir con las finalidades descritas en esta política, o según lo requiera la legislación aplicable.
+              MR ATEducativa procurará no recopilar datos personales que no sean necesarios para las finalidades informadas.
             </p>
           </section>
 
           <section>
-            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">8. Derechos del Titular de los Datos</h2>
-            <p class="text-neutral-700 leading-relaxed mb-4">
-              De acuerdo con la Ley N° 19.628 sobre Protección de la Vida Privada de Chile, usted tiene derecho a:
-            </p>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">5. Finalidades del tratamiento</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">Los datos personales podrán ser tratados para una o más de las siguientes finalidades:</p>
             <ul class="list-disc pl-6 space-y-2 text-neutral-700">
-              <li><strong>Acceder</strong> a sus datos personales en nuestro poder</li>
-              <li><strong>Rectificar</strong> datos inexactos o incompletos</li>
-              <li><strong>Cancelar</strong> sus datos cuando considere que no están siendo utilizados conforme a la ley</li>
-              <li><strong>Oponerse</strong> al tratamiento de sus datos para fines específicos</li>
-              <li><strong>Revocar el consentimiento</strong> otorgado para el tratamiento de sus datos</li>
-              <li><strong>Portabilidad</strong> de sus datos en formato estructurado</li>
+              <li>Responder consultas y solicitudes de información</li>
+              <li>Gestionar solicitudes de cotización</li>
+              <li>Contactar a establecimientos educacionales, instituciones o profesionales interesados en los servicios de MR ATEducativa</li>
+              <li>Gestionar inscripciones a cursos, talleres, webinars, asesorías y otras actividades</li>
+              <li>Ejecutar servicios contratados</li>
+              <li>Coordinar reuniones, actividades de asesoría, mentoría, acompañamiento técnico o formación</li>
+              <li>Emitir certificados, constancias u otros documentos relacionados con actividades realizadas</li>
+              <li>Enviar materiales, presentaciones, documentos, recursos pedagógicos u otra información solicitada por el usuario</li>
+              <li>Realizar seguimiento de servicios, actividades o solicitudes</li>
+              <li>Gestionar la relación administrativa, contractual y comercial con clientes</li>
+              <li>Enviar información relativa a nuevos cursos, actividades, servicios, recursos, contenidos educativos, novedades institucionales y otras comunicaciones vinculadas con MR ATEducativa</li>
+              <li>Elaborar estadísticas internas y análisis generales orientados a mejorar nuestros servicios</li>
+              <li>Mantener la seguridad y correcto funcionamiento del sitio web y demás sistemas tecnológicos</li>
+              <li>Cumplir obligaciones legales, tributarias, administrativas o contractuales</li>
             </ul>
             <p class="text-neutral-700 leading-relaxed mt-4">
-              Para ejercer estos derechos, puede contactarnos a <a href="mailto:info@mr-ateducativa.cl" class="text-primary-600 hover:underline">info@mr-ateducativa.cl</a>. Responderemos a su solicitud dentro de los plazos establecidos por la ley.
+              Los datos no serán utilizados para finalidades incompatibles con aquellas informadas al momento de su recopilación, salvo que exista una habilitación legal para hacerlo o que se obtenga una nueva autorización cuando corresponda.
             </p>
           </section>
 
           <section>
-            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">9. Cookies y Tecnologías de Rastreo</h2>
-            <p class="text-neutral-700 leading-relaxed mb-4">
-              Nuestro sitio web utiliza cookies y tecnologías similares para mejorar su experiencia de navegación. Las cookies son pequeños archivos de texto que se almacenan en su dispositivo.
-            </p>
-            <h3 class="text-xl font-semibold text-neutral-900 mt-6 mb-3">Tipos de cookies que utilizamos:</h3>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">6. Base que permite el tratamiento de los datos</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">Dependiendo de las circunstancias, MR ATEducativa podrá tratar datos personales cuando:</p>
             <ul class="list-disc pl-6 space-y-2 text-neutral-700">
-              <li><strong>Cookies esenciales:</strong> necesarias para el funcionamiento del sitio</li>
-              <li><strong>Cookies de rendimiento:</strong> nos ayudan a entender cómo los visitantes interactúan con el sitio</li>
-              <li><strong>Cookies de funcionalidad:</strong> permiten recordar sus preferencias</li>
+              <li>La persona haya otorgado su consentimiento</li>
+              <li>El tratamiento sea necesario para atender una solicitud efectuada por la propia persona</li>
+              <li>Sea necesario para gestionar una relación precontractual o contractual</li>
+              <li>Exista una obligación legal</li>
+              <li>La legislación autorice expresamente dicho tratamiento</li>
+              <li>Exista otro fundamento legítimo reconocido por la legislación aplicable</li>
             </ul>
             <p class="text-neutral-700 leading-relaxed mt-4">
-              Puede configurar su navegador para rechazar cookies, aunque esto puede afectar la funcionalidad del sitio.
+              Cuando el tratamiento se encuentre basado en el consentimiento, este podrá ser retirado en cualquier momento, sin afectar la licitud de los tratamientos realizados con anterioridad a su retiro.
             </p>
           </section>
 
           <section>
-            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">10. Herramientas de Análisis y Monitoreo</h2>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">7. Comunicaciones informativas y comerciales</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">MR ATEducativa podrá enviar por correo electrónico u otros medios comunicaciones relacionadas con:</p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
+              <li>Cursos</li>
+              <li>Asesorías</li>
+              <li>Webinars</li>
+              <li>Actividades profesionales</li>
+              <li>Contenidos educativos</li>
+              <li>Novedades normativas relevantes para establecimientos educacionales</li>
+              <li>Materiales y recursos</li>
+              <li>Invitaciones</li>
+              <li>Servicios propios</li>
+              <li>Actividades organizadas o desarrolladas por MR ATEducativa</li>
+            </ul>
+            <p class="text-neutral-700 leading-relaxed mt-4">
+              Las personas podrán solicitar en cualquier momento dejar de recibir estas comunicaciones. Los correos electrónicos masivos deberán incorporar un mecanismo de desuscripción o cancelación de suscripción. Cuando una persona solicite dejar de recibir comunicaciones comerciales, MR ATEducativa adoptará las medidas necesarias para excluirla de futuros envíos de esa naturaleza, sin perjuicio de conservar los datos que resulten necesarios para cumplir obligaciones legales, contractuales o administrativas.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">8. Procedencia de los datos</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">Los datos personales pueden ser obtenidos:</p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
+              <li>Directamente del titular</li>
+              <li>Mediante formularios del sitio web</li>
+              <li>Mediante inscripción en actividades organizadas por MR ATEducativa</li>
+              <li>A través de solicitudes realizadas por correo electrónico, teléfono, WhatsApp u otros canales</li>
+              <li>Como consecuencia de una relación contractual, comercial o profesional</li>
+              <li>Mediante fuentes cuya utilización esté permitida por la legislación aplicable</li>
+              <li>Mediante información profesional o institucional públicamente disponible, cuando el tratamiento esté jurídicamente permitido</li>
+            </ul>
+            <p class="text-neutral-700 leading-relaxed mt-4">
+              Cuando corresponda, MR ATEducativa informará al titular acerca de la procedencia de sus datos y de las finalidades para las cuales son utilizados.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">9. Exactitud y actualización</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              MR ATEducativa procurará mantener los datos personales exactos, completos y actualizados conforme a las finalidades para las cuales son tratados. Los usuarios podrán solicitar la corrección o actualización de sus datos cuando detecten información errónea, incompleta o desactualizada.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">10. Conservación de los datos</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Los datos personales serán conservados únicamente durante el período necesario para cumplir las finalidades que justificaron su recopilación o tratamiento. El plazo podrá extenderse cuando sea necesario para:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
+              <li>Cumplir obligaciones legales</li>
+              <li>Acreditar relaciones contractuales</li>
+              <li>Mantener registros tributarios o administrativos</li>
+              <li>Formular, ejercer o defender reclamaciones</li>
+              <li>Atender responsabilidades derivadas de los servicios prestados</li>
+            </ul>
+            <p class="text-neutral-700 leading-relaxed mt-4">
+              Una vez que los datos dejen de resultar necesarios y no exista obligación jurídica de conservarlos, podrán ser eliminados, anonimizados o bloqueados según corresponda.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">11. Proveedores y encargados del tratamiento</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Para desarrollar sus actividades, MR ATEducativa puede utilizar servicios tecnológicos proporcionados por terceros, entre ellos plataformas de:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700 mb-4">
+              <li>Alojamiento web</li>
+              <li>Correo electrónico</li>
+              <li>Gestión de contactos</li>
+              <li>Marketing y newsletters</li>
+              <li>Videoconferencias</li>
+              <li>Formularios</li>
+              <li>Almacenamiento en la nube</li>
+              <li>Administración de contenidos</li>
+              <li>Analítica web</li>
+              <li>Gestión administrativa</li>
+              <li>Sistemas de inscripción y comunicaciones</li>
+            </ul>
+            <p class="text-neutral-700 leading-relaxed">
+              Estos proveedores podrán tratar datos personales únicamente en la medida necesaria para prestar los servicios contratados por MR ATEducativa y estarán sujetos a las obligaciones contractuales, técnicas y jurídicas que correspondan.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">12. Transferencias internacionales de datos</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Algunos de los proveedores tecnológicos utilizados por MR ATEducativa pueden disponer de servidores, infraestructura, empresas relacionadas o proveedores ubicados fuera de Chile. Por esta razón, determinados datos personales podrían ser objeto de almacenamiento, acceso o tratamiento desde otros países.
+            </p>
+            <p class="text-neutral-700 leading-relaxed">
+              Cuando corresponda realizar una transferencia internacional de datos personales, MR ATEducativa procurará utilizar proveedores y mecanismos que permitan otorgar un nivel adecuado de protección y adoptará las medidas requeridas por la legislación aplicable.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">13. Cesión o entrega de datos a terceros</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              MR ATEducativa no vende bases de datos personales ni comercializa datos personales de sus usuarios. Los datos podrán ser comunicados a terceros únicamente cuando:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
+              <li>Resulte necesario para prestar un servicio solicitado</li>
+              <li>Intervenga un proveedor que actúe por cuenta de MR ATEducativa</li>
+              <li>Exista autorización del titular cuando esta sea requerida</li>
+              <li>Sea necesario para cumplir una obligación contractual</li>
+              <li>Exista una obligación legal o requerimiento válido de una autoridad competente</li>
+              <li>Exista otro fundamento jurídicamente permitido</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">14. Seguridad y confidencialidad</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              MR ATEducativa adoptará medidas técnicas, administrativas y organizativas razonables destinadas a proteger los datos personales contra:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700 mb-4">
+              <li>Pérdida</li>
+              <li>Destrucción</li>
+              <li>Modificación indebida</li>
+              <li>Divulgación no autorizada</li>
+              <li>Acceso no autorizado</li>
+              <li>Uso ilícito</li>
+              <li>Filtración o tratamiento indebido</li>
+            </ul>
+            <p class="text-neutral-700 leading-relaxed">
+              Las personas que, debido a sus funciones, tengan acceso a datos personales deberán mantener su confidencialidad y utilizarlos exclusivamente para las finalidades autorizadas. Sin perjuicio de estas medidas, ningún sistema conectado a internet puede garantizar un nivel de seguridad absoluto.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">15. Derechos de los titulares</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Las personas cuyos datos sean tratados por MR ATEducativa podrán ejercer los derechos reconocidos por la legislación aplicable. Estos derechos podrán comprender, según corresponda:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700">
+              <li><strong>Derecho de acceso:</strong> conocer si MR ATEducativa trata datos personales relativos a su persona y acceder a ellos</li>
+              <li><strong>Derecho de rectificación:</strong> solicitar la corrección de datos inexactos, incompletos o desactualizados</li>
+              <li><strong>Derecho de supresión o eliminación:</strong> solicitar la eliminación de los datos cuando se cumplan los requisitos establecidos por la legislación</li>
+              <li><strong>Derecho de oposición:</strong> solicitar que determinados tratamientos de datos personales cesen cuando concurran las condiciones legales para ello</li>
+              <li><strong>Derecho de bloqueo:</strong> solicitar la suspensión temporal de determinadas operaciones de tratamiento cuando corresponda</li>
+              <li><strong>Derecho a la portabilidad:</strong> solicitar los datos personales en un formato estructurado y de uso común en aquellos casos en que este derecho resulte aplicable</li>
+              <li><strong>Derecho a retirar el consentimiento:</strong> cuando el tratamiento se encuentre basado en el consentimiento</li>
+              <li><strong>Derecho a dejar de recibir comunicaciones comerciales:</strong> mediante el mecanismo de desuscripción incorporado en las comunicaciones o contactando directamente a MR ATEducativa</li>
+            </ul>
+            <p class="text-neutral-700 leading-relaxed mt-4">
+              El ejercicio de estos derechos será gratuito en los casos establecidos por la legislación.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">16. Cómo ejercer los derechos sobre datos personales</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Para efectuar una solicitud relativa a sus datos personales, el titular podrá comunicarse con MR ATEducativa a través de:
+            </p>
+            <div class="bg-neutral-50 p-6 rounded-xl border border-neutral-200 mb-4">
+              <p class="text-neutral-700 leading-relaxed mb-2"><strong>MR ATEducativa</strong></p>
+              <p class="text-neutral-700 leading-relaxed mb-2">Correo electrónico: <a href="mailto:info@mr-ateducativa.cl" class="text-primary-600 hover:underline">info@mr-ateducativa.cl</a></p>
+              <p class="text-neutral-700 leading-relaxed mb-2">Asunto sugerido: "Solicitud de protección de datos personales"</p>
+            </div>
+            <p class="text-neutral-700 leading-relaxed mb-4">La solicitud deberá permitir identificar razonablemente:</p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700 mb-4">
+              <li>A la persona solicitante</li>
+              <li>El derecho que desea ejercer</li>
+              <li>Los datos o tratamiento respecto de los cuales formula su solicitud</li>
+              <li>Un medio de contacto para recibir la respuesta</li>
+            </ul>
+            <p class="text-neutral-700 leading-relaxed">
+              MR ATEducativa podrá solicitar antecedentes razonables destinados exclusivamente a verificar la identidad del titular antes de proporcionar, modificar o eliminar información personal. Las solicitudes serán atendidas dentro de los plazos establecidos por la legislación aplicable.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">17. Datos personales de niños, niñas y adolescentes</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Los servicios ofrecidos a través del sitio web de MR ATEducativa están dirigidos principalmente a establecimientos educacionales, equipos directivos, docentes, profesionales y otros adultos vinculados con el ámbito educativo.
+            </p>
+            <p class="text-neutral-700 leading-relaxed">
+              MR ATEducativa no pretende recopilar mediante su sitio web datos personales de niños, niñas o adolescentes directamente para fines comerciales. Cuando, debido a la naturaleza de una actividad educativa, resulte necesario tratar información relativa a niños, niñas o adolescentes, MR ATEducativa aplicará las medidas de protección correspondientes y limitará el tratamiento a las finalidades necesarias y jurídicamente permitidas.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">18. Fotografías, grabaciones y actividades</h2>
+            <p class="text-neutral-700 leading-relaxed">
+              En determinados cursos, reuniones, webinars o actividades podrá realizarse registro fotográfico, audiovisual o de audio. Cuando dichos registros permitan identificar a participantes y se pretendan utilizar para finalidades distintas de la ejecución normal de la actividad, tales como difusión institucional o promoción, MR ATEducativa solicitará las autorizaciones que correspondan de acuerdo con la legislación aplicable.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">19. Cookies y tecnologías similares</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              El sitio web de MR ATEducativa podrá utilizar cookies u otras tecnologías similares necesarias para su funcionamiento y, cuando corresponda, herramientas destinadas a obtener estadísticas, analizar el uso del sitio o mejorar la experiencia de navegación.
+            </p>
+            <p class="text-neutral-700 leading-relaxed mb-4">Las cookies pueden ser:</p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700 mb-4">
+              <li><strong>Cookies necesarias:</strong> requeridas para el funcionamiento técnico del sitio</li>
+              <li><strong>Cookies de preferencias:</strong> permiten recordar determinadas opciones seleccionadas por los usuarios</li>
+              <li><strong>Cookies analíticas:</strong> permiten conocer de manera agregada cómo se utiliza el sitio web</li>
+              <li><strong>Cookies de marketing:</strong> permiten evaluar campañas o mostrar contenido relacionado con los intereses de los usuarios, cuando estas tecnologías sean utilizadas</li>
+            </ul>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Cuando la legislación aplicable lo requiera, las cookies no esenciales serán utilizadas previa autorización del usuario. Los usuarios podrán administrar sus preferencias mediante el sistema de configuración de cookies del sitio web o las opciones disponibles en su navegador.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">20. Herramientas de análisis y monitoreo</h2>
             <p class="text-neutral-700 leading-relaxed mb-4">
               Utilizamos herramientas de análisis para entender cómo los visitantes interactúan con nuestro sitio web y mejorar continuamente nuestros servicios.
             </p>
@@ -192,35 +377,53 @@ const lastUpdated = 'Septiembre 2026';
             </p>
 
             <p class="text-neutral-700 leading-relaxed">
-              Ambas herramientas operan dentro del marco de la Ley N° 19.628 y respetan su derecho a la privacidad. No utilizamos estos datos para identificar individuos específicos.
+              Ambas herramientas operan dentro del marco de la Ley N° 19.628 y la Ley N° 21.719, y respetan su derecho a la privacidad. No utilizamos estos datos para identificar individuos específicos.
             </p>
           </section>
 
           <section>
-            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">11. Menores de Edad</h2>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">21. Enlaces a sitios de terceros</h2>
             <p class="text-neutral-700 leading-relaxed">
-              Nuestros servicios están dirigidos a profesionales de la educación y establecimientos educacionales. No recopilamos intencionalmente información personal de menores de edad. Si tiene conocimiento de que un menor nos ha proporcionado datos personales, por favor contáctenos para que podamos eliminar dicha información.
+              El sitio web puede incluir enlaces hacia sitios web, documentos, plataformas o servicios pertenecientes a terceros. MR ATEducativa no controla las políticas de privacidad ni las prácticas de tratamiento de datos realizadas directamente por dichos terceros. Se recomienda revisar sus respectivas políticas de privacidad antes de proporcionar información personal.
             </p>
           </section>
 
           <section>
-            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">12. Transferencias Internacionales</h2>
-            <p class="text-neutral-700 leading-relaxed">
-              En caso de que sus datos sean transferidos fuera de Chile, nos aseguraremos de que existan garantías adecuadas de protección, conforme a la legislación chilena vigente.
-            </p>
-          </section>
-
-          <section>
-            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">13. Cambios en esta Política</h2>
-            <p class="text-neutral-700 leading-relaxed">
-              Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento. Los cambios entrarán en vigor inmediatamente después de su publicación en el sitio web. Le recomendamos revisar periódicamente esta política para estar informado sobre cómo protegemos su información.
-            </p>
-          </section>
-
-          <section>
-            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">14. Contacto</h2>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">22. Redes sociales</h2>
             <p class="text-neutral-700 leading-relaxed mb-4">
-              Si tiene preguntas, comentarios o inquietudes sobre esta Política de Privacidad o el tratamiento de sus datos personales, puede contactarnos a través de:
+              MR ATEducativa puede mantener perfiles o páginas institucionales en redes sociales. Cuando un usuario interactúe directamente con dichas plataformas, el tratamiento de determinados datos también estará sujeto a las políticas y condiciones de la correspondiente red social.
+            </p>
+            <p class="text-neutral-700 leading-relaxed">
+              MR ATEducativa únicamente tratará la información recibida mediante dichos canales para gestionar las comunicaciones, solicitudes o interacciones relacionadas con sus actividades.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">23. Decisiones automatizadas y elaboración de perfiles</h2>
+            <p class="text-neutral-700 leading-relaxed">
+              MR ATEducativa no adopta, como práctica general, decisiones que produzcan efectos jurídicos o consecuencias significativas para una persona basándose exclusivamente en un tratamiento automatizado de sus datos personales. En caso de que en el futuro se implementen tecnologías de esta naturaleza, se proporcionará la información correspondiente conforme a la normativa aplicable.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">24. Cambios a esta Política</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">MR ATEducativa podrá modificar esta Política de Privacidad para adecuarla a:</p>
+            <ul class="list-disc pl-6 space-y-2 text-neutral-700 mb-4">
+              <li>Modificaciones legales o regulatorias</li>
+              <li>Instrucciones de autoridades competentes</li>
+              <li>Cambios tecnológicos</li>
+              <li>Incorporación de nuevos servicios</li>
+              <li>Modificaciones en sus procedimientos internos de tratamiento</li>
+            </ul>
+            <p class="text-neutral-700 leading-relaxed">
+              La versión vigente estará permanentemente disponible en el sitio web. Cuando se introduzcan modificaciones relevantes, se actualizará la fecha y número de versión indicados al comienzo del documento.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="heading-h2 text-neutral-900 mb-4 text-2xl">25. Contacto</h2>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Para consultas relacionadas con esta Política de Privacidad, protección de datos personales o ejercicio de derechos, podrá contactar a:
             </p>
             <div class="bg-neutral-50 p-6 rounded-xl border border-neutral-200">
               <p class="text-neutral-700 leading-relaxed mb-2"><strong>MR ATEducativa</strong></p>
@@ -228,7 +431,7 @@ const lastUpdated = 'Septiembre 2026';
               <p class="text-neutral-700 leading-relaxed mb-2">Representante legal: Marilyn Reyes Molina</p>
               <p class="text-neutral-700 leading-relaxed mb-2">Dirección: Juan Pablo II 11399, La Florida, Santiago, Chile</p>
               <p class="text-neutral-700 leading-relaxed mb-2">Correo electrónico: <a href="mailto:info@mr-ateducativa.cl" class="text-primary-600 hover:underline">info@mr-ateducativa.cl</a></p>
-              <p class="text-neutral-700 leading-relaxed mb-2">Teléfono: <a href="tel:+56232100922" class="text-primary-600 hover:underline">+56 2 32100922</a></p>
+              <p class="text-neutral-700 leading-relaxed mb-2">Teléfono: <a href="tel:+56927659269" class="text-primary-600 hover:underline">+56 9 2765 9269</a></p>
               <p class="text-neutral-700 leading-relaxed">Sitio web: <a href="https://mr-ateducativa.cl" class="text-primary-600 hover:underline" target="_blank" rel="noopener noreferrer">mr-ateducativa.cl</a></p>
             </div>
           </section>
