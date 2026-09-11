@@ -43,7 +43,7 @@ const variantClasses = {
 </button>
 
 <script>
-  // Función inteligente para el CTA: scroll en /contacto, modal en otras páginas
+  // Función inteligente para el CTA: scroll en /contacto, modal en index, redirect en otras
   (window as any).handleCTAClick = () => {
     // Si estamos en la página de contacto, hacer scroll al formulario
     if (window.location.pathname === '/contacto') {
@@ -70,7 +70,12 @@ const variantClasses = {
       document.body.classList.remove('overflow-hidden');
     }
     
-    // Abrir el modal
-    (window as any).openDiagnosticoModal();
+    // Si existe el modal (solo en index), abrirlo
+    if (typeof (window as any).openDiagnosticoModal === 'function') {
+      (window as any).openDiagnosticoModal();
+    } else {
+      // Si no hay modal, redirigir a /contacto
+      window.location.href = '/contacto';
+    }
   };
 </script>
