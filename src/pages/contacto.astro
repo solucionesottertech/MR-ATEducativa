@@ -315,87 +315,87 @@ const breadcrumbItems = [
       </div>
     </div>
   </section>
-</BaseLayout>
 
-<script>
-  // CSRF Token generation
-  function generateCSRFToken() {
-    const array = new Uint8Array(32);
-    crypto.getRandomValues(array);
-    return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('');
-  }
-  
-  // Set CSRF token in cookie and form
-  const csrfToken = generateCSRFToken();
-  document.cookie = `csrf_token=${csrfToken}; path=/; SameSite=Strict; Secure`;
-  const csrfInput = document.getElementById('csrf-token');
-  if (csrfInput) csrfInput.value = csrfToken;
-  
-  // Set submit time when form is loaded
-  const pageLoadTime = Math.floor(Date.now() / 1000);
-  const submitTimeInput = document.getElementById('submit-time');
-  if (submitTimeInput) submitTimeInput.value = pageLoadTime;
-
-  const contactForm = document.getElementById('contact-form') as HTMLFormElement | null;
-  const contactSubmit = document.getElementById('contact-submit') as HTMLButtonElement | null;
-  const contactStatus = document.getElementById('contact-form-status');
-
-  contactForm?.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    if (!contactForm.checkValidity()) {
-      contactForm.reportValidity();
-      return;
+  <script>
+    // CSRF Token generation
+    function generateCSRFToken() {
+      const array = new Uint8Array(32);
+      crypto.getRandomValues(array);
+      return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('');
     }
+    
+    // Set CSRF token in cookie and form
+    const csrfToken = generateCSRFToken();
+    document.cookie = `csrf_token=${csrfToken}; path=/; SameSite=Strict; Secure`;
+    const csrfInput = document.getElementById('csrf-token');
+    if (csrfInput) csrfInput.value = csrfToken;
+    
+    // Set submit time when form is loaded
+    const pageLoadTime = Math.floor(Date.now() / 1000);
+    const submitTimeInput = document.getElementById('submit-time');
+    if (submitTimeInput) submitTimeInput.value = pageLoadTime;
 
-    // Update submit time right before sending
-    if (submitTimeInput) submitTimeInput.value = Math.floor(Date.now() / 1000);
+    const contactForm = document.getElementById('contact-form') as HTMLFormElement | null;
+    const contactSubmit = document.getElementById('contact-submit') as HTMLButtonElement | null;
+    const contactStatus = document.getElementById('contact-form-status');
 
-    if (contactSubmit) {
-      contactSubmit.disabled = true;
-      contactSubmit.textContent = 'ENVIANDO...';
-    }
-    if (contactStatus) {
-      contactStatus.textContent = 'Enviando tu solicitud...';
-      contactStatus.className = 'min-h-6 text-sm text-neutral-600';
-      contactStatus.setAttribute('role', 'status');
-    }
-
-    try {
-      const response = await fetch(contactForm.action, {
-        method: 'POST',
-        body: new FormData(contactForm),
-        headers: { Accept: 'application/json' },
-      });
-      const result = await response.json().catch(() => null);
-
-      if (!response.ok || !result?.success) {
-        throw new Error(result?.error || result?.message || 'No fue posible enviar tu solicitud.');
+    contactForm?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
       }
 
-      contactForm.reset();
-      // Regenerate CSRF token after successful submission
-      const newToken = generateCSRFToken();
-      document.cookie = `csrf_token=${newToken}; path=/; SameSite=Strict; Secure`;
-      if (csrfInput) csrfInput.value = newToken;
+      // Update submit time right before sending
       if (submitTimeInput) submitTimeInput.value = Math.floor(Date.now() / 1000);
-      
-      if (contactStatus) {
-        contactStatus.textContent = result.message || '¡Gracias! Tu solicitud fue enviada correctamente.';
-        contactStatus.className = 'min-h-6 text-sm text-green-700';
-      }
-    } catch (error) {
-      if (contactStatus) {
-        contactStatus.textContent = error instanceof Error
-          ? error.message
-          : 'No fue posible enviar tu solicitud. Inténtalo nuevamente.';
-        contactStatus.className = 'min-h-6 text-sm text-red-700';
-        contactStatus.setAttribute('role', 'alert');
-      }
-    } finally {
+
       if (contactSubmit) {
-        contactSubmit.disabled = false;
-        contactSubmit.textContent = 'SOLICITAR CONTACTO';
+        contactSubmit.disabled = true;
+        contactSubmit.textContent = 'ENVIANDO...';
       }
-    }
-  });
-</script>
+      if (contactStatus) {
+        contactStatus.textContent = 'Enviando tu solicitud...';
+        contactStatus.className = 'min-h-6 text-sm text-neutral-600';
+        contactStatus.setAttribute('role', 'status');
+      }
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { Accept: 'application/json' },
+        });
+        const result = await response.json().catch(() => null);
+
+        if (!response.ok || !result?.success) {
+          throw new Error(result?.error || result?.message || 'No fue posible enviar tu solicitud.');
+        }
+
+        contactForm.reset();
+        // Regenerate CSRF token after successful submission
+        const newToken = generateCSRFToken();
+        document.cookie = `csrf_token=${newToken}; path=/; SameSite=Strict; Secure`;
+        if (csrfInput) csrfInput.value = newToken;
+        if (submitTimeInput) submitTimeInput.value = Math.floor(Date.now() / 1000);
+        
+        if (contactStatus) {
+          contactStatus.textContent = result.message || '¡Gracias! Tu solicitud fue enviada correctamente.';
+          contactStatus.className = 'min-h-6 text-sm text-green-700';
+        }
+      } catch (error) {
+        if (contactStatus) {
+          contactStatus.textContent = error instanceof Error
+            ? error.message
+            : 'No fue posible enviar tu solicitud. Inténtalo nuevamente.';
+          contactStatus.className = 'min-h-6 text-sm text-red-700';
+          contactStatus.setAttribute('role', 'alert');
+        }
+      } finally {
+        if (contactSubmit) {
+          contactSubmit.disabled = false;
+          contactSubmit.textContent = 'SOLICITAR CONTACTO';
+        }
+      }
+    });
+  </script>
+</BaseLayout>
