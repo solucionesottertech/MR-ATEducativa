@@ -5,9 +5,9 @@
  * IMPORTANTE: Cambia estos valores antes de subir a producción
  */
 
-// ─── Email Configuration ───
+// ── Email Configuration ───
 // Correo donde se recibirán los formularios
-$DEST_EMAIL = 'marilyn@mr-ateducativa.cl';
+$DEST_EMAIL = 'Info@mr-ateducativa.cl';
 
 // Correo que aparecerá como remitente (debe existir en el hosting)
 $FROM_EMAIL = 'noreply@mr-ateducativa.cl';
