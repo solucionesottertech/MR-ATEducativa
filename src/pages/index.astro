@@ -102,8 +102,47 @@ const schemaData = {
     <!-- Wave divider -->
     <div class="absolute bottom-0 left-0 right-0">
       <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
-        <path d="M0 120L60 108C120 96 240 72 360 66C480 60 600 72 720 78C840 84 960 84 1080 78C1200 72 1320 60 1380 54L1440 48V120H0Z" fill="white"/>
+        <path d="M0 120L60 108C120 96 240 72 360 66C480 60 600 72 720 78C840 84 960 84 1080 78C1200 72 1320 60 1380 54L1440 48V120H0Z" fill="#F3EFE9"/>
       </svg>
+    </div>
+  </section>
+
+  <!-- Registro ATE / SEP Trust Band -->
+  <section class="bg-primary-50 border-b border-primary-100" aria-label="Acreditación oficial Registro ATE">
+    <div class="container-page py-8 sm:py-10">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
+        <div class="bg-white rounded-2xl px-6 py-4 shadow-sm border border-neutral-100 flex-shrink-0">
+          <img
+            src="/registro-ate-sep.png"
+            alt="Registro ATE — Subvención Escolar Preferencial SEP"
+            width="632"
+            height="179"
+            class="h-12 sm:h-14 w-auto"
+            loading="lazy"
+          />
+        </div>
+        <div class="flex-1 text-center md:text-left">
+          <p class="text-neutral-900 font-semibold text-base sm:text-lg leading-snug mb-1">
+            Contamos con Registro ATE ante el MINEDUC
+          </p>
+          <p class="text-neutral-600 text-sm sm:text-base leading-relaxed">
+            Somos Asistencia Técnica Educativa acreditada: tu establecimiento puede contratarnos con{' '}
+            <span class="font-semibold text-primary-700">fondos SEP</span>.
+          </p>
+          <p class="text-xs font-semibold text-neutral-500 mt-2">En el Buscador Público MINEDUC, ingresa el RUT 13.673.271-4</p>
+        </div>
+        <a
+          href="https://registroate.mineduc.cl/registro-ate/buscadorPublico/index"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-primary-200 text-primary-700 text-sm font-semibold whitespace-nowrap transition-all hover:border-primary-400 hover:shadow-md"
+        >
+          Verificar en registro oficial
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+          </svg>
+        </a>
+      </div>
     </div>
   </section>
 

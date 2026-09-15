@@ -134,6 +134,7 @@ $mensaje = sanitize($_POST['mensaje'] ?? '');
 $colegio = sanitize($_POST['colegio'] ?? '');
 $comunaRegion = sanitize($_POST['comuna_region'] ?? '');
 $numAlumnos = sanitize($_POST['num_alumnos'] ?? '');
+$consentimiento = !empty($_POST['consentimiento']) ? 'SI (casilla marcada por el usuario)' : 'NO';
 
 // Áreas de interés (puede ser array)
 $areasInteres = [];
@@ -210,6 +211,7 @@ if ($formType === 'diagnostico') {
     if (!empty($colegio))       $body .= "  Colegio:       {$colegio}\n";
     if (!empty($comunaRegion))  $body .= "  Comuna/Región: {$comunaRegion}\n";
     if (!empty($numAlumnos))    $body .= "  N° Alumnos:    {$numAlumnos}\n";
+    $body .= "  Consentimiento: {$consentimiento}\n";
     $body .= "\n";
     
     if (!empty($areasInteres)) {
@@ -242,6 +244,7 @@ if ($formType === 'diagnostico') {
     if (!empty($institution))   $body .= "  Institución:   {$institution}\n";
     if (!empty($cargo))         $body .= "  Cargo:         {$cargo}\n";
     if (!empty($tipoAyuda))     $body .= "  Tipo de ayuda: {$tipoAyuda}\n";
+    $body .= "  Consentimiento: {$consentimiento}\n";
     $body .= "\n";
     
     if (!empty($mensaje)) {

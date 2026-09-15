@@ -1,22 +1,110 @@
 ---
-// Umami Cloud — privacy-first analytics (no cookie banner)
+// Umami Cloud — privacy-first analytics (cookieless: loads without prior consent)
 // <!-- CLIENTE: Reemplazar UMAMI_WEBSITE_ID con el ID real de Umami -->
 const umamiWebsiteId = 'UMAMI_WEBSITE_ID';
 const umamiSrc = 'https://cloud.umami.is/script.js';
+const umamiConfigured = umamiWebsiteId !== 'UMAMI_WEBSITE_ID';
 
-// Microsoft Clarity — heatmaps + session recordings
+// Microsoft Clarity — heatmaps + session recordings (installs cookies:
+// only loads after explicit consent through the cookie banner)
 // <!-- CLIENTE: Reemplazar CLARITY_PROJECT_ID con el ID real de Clarity -->
 const clarityProjectId = 'CLARITY_PROJECT_ID';
 ---
 
-<!-- Umami Analytics -->
-<script defer data-website-id={umamiWebsiteId} src={umamiSrc}></script>
+<!-- Umami Analytics (solo carga con ID real; evita 400 de /api/send con placeholder) -->
+{umamiConfigured && <script defer data-website-id={umamiWebsiteId} src={umamiSrc}></script>}
 
-<!-- Microsoft Clarity -->
-<script defer type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", {clarityProjectId});
+<!-- Clarity config for the consent script (Astro scripts cannot interpolate frontmatter) -->
+<div id="analytics-config" data-clarity-id={clarityProjectId} hidden></div>
+
+<!-- Cookie consent banner (gates Clarity only; Umami is cookieless) -->
+<div
+  id="cookie-banner"
+  hidden
+  role="region"
+  aria-label="Autorización de cookies de análisis"
+  class="fixed inset-x-0 bottom-0 z-40 border-t border-primary-700 bg-primary-800/95 shadow-2xl backdrop-blur-sm"
+>
+  <div class="container-page py-4 sm:py-5">
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+      <p class="flex-1 text-sm leading-relaxed text-neutral-300">
+        Usamos cookies de analítica para entender cómo se usa e interactúa con el sitio. Estas herramientas solo se
+        activarán si lo autorizas. Más detalles en nuestra{' '}
+        <a
+          href="/politica-privacidad"
+          class="font-medium text-white underline decoration-neutral-500 underline-offset-2 hover:decoration-white"
+          >Política de Privacidad</a
+        >.
+      </p>
+      <div class="flex flex-shrink-0 gap-3">
+        <button
+          id="cookie-reject"
+          type="button"
+          class="rounded-full border border-neutral-500 px-5 py-2.5 text-sm font-semibold text-neutral-200 transition-all hover:border-white hover:text-white"
+        >
+          Rechazar
+        </button>
+        <button
+          id="cookie-accept"
+          type="button"
+          class="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-primary-700 transition-all hover:bg-neutral-100"
+        >
+          Aceptar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Consent gate for Microsoft Clarity. Umami is cookieless and loads independently.
+  const CONSENT_KEY = 'mrateducativa-consent-v1';
+  const CLARITY_PLACEHOLDER = 'CLARITY_PROJECT_ID';
+
+  function loadClarity(projectId: string) {
+    const w = window as any;
+    w.clarity =
+      w.clarity ||
+      function () {
+        (w.clarity.q = w.clarity.q || []).push(arguments);
+      };
+    const t = document.createElement('script');
+    t.async = 1;
+    t.src = 'https://www.clarity.ms/tag/' + projectId;
+    const y = document.getElementsByTagName('script')[0];
+    y.parentNode?.insertBefore(t, y);
+  }
+
+  const banner = document.getElementById('cookie-banner');
+  const config = document.getElementById('analytics-config');
+  const projectId = config?.getAttribute('data-clarity-id') || '';
+  const clarityConfigured = projectId !== '' && projectId !== CLARITY_PLACEHOLDER;
+
+  function getStoredConsent(): string | null {
+    try {
+      return localStorage.getItem(CONSENT_KEY);
+    } catch {
+      return null;
+    }
+  }
+
+  function decide(value: 'accepted' | 'rejected') {
+    try {
+      localStorage.setItem(CONSENT_KEY, value);
+    } catch {
+      /* storage unavailable (private mode): choice applies to this visit only */
+    }
+    if (banner) banner.hidden = true;
+    if (value === 'accepted' && clarityConfigured) loadClarity(projectId);
+  }
+
+  document.getElementById('cookie-accept')?.addEventListener('click', () => decide('accepted'));
+  document.getElementById('cookie-reject')?.addEventListener('click', () => decide('rejected'));
+
+  const stored = getStoredConsent();
+  if (stored === 'accepted') {
+    if (clarityConfigured) loadClarity(projectId);
+  } else if (!stored && banner) {
+    banner.hidden = false;
+  }
 </script>

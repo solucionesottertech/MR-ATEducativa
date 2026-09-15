@@ -185,11 +185,28 @@ const breadcrumbItems = [
                 ></textarea>
               </div>
 
+              <!-- Consentimiento expreso -->
+              <div>
+                <label for="contacto-consentimiento" class="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    id="contacto-consentimiento"
+                    name="consentimiento"
+                    value="1"
+                    required
+                    class="mt-0.5 w-4 h-4 flex-shrink-0 rounded border-neutral-300 text-primary-600 focus:ring-primary-500"
+                  />
+                  <span class="text-sm text-neutral-600 leading-relaxed">
+                    Autorizo que MR ATEducativa trate los datos entregados en este formulario para responder mi solicitud, conforme a la <a href="/politica-privacidad" class="text-primary-600 hover:underline">Política de Privacidad</a>.
+                  </span>
+                </label>
+              </div>
+
               <!-- Submit -->
               <button
                 id="contact-submit"
                 type="submit"
-                class="w-full btn bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-4 text-lg rounded-xl hover:from-primary-700 hover:to-primary-800 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all font-semibold"
+                class="w-full btn bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-4 text-lg rounded-xl hover:from-primary-700 hover:to-primary-800 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 SOLICITAR CONTACTO
               </button>
@@ -339,6 +356,14 @@ const breadcrumbItems = [
     const contactSubmit = document.getElementById('contact-submit') as HTMLButtonElement | null;
     const contactStatus = document.getElementById('contact-form-status');
 
+    // Habilitar el envío solo con consentimiento expreso
+    const consentCheck = document.getElementById('contacto-consentimiento') as HTMLInputElement | null;
+    function updateConsentState() {
+      if (contactSubmit && consentCheck) contactSubmit.disabled = !consentCheck.checked;
+    }
+    consentCheck?.addEventListener('change', updateConsentState);
+    updateConsentState();
+
     contactForm?.addEventListener('submit', async (event) => {
       event.preventDefault();
       if (!contactForm.checkValidity()) {
@@ -346,8 +371,8 @@ const breadcrumbItems = [
         return;
       }
 
-      // Update submit time right before sending
-      if (submitTimeInput) submitTimeInput.value = Math.floor(Date.now() / 1000);
+      // submit_time NO se actualiza: debe reflejar el momento de carga de la
+      // página para que la detección de bots (elapsed > MIN_SUBMIT_TIME) funcione
 
       if (contactSubmit) {
         contactSubmit.disabled = true;
@@ -376,7 +401,7 @@ const breadcrumbItems = [
         const newToken = generateCSRFToken();
         document.cookie = `csrf_token=${newToken}; path=/; SameSite=Strict; Secure`;
         if (csrfInput) csrfInput.value = newToken;
-        if (submitTimeInput) submitTimeInput.value = Math.floor(Date.now() / 1000);
+        // No reestablecer submit_time tras el reset: queda vacío y el servidor omite el chequeo de tiempo
         
         if (contactStatus) {
           contactStatus.textContent = result.message || '¡Gracias! Tu solicitud fue enviada correctamente.';
@@ -392,9 +417,9 @@ const breadcrumbItems = [
         }
       } finally {
         if (contactSubmit) {
-          contactSubmit.disabled = false;
           contactSubmit.textContent = 'SOLICITAR CONTACTO';
         }
+        updateConsentState();
       }
     });
   </script>
